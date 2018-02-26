@@ -1,10 +1,53 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class Fotos extends Component {
+  // static defaultProps = {
+  //   imgs: {
+  //     title: 'Thailand Dezember 2017-...',
+  //     data: {
+  //         albumTitle: 'Thailand Pt.2 - I: Bangkok',
+  //         albumsrc: 'https://photos.google.com/share/AF1QipNVILzr66D9pMK_Z12uvMwnQmNHniGqBbCye3IpTrgv0oclZbQl49i3boHbdGI8JA?key=STltb0RLWDFtUzhRQndzdmx1bS1lOG90dDczd013&source=ctrlq.org',
+  //         imgsrc: 'https://lh3.googleusercontent.com/FHtq-1ZRxW_GmWvJKE__qGHSjnGyHRvcGpw3e6IkhC9uGILM0SK2TYcF2zpYec0ToFdj9myqo0MFiSknDMnwmfZ8-uJoys9RjpLjLrQkjeZo0pY67rLc5g4nhSbRJBU8Wnmbj45KFfQ'
+  //       }
+  //   }
+  // }
+  static propTypes = {
+    imgs: PropTypes.arrayOf(PropTypes.object)
+                    .isRequired
+  }
   render() {
+    const {imgs} = this.props;
+
     return (
       <div className="Fotos">
+        {
+          imgs.map((chapter, ind) => {
+            return(
+              <div className='FotoContent' key={chapter.title}>
 
+                <h4>{chapter.title}</h4>
+
+                  {chapter.data.map((album, ind) => {
+
+                    return(
+
+                      <div className='Foto' key={album.albumTitle}>
+                        <a href={album.albumsrc}>
+                          <figure>
+                            <img src={album.imgsrc} alt='' />
+                            <figcaption>
+                              {album.albumTitle}
+                            </figcaption>
+                          </figure>
+                        </a>
+                      </div>
+                    );
+                  })}
+              </div>
+            );
+          })
+        }
       </div>
     );
   }

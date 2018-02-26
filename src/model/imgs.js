@@ -1,4 +1,4 @@
-var imgs = [{
+export default [{
 
   title: 'Thailand Dezember 2017-...',
   data: [{
