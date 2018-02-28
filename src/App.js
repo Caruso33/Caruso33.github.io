@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import Navbar from './views/partials/Navbar';
 import Header from './views/partials/Header';
-import TestButton from './views/testButton';
+import TestForm from './views/testForm';
 import Fotos from './views/Fotos';
 import Themen from './views/Themen';
 import Kontakt from './views/Kontakt';
@@ -42,7 +42,7 @@ class App extends Component {
           h3={greet}
           // passionsList={this.props.passionsList}
         />
-        <TestButton/>
+        <TestForm/>
         <Fotos imgs={Imgs} />
         <Themen/>
         <Kontakt/>
