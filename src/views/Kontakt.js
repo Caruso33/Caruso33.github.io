@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class Kontakt extends Component {
   render() {
     return (
-      <div className='Kontakt'>
+      <div className='kontakt'>
 
         <h4>Kontakt</h4>
         <ul className="wrapper">

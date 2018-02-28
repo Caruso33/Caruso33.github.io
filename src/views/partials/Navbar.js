@@ -1,18 +1,37 @@
 import React, { Component } from 'react';
+import './Navbar.css';
 
-class Header extends Component {
+class Navbar extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      navItems: ['Home','Contact', 'About',  'Blog']
+    };
+  };
   render() {
+    const navItems = this.state.navItems.map((item, ind) => (
+      <a
+        key={ind}
+        className = {item === 'Home'? 'active' : ""}
+        href={'#'+item.toLowerCase()}>{item}
+      </a>
+    ) )
     return (
-      <header className="Header">
-        <h1 className="Title">Welcome to traveltobi.de</h1>
-        <h2 className="small">Travel the world or die tryin'</h2>
-
-        <h2>Digitalnomade, Web-Developer, Crypto-Trader</h2>
-
-        <h3>Hallo und ein herzliches Willkommen auf meiner Homepage.</h3>
+      <header style={ {marginBottom: '50px'} }>
+        <nav>
+          <h1 style={
+            {
+              textTransform: 'uppercase',
+              display: 'inline-block'
+            }
+          }>traveltobi.de</h1>
+          <div>
+            {navItems}
+          </div>
+        </nav>
       </header>
     );
   }
 }
 
-export default Header;
+export default Navbar;
