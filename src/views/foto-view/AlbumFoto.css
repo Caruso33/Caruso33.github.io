@@ -1,22 +1,16 @@
-.album-wrapper{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
 
-.album{
-  width: 350px;
-}
+
+
 img{
   max-width: 100%;
   animation-name: imgHover;
 }
-.sectionHeader,
-section h3 {
-  text-align: center;
-  width: 100%;
-  background-color: #333;
-  margin: 0;
+.imgThumbs{
+  border-radius: 20px;
+  max-width: 90%;
+}
+.imgThumbs:hover{
+  animation: imgHover 1s ease;
 }
 /*
 h4.fotos{
@@ -61,14 +55,7 @@ hr{
   font-size: 0.8em;
 }
 
-.imgThumbs{
-  border-radius: 20px;
-  max-width: 90%;
-}
 
-.imgThumbs:hover{
-  animation: imgHover 1s ease;
-}
 
 .container{
   width: 70%;

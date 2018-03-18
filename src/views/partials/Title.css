@@ -1,9 +1,12 @@
 .title{
-  width: 100%;
+  /* max-width: 100%; */
   padding: 1px 50px;
   text-align: center;
 
   background-image: url('../../imgs/background-ktm-min.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 
