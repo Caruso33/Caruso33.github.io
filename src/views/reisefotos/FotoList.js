@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './FotoList.css';
 import Album from './foto-view/Album';
-import SectionHeader from './partials/SectionHeader'
-import Imgs from '../model/Imgs';
+import SectionHeader from '../partials/SectionHeader'
+import Imgs from '../../model/Imgs';
 
 export default class Fotos extends Component {
 
