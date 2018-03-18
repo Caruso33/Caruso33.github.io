@@ -1,17 +1,14 @@
 import React, { Component } from 'react';
-
 import Navbar from './views/partials/Navbar';
-import Header from './views/partials/Header';
-import TestForm from './views/testForm';
-import Fotos from './views/Fotos';
+import Title from './views/partials/Title';
+// import TestForm from './views/testForm';
+import FotoList from './views/FotoList';
 import Themen from './views/Themen';
 import Kontakt from './views/Kontakt';
 import Impressum from './views/Impressum';
 import Footer from './views/partials/Footer';
-
 import './App.css';
 
-import Imgs from './model/imgs.js';
 
 class App extends Component {
   constructor(props){
@@ -38,15 +35,17 @@ class App extends Component {
     return (
       <div className="app">
         <Navbar />
-        <Header
-          h3={greet}
-          // passionsList={this.props.passionsList}
-        />
-        <TestForm/>
-        <Fotos imgs={Imgs} />
-        <Themen/>
-        <Kontakt/>
-        <Impressum/>
+        <main>
+          <Title
+            h3={greet}
+            // passionsList={this.props.passionsList}
+          />
+          {/* <TestForm/> */}
+          <FotoList />
+          <Themen/>
+          <Kontakt/>
+          <Impressum/>
+        </main>
         <Footer footer='Footer'/>
       </div>
     );

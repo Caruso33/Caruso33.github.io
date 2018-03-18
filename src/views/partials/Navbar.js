@@ -17,7 +17,7 @@ class Navbar extends Component {
       </a>
     ) )
     return (
-      <header style={ {marginBottom: '50px'} }>
+      <header>
         <nav>
           <h1 style={
             {

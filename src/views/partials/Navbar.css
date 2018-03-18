@@ -12,7 +12,7 @@ nav {
 nav a {
   float: left;
   display: block;
-  color: white;
+  color: #fdfdfd;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -24,12 +24,7 @@ nav a:hover:not(.active) {
 
 nav h1{
   font-size: 1.5em;
-  margin: auto 40px;
-}
-
-figure img{
-  width: 20vw;
-  max-width: 400px;
+  margin: 0 40px;
 }
 
 .active {

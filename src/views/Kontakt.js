@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
+import './Kontakt.css';
 
 class Kontakt extends Component {
   render() {
     return (
-      <div className='kontakt'>
+      <section className='kontakt'>
 
         <h4>Kontakt</h4>
         <ul className="wrapper">
@@ -16,7 +17,7 @@ class Kontakt extends Component {
           <li><a href="https://www.twitch.tv/caruso33/"><i className="fab fa-twitch fa-2x"></i></a></li>
           <li><a href='mailto:leinsst@web.de'><i className="fas fa-envelope fa-2x"></i></a></li>
         </ul>
-      </div>
+      </section>
     );
   }
 }

@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import './Title.css';
 
-class Header extends Component {
-  constructor(props){
-    super(props)
-  }
+class Title extends Component {
+  // constructor(props){
+  //   super(props)
+  // }
   static defaultProps = {
     passionsList: ['Digitalnomade', 'Web-Developer', 'Crypto-Trader']
   }
@@ -20,28 +21,21 @@ class Header extends Component {
     ));
 
     return (
-      <header className="header"
-        style={
-        {
-          width: '60vw',
-          margin: 'auto',
-          textAlign: 'center'
-        }
-      } >
-        <h1 className="title">Welcome to traveltobi.de</h1>
+      <section className="title">
+        <h1 className="title-h1">Welcome to traveltobi.de</h1>
         <h2 className="small">Travel the world or die tryin'</h2>
 
         <h2 style= {
           {
             display: 'flex',
-            justifyContent: 'space-between'
+            justifyContent: 'space-around'
           }
         }>{passions}</h2>
 
         <h3>{h3}</h3>
-      </header>
+      </section>
     );
   }
 }
 
-export default Header;
+export default Title;

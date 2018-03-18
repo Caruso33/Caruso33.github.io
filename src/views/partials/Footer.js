@@ -2,7 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Footer = props => (
-  <h1>This is the {props.footer}</h1>
+  <footer>
+    <h1>This is the {props.footer}</h1>
+  </footer>
 );
 
 Footer.propTypes = {
