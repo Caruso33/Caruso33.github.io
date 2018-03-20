@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router';
+
 import Navbar from './views/partials/Navbar';
 import Title from './views/partials/Title';
 // import TestForm from './views/testForm';
@@ -17,12 +19,14 @@ class App extends Component {
 
     this.state = { greeting: 'Willkommen' }
 
-    let greetingInterval = setInterval(() => {
+    // let greetingInterval =
+    setInterval(() => {
       const randGreet = Math.floor( Math.random() * Greetings.length );
       this.setState( { greeting: Greetings[randGreet] } )
     }, 3000);
   }
   render() {
+    // {this.props.children}
     let greet = `Hallo und ein herzliches ${this.state.greeting} auf meiner Homepage`;
     return (
       <div className="app">

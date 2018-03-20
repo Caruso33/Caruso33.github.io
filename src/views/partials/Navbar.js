@@ -1,19 +1,13 @@
 import React, { Component } from 'react';
 import './Navbar.css';
+import NavItems from '../../model/NavItems';
 
 class Navbar extends Component {
-  constructor(props){
-    super(props);
-    this.state = {
-      navItems: ['Home','Contact', 'About',  'Blog']
-    };
-  };
   render() {
-    const navItems = this.state.navItems.map((item, ind) => (
-      <a
-        key={ind}
+    let navItems = NavItems.map(item => (
+      <a key={item}
         className = {item === 'Home'? 'active' : ""}
-        href={'#'+item.toLowerCase()}>{item}
+        href={`#${item.toLowerCase()}`}>{item}
       </a>
     ) )
     return (
@@ -25,9 +19,10 @@ class Navbar extends Component {
               display: 'inline-block'
             }
           }>traveltobi.de</h1>
-          <div>
+          <div className="nav-wrapper">
             {navItems}
           </div>
+          <div id="hamburger"><i className="fas fa-bars fa-2x"></i></div>
         </nav>
       </header>
     );

@@ -12,26 +12,8 @@ img{
 .imgThumbs:hover{
   animation: imgHover 1s ease;
 }
-/*
-h4.fotos{
-  margin: 30px auto;
-  text-align: center;
-}
-figure{
-  margin-bottom: 20px;
-}
-figure:nth-child(2){
-}
-figure img{
-  width: 20vw;
-  max-width: 400px;
-}
-ul{
-  list-style: none;
-}
-li{
-  margin-bottom: 20px;
-}
+
+
 hr{
   width: 80%;
 }
