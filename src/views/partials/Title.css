@@ -8,10 +8,36 @@
   background-size: cover;
   background-attachment: fixed;
 
-  height: 450px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-bottom: 50px;
 }
 
+h2{
+  letter-spacing: 2px;
+  color: #a0cf5e;
+}
 
-/* .title h2{
-  width: 60%;
-} */
+.title-h2{
+  color: #5ecfcf;
+}
+
+.title-h3{
+  height: 80px;
+}
+.title-passions {
+  display: flex;
+  justif-content: space-around;
+}
+
+.greeting{
+  width: 150px;
+  margin: 0 30px;
+  color: #cb3939;
+}
+
+.passions{
+  width: 80%;
+}

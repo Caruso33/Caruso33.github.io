@@ -17,6 +17,9 @@ body {
   margin: auto;
   background-color: #ccc;
 
+  margin: 0;
+  padding: 0;
+
   color: #5ecfcf;
   text-shadow: 1px 2px #000;
   font-size: 150%;
@@ -61,10 +64,6 @@ h1, h2{
 }
 h1{
   letter-spacing: 13px;
-}
-h2, figcaption{
-  letter-spacing: 2px;
-  color: #a0cf5e;
 }
 h3, h4, p{
     font-family: 'Audiowide', cursive;

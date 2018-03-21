@@ -1,45 +1,31 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router';
+import { Switch, Route } from 'react-router-dom';
 
-import Navbar from './views/partials/Navbar';
-import Title from './views/partials/Title';
-// import TestForm from './views/testForm';
-import FotoList from './views/reisefotos/FotoList';
-import Themen from './views/Themen';
+import Home from './views/Home';
 import Kontakt from './views/Kontakt';
+import Themen from './views/Themen';
 import Impressum from './views/Impressum';
-import Footer from './views/partials/Footer';
-import Greetings from './model/Greetings';
+import FotoList from './views/reisefotos/FotoList';
+import Ueber from './views/Ueber';
+import Blog from './views/blog/Blog';
 import './App.css';
 
 
 class App extends Component {
-  constructor(props){
-    super(props);
 
-    this.state = { greeting: 'Willkommen' }
-
-    // let greetingInterval =
-    setInterval(() => {
-      const randGreet = Math.floor( Math.random() * Greetings.length );
-      this.setState( { greeting: Greetings[randGreet] } )
-    }, 3000);
-  }
   render() {
     // {this.props.children}
-    let greet = `Hallo und ein herzliches ${this.state.greeting} auf meiner Homepage`;
     return (
-      <div className="app">
-        <Navbar />
-        <main>
-          <Title h3={greet} />
-          <FotoList />
-          <Themen/>
-          <Kontakt/>
-          <Impressum/>
-        </main>
-        <Footer footer='Footer'/>
-      </div>
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route path="/home" component={Home} />
+        <Route path="/kontakt" component={Kontakt} />
+        <Route path="/über" component={Ueber} />
+        <Route path="/blog" component={Blog} />
+        <Route path="/bilder" component={FotoList} />
+        <Route path="/inspi" component={Themen} />
+        <Route path="/impressum" component={Impressum} />
+      </Switch>
     );
   }
 }

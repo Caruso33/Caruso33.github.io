@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import './Navbar.css';
 import NavItems from '../../model/NavItems';
 
 class Navbar extends Component {
   render() {
     let navItems = NavItems.map(item => (
-      <a key={item}
+      <Link key={item}
         className = {item === 'Home'? 'active' : ""}
-        href={`#${item.toLowerCase()}`}>{item}
-      </a>
+        to={ {pathname: `/${item.toLowerCase()}`}}>{item}
+      </Link>
     ) )
     return (
       <header>

@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './Footer.css';
 
 const Footer = props => (
   <footer>
-    <h1>This is the {props.footer}</h1>
+    <h4>Created by Tobi Bobi</h4>
   </footer>
 );
 

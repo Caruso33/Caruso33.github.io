@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
+import SectionHeader from './partials/SectionHeader'
+
 import './Themen.css';
 
 class Themen extends Component {
   render() {
     return (
-      <div className='themen'>
-
-        <h4>Themen</h4>
-
+      <section className='themen'>
+        <SectionHeader sectionTitle='Inspirations-Themen' className='sectionHeader' />
         <ul>
           <li><a href="http://www.dhamma.org/">Vipassana Meditation</a></li>
           <li><a href="http://www.flocutus.de/packliste/">Handgepäckreisen</a></li>
@@ -42,7 +42,7 @@ class Themen extends Component {
           <li>Philosophie – werte</li>
           <li>Reziprozität</li>
         </ul>
-      </div>
+      </section>
     );
   }
 }

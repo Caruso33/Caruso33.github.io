@@ -1,11 +1,20 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import Greetings from '../../model/Greetings';
+
 import './Title.css';
 
 class Title extends Component {
-  // constructor(props){
-  //   super(props)
-  // }
+  constructor(props){
+    super(props);
+
+    this.state = { greeting: 'Willkommen' }
+
+    setInterval(() => {
+      const randGreet = Math.floor( Math.random() * Greetings.length );
+      this.setState( { greeting: Greetings[randGreet] } )
+    }, 3000);
+  }
   static defaultProps = {
     passionsList: ['Digitalnomade', 'Web-Developer', 'Crypto-Trader']
   }
@@ -14,25 +23,18 @@ class Title extends Component {
                             .isRequired
   }
   render() {
-    const { h3 } = this.props;
     const passions = this.props.passionsList.map((passion, i) => (
-      // console.log(passion)
-      <span key={i}>{passion}</span>
+      <span className="passions" key={passion}>{passion}</span>
     ));
 
     return (
       <section className="title">
-        <h1 className="title-h1">Welcome to traveltobi.de</h1>
+        <h2 className="title-h2">Welcome to traveltobi.de</h2>
         <h2 className="small">Travel the world or die tryin'</h2>
 
-        <h2 style= {
-          {
-            display: 'flex',
-            justifyContent: 'space-around'
-          }
-        }>{passions}</h2>
+        <h2 className="title-passions">{passions}</h2>
 
-        <h3>{h3}</h3>
+        <h3>Hallo und ein herzliches <span className="greeting">{this.state.greeting}</span> auf meiner Homepage</h3>
       </section>
     );
   }
