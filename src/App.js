@@ -10,9 +10,7 @@ import Ueber from './views/Ueber';
 import Blog from './views/blog/Blog';
 import './App.css';
 
-
 class App extends Component {
-
   render() {
     // {this.props.children}
     return (

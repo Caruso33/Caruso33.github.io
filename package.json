@@ -3,6 +3,15 @@
   "homepage": "https://www.traveltobi.de",
   "version": "0.1.1",
   "private": true,
+  "bugs": {
+    "url": "https://github.com/Caruso33/traveltobi/issues",
+    "email": "leinsst@web.de"
+  },
+  "author": "Tobias Leinss",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Caruso33/traveltobi.git"
+  },
   "dependencies": {
     "prop-types": "^15.6.1",
     "react": "^16.2.0",
