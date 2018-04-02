@@ -1,27 +1,25 @@
 import React, { Component, Fragment } from 'react';
 
 import AppBar from './partials/AppBar';
+import Drawer from './partials/Drawer';
+
 import Landing from './Landing';
 
 class App extends Component {
   state = {
-    open: true
+    open: false
   };
 
   onDrawerToggle = isOpen =>
-    this.setState(
-      {
-        open: isOpen
-      },
-      () => {
-        console.log('state set');
-      }
-    );
+    this.setState({
+      open: isOpen
+    });
 
   render() {
     return (
       <Fragment>
         <AppBar onDrawerToggle={this.onDrawerToggle} />
+        <Drawer open={this.state.open} onDrawerToggle={this.onDrawerToggle} />
         <Landing
           drawerOpen={this.state.open}
           onDrawerToggle={this.onDrawerToggle}

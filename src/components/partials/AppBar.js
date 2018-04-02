@@ -6,7 +6,7 @@ import MenuIcon from 'material-ui-icons/Menu';
 
 export default ({ onDrawerToggle }) => (
   <AppBar position="static">
-    <Toolbar>
+    <Toolbar style={{ display: 'flex', justifyContent: 'space-between' }}>
       <IconButton
         // className={classes.menuButton}
         color="inherit"
@@ -14,17 +14,17 @@ export default ({ onDrawerToggle }) => (
       >
         <MenuIcon onClick={() => onDrawerToggle(true)} />
       </IconButton>
-      <Typography
-        variant="title"
-        color="inherit"
-        // className={classes.flex}
-        style={{ flex: 1 }}
-      >
+      <Typography variant="headline" component="h3" style={{ color: 'white' }}>
         traveltobi.de
       </Typography>
-      <Button color="inherit" onClick={() => onDrawerToggle(true)}>
-        Login
-      </Button>
+      <Button color="inherit">Login</Button>
     </Toolbar>
   </AppBar>
 );
+
+// <Typography
+//  variant="title"
+//  color="inherit"
+//  // className={classes.flex}
+// >
+// </Typography>
