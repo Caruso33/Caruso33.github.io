@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import SwipeableDrawer from 'material-ui/SwipeableDrawer';
 import { List, Divider } from 'material-ui';
@@ -24,12 +25,14 @@ const sideList = (
         width: 250
       }}
     >
-      <ListItem button>
-        <ListItemIcon>
-          <Home />
-        </ListItemIcon>
-        <ListItemText primary="Home" />
-      </ListItem>
+      <Link to="/">
+        <ListItem button>
+          <ListItemIcon>
+            <Home />
+          </ListItemIcon>
+          <ListItemText primary="Home" />
+        </ListItem>
+      </Link>
       <Divider />
       <ListItem button>
         <ListItemText primary="Business" />
@@ -74,12 +77,14 @@ const sideList = (
         </ListItemIcon>
         <ListItemText primary="Themen" />
       </ListItem>
-      <ListItem button>
-        <ListItemIcon>
-          <Collections />
-        </ListItemIcon>
-        <ListItemText primary="Reisephotos" />
-      </ListItem>
+      <Link to="/bilder">
+        <ListItem button>
+          <ListItemIcon>
+            <Collections />
+          </ListItemIcon>
+          <ListItemText primary="Reisephotos" />
+        </ListItem>
+      </Link>
       <Divider />
       <ListItem button>
         <ListItemIcon>

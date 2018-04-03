@@ -11,13 +11,13 @@ import { withStyles } from 'material-ui/styles';
 import backgroundImg from '../img/dist/background-original.jpg';
 import profilImg from '../img/dist/profil-200.jpg';
 import ronjaImg from '../img/dist/withRonja-600.jpg';
-import muiImg from '../img/dist/withMui-600.jpg';
+import muiImg from '../img/dist/withMui-400.jpg';
 
 const styles = theme => ({
   // toolbar: theme.mixins.toolbar
   Card: {
     width: '100%',
-    marginTop: 60,
+    marginTop: 20,
     '@media screen and (minWidth: 600px)': { marginTop: 700 }
   },
   CardMediaBackground: { height: 400, maxWidth: '100%' },
@@ -33,14 +33,16 @@ const styles = theme => ({
     maxWidth: '100%'
   },
   CardMediaMui: {
-    height: 600,
-    width: 338,
+    height: 532,
+    width: 400,
     maxWidth: '100%'
+  },
+  CardContentHeading: {
+    padding: 20
   },
   Paper: { padding: '20px' },
   Typography: {
-    marginBottom: 20,
-    width: 200
+    marginBottom: 20
   },
   Panel: { flexGrow: 1 },
   heading: {
@@ -51,7 +53,7 @@ const styles = theme => ({
 
 export default withStyles(styles)(({ classes }) => (
   <Fragment>
-    <Card className={classes.Card}>
+    <Card className={classes.Card} style={{ marginTop: 60 }}>
       <CardMedia
         className={classes.CardMediaBackground}
         image={backgroundImg}
@@ -79,16 +81,28 @@ export default withStyles(styles)(({ classes }) => (
         development at a German wholesaler.
       </Typography>
 
-      <Card>
+      <Card
+        className={classes.Card}
+        style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center' }}
+      >
+        <CardContent style={{ width: '100%' }}>
+          <Typography
+            gutterBottom
+            variant="headline"
+            component="h2"
+            className={classes.CardContentHeading}
+            style={{ textAlign: 'center' }}
+          >
+            What I can do
+          </Typography>
+        </CardContent>
         <CardMedia
           image={profilImg}
           title="It's me, professionally"
           className={classes.CardMediaProfil}
+          style={{ width: '30vw', maxWidth: 200 }}
         />
-        <CardContent>
-          <Typography gutterBottom variant="headline" component="h2">
-            What I can do:
-          </Typography>
+        <CardContent style={{ width: '60vw' }}>
           <ExpansionPanel className={classes.Panel}>
             <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
               <Typography className={classes.heading}>
@@ -158,14 +172,23 @@ export default withStyles(styles)(({ classes }) => (
           </ExpansionPanel>
         </CardContent>
       </Card>
-      <Card>
+      <Card className={classes.Card}>
         <CardMedia
           image={ronjaImg}
           title="Me with our family dog back in Germany"
           className={classes.CardMediaRonja}
+          style={{ maxWidth: '100%' }}
         />
         <CardContent>
-          <Typography variant="subheading" component="p" style={{ width: 600 }}>
+          <Typography
+            gutterBottom
+            variant="headline"
+            component="h2"
+            className={classes.CardContentHeading}
+          >
+            more
+          </Typography>
+          <Typography variant="subheading" component="p">
             I am recipient of Google's Developer Challenge Scholarship to deepen
             my understanding of modern mobile websites and to align projects to
             best practices.
@@ -178,22 +201,36 @@ export default withStyles(styles)(({ classes }) => (
           </Typography>
         </CardContent>
       </Card>
-      <Card>
+      <Card
+        className={classes.Card}
+        style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center' }}
+      >
         <CardContent>
           <CardMedia
             image={muiImg}
             title="Me with our family dog back in Germany"
             className={classes.CardMediaMui}
+            style={{ maxHeight: '100%' }}
           />
-          <Typography gutterBottom variant="headline" component="h2">
-            Who I am:
-          </Typography>I am a digital nomad having my base in Bangkok and living
-          here with my girlfriend. I am enjoying the combination of working on
-          my laptop and traveling on free time so much that I decided to sell
-          most of my things back home in Germany in order to pursue this life.
+          <Typography
+            gutterBottom
+            variant="headline"
+            component="h2"
+            className={classes.CardContentHeading}
+          >
+            Who I am
+          </Typography>
+          <Typography variant="subheading" component="p">
+            I am a digital nomad having my base in Bangkok and living here with
+            my girlfriend. I am enjoying the combination of working on my laptop
+            and traveling on free time so much that I decided to sell most of my
+            things back home in Germany in order to pursue this life.
+          </Typography>
           <br />
-          If you have ANY questions, don't hesitate to send me a message.
-          Thanks!
+          <Typography variant="subheading" component="p">
+            If you have ANY questions, don't hesitate to send me a message.
+            Thanks!
+          </Typography>
         </CardContent>
       </Card>
     </Paper>

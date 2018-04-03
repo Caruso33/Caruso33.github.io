@@ -1,9 +1,10 @@
 import React, { Component, Fragment } from 'react';
-
+import { Route } from 'react-router-dom';
 import AppBar from './partials/AppBar';
 import Drawer from './partials/Drawer';
 
 import Landing from './Landing';
+import FotoList from './reisefotos/FotoList';
 
 class App extends Component {
   state = {
@@ -20,10 +21,17 @@ class App extends Component {
       <Fragment>
         <AppBar onDrawerToggle={this.onDrawerToggle} />
         <Drawer open={this.state.open} onDrawerToggle={this.onDrawerToggle} />
-        <Landing
-          drawerOpen={this.state.open}
-          onDrawerToggle={this.onDrawerToggle}
+        <Route
+          exact
+          path="/"
+          render={() => (
+            <Landing
+              drawerOpen={this.state.open}
+              onDrawerToggle={this.onDrawerToggle}
+            />
+          )}
         />
+        <Route path="/bilder" component={FotoList} />
       </Fragment>
     );
   }
@@ -37,7 +45,6 @@ export default App;
 // import Kontakt from './kontakt/Kontakt';
 // import Themen from './themen/Themen';
 // import Impressum from './impressum/Impressum';
-// import FotoList from './reisefotos/FotoList';
 // import Ueber from './ueber/Ueber';
 // import Blog from './blog/Blog';
 

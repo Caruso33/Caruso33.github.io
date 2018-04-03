@@ -3,10 +3,21 @@ import React from 'react';
 import { AppBar, Toolbar, Typography, Button } from 'material-ui';
 import IconButton from 'material-ui/IconButton';
 import MenuIcon from 'material-ui-icons/Menu';
+import { withStyles } from 'material-ui/styles';
 
-export default ({ onDrawerToggle }) => (
+const styles = theme => ({
+  Toolbar: {
+    display: 'flex',
+    justifyContent: 'space-between'
+  },
+  h1: {
+    color: 'inherit'
+  }
+});
+
+export default withStyles(styles)(({ classes, onDrawerToggle }) => (
   <AppBar position="fixed">
-    <Toolbar style={{ display: 'flex', justifyContent: 'space-between' }}>
+    <Toolbar className={classes.Toolbar}>
       <IconButton
         // className={classes.menuButton}
         color="inherit"
@@ -14,17 +25,10 @@ export default ({ onDrawerToggle }) => (
       >
         <MenuIcon onClick={() => onDrawerToggle(true)} />
       </IconButton>
-      <Typography variant="display1" component="h1" style={{ color: 'white' }}>
+      <Typography variant="display1" component="h1" className={classes.h1}>
         traveltobi.de
       </Typography>
-      <Button color="inherit">Login</Button>
+      <Button color="inherit">Travel and Work</Button>
     </Toolbar>
   </AppBar>
-);
-
-// <Typography
-//  variant="title"
-//  color="inherit"
-//  // className={classes.flex}
-// >
-// </Typography>
+));
