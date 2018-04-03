@@ -1,11 +1,21 @@
 import React from 'react';
 
 import SwipeableDrawer from 'material-ui/SwipeableDrawer';
-import List from 'material-ui/List';
+import { List, Divider } from 'material-ui';
 import { ListItem, ListItemIcon, ListItemText } from 'material-ui/List';
-import Divider from 'material-ui/Divider';
 
-import { Home, Inbox, ContactMail, InsertPhoto } from 'material-ui-icons';
+import {
+  Home,
+  Gavel,
+  ContactMail,
+  Collections,
+  Face,
+  Assignment,
+  Dashboard,
+  TrendingUp,
+  BusinessCenter,
+  SentimentVerySatisfied
+} from 'material-ui-icons';
 
 const sideList = (
   <div>
@@ -20,23 +30,62 @@ const sideList = (
         </ListItemIcon>
         <ListItemText primary="Home" />
       </ListItem>
+      <Divider />
+      <ListItem button>
+        <ListItemText primary="Business" />
+        <ListItemIcon>
+          <BusinessCenter />
+        </ListItemIcon>
+      </ListItem>
       <ListItem button>
         <ListItemIcon>
-          <Inbox />
+          <Dashboard />
         </ListItemIcon>
-        <ListItemText primary="Inbox" />
+        <ListItemText primary="Portfolio" />
       </ListItem>
       <ListItem button>
         <ListItemIcon>
           <ContactMail />
         </ListItemIcon>
-        <ListItemText primary="Contact" />
+        <ListItemText primary="Kontakt" />
+      </ListItem>
+      <Divider />
+      <ListItem button>
+        <ListItemText primary="Privat" />
+        <ListItemIcon>
+          <SentimentVerySatisfied />
+        </ListItemIcon>
       </ListItem>
       <ListItem button>
         <ListItemIcon>
-          <InsertPhoto />
+          <Assignment />
+        </ListItemIcon>
+        <ListItemText primary="Blog" />
+      </ListItem>
+      <ListItem button>
+        <ListItemIcon>
+          <Face />
+        </ListItemIcon>
+        <ListItemText primary="Ueber mich" />
+      </ListItem>
+      <ListItem button>
+        <ListItemIcon>
+          <TrendingUp />
+        </ListItemIcon>
+        <ListItemText primary="Themen" />
+      </ListItem>
+      <ListItem button>
+        <ListItemIcon>
+          <Collections />
         </ListItemIcon>
         <ListItemText primary="Reisephotos" />
+      </ListItem>
+      <Divider />
+      <ListItem button>
+        <ListItemIcon>
+          <Gavel />
+        </ListItemIcon>
+        <ListItemText primary="Impressum" />
       </ListItem>
       <Divider />
     </List>

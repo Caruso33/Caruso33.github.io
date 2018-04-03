@@ -5,7 +5,7 @@ import IconButton from 'material-ui/IconButton';
 import MenuIcon from 'material-ui-icons/Menu';
 
 export default ({ onDrawerToggle }) => (
-  <AppBar position="static">
+  <AppBar position="fixed">
     <Toolbar style={{ display: 'flex', justifyContent: 'space-between' }}>
       <IconButton
         // className={classes.menuButton}
@@ -14,7 +14,7 @@ export default ({ onDrawerToggle }) => (
       >
         <MenuIcon onClick={() => onDrawerToggle(true)} />
       </IconButton>
-      <Typography variant="headline" component="h3" style={{ color: 'white' }}>
+      <Typography variant="display1" component="h1" style={{ color: 'white' }}>
         traveltobi.de
       </Typography>
       <Button color="inherit">Login</Button>
