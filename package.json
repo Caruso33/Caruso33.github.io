@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "@material-ui/icons": "^1.0.0-beta.43",
+    "clipboard": "^2.0.0",
     "material-ui": "^1.0.0-beta.42",
     "npm": "^6.0.0",
     "prop-types": "^15.6.1",
