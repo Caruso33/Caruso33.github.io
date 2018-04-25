@@ -13,12 +13,12 @@
     "url": "https://github.com/Caruso33/traveltobi.git"
   },
   "dependencies": {
-    "material-ui": "^1.0.0-beta.40",
-    "material-ui-icons": "^1.0.0-beta.36",
-    "npm": "^5.8.0",
+    "@material-ui/icons": "^1.0.0-beta.43",
+    "material-ui": "^1.0.0-beta.42",
+    "npm": "^6.0.0",
     "prop-types": "^15.6.1",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.1"
@@ -33,6 +33,7 @@
   "devDependencies": {
     "gh-pages": "^1.1.0",
     "gulp": "^3.9.1",
-    "gulp-responsive": "^2.9.0"
+    "gulp-responsive": "^2.9.0",
+    "gulp-webp": "^3.0.0"
   }
 }

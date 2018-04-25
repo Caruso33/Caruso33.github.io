@@ -2,7 +2,7 @@ import React from 'react';
 
 import { AppBar, Toolbar, Typography, Button } from 'material-ui';
 import IconButton from 'material-ui/IconButton';
-import MenuIcon from 'material-ui-icons/Menu';
+import MenuIcon from '@material-ui/icons/Menu';
 import { withStyles } from 'material-ui/styles';
 
 const styles = theme => ({

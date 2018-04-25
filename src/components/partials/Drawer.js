@@ -16,7 +16,7 @@ import {
   TrendingUp,
   BusinessCenter,
   SentimentVerySatisfied
-} from 'material-ui-icons';
+} from '@material-ui/icons';
 
 const sideList = (
   <div>

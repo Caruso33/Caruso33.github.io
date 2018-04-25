@@ -6,7 +6,7 @@ import { Paper } from 'material-ui';
 import GridList, { GridListTile, GridListTileBar } from 'material-ui/GridList';
 import Subheader from 'material-ui/List/ListSubheader';
 import IconButton from 'material-ui/IconButton';
-import InfoIcon from 'material-ui-icons/Info';
+import InfoIcon from '@material-ui/icons/Info';
 import { withStyles } from 'material-ui/styles';
 
 const styles = theme => ({
@@ -33,8 +33,12 @@ const styles = theme => ({
 export default withStyles(styles)(({ classes }) => (
   <Paper className={classes.root}>
     {Imgs.map(chapter => (
-      <GridList cellHeight={180} className={classes.gridList}>
-        <GridListTile key="Subheader" cols={2} style={{ height: 'auto' }}>
+      <GridList
+        key={chapter.data}
+        cellHeight={180}
+        className={classes.gridList}
+      >
+        <GridListTile cols={2} style={{ height: 'auto' }}>
           <Subheader component="div">{chapter.title}</Subheader>
         </GridListTile>
         {chapter.data.map(album => (

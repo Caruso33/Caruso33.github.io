@@ -1,11 +1,12 @@
 import React, { Fragment } from 'react';
-import { Paper, Typography } from 'material-ui';
+import { Paper, Typography, Button } from 'material-ui';
 import Card, { CardContent, CardMedia } from 'material-ui/Card';
 import ExpansionPanel, {
   ExpansionPanelSummary,
   ExpansionPanelDetails
 } from 'material-ui/ExpansionPanel';
-import ExpandMoreIcon from 'material-ui-icons/ExpandMore';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import { MailIcon } from '@material-ui/icons';
 import { withStyles } from 'material-ui/styles';
 
 import backgroundImg from '../img/dist/background-original.jpg';
@@ -20,7 +21,7 @@ const styles = theme => ({
     marginTop: 20,
     '@media screen and (minWidth: 600px)': { marginTop: 700 }
   },
-  CardMediaBackground: { height: 400, maxWidth: '100%' },
+  CardMediaBackground: { height: 400, maxWidth: '100%', margin: 10 },
   CardMediaProfil: {
     height: 291,
     width: 200,
@@ -229,6 +230,10 @@ export default withStyles(styles)(({ classes }) => (
           <br />
           <Typography variant="subheading" component="p">
             If you have ANY questions, don't hesitate to send me a message.
+            {/* <Button className={classes.button} variant="raised" color="primary">
+              Mail
+              <MailIcon className={classes.rightIcon} />
+            </Button> */}
             Thanks!
           </Typography>
         </CardContent>
