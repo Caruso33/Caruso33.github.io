@@ -86,12 +86,14 @@ const sideList = (
         </ListItem>
       </Link>
       <Divider />
-      <ListItem button>
-        <ListItemIcon>
-          <Gavel />
-        </ListItemIcon>
-        <ListItemText primary="Impressum" />
-      </ListItem>
+      <Link to="/impressum">
+        <ListItem button>
+          <ListItemIcon>
+            <Gavel />
+          </ListItemIcon>
+          <ListItemText primary="Impressum" />
+        </ListItem>
+      </Link>
       <Divider />
     </List>
   </div>

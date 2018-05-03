@@ -5,6 +5,7 @@ import Drawer from './partials/Drawer';
 
 import Landing from './Landing';
 import FotoList from './reisefotos/FotoList';
+import Impressum from './impressum/';
 
 class App extends Component {
   state = {
@@ -32,6 +33,7 @@ class App extends Component {
           )}
         />
         <Route path="/bilder" component={FotoList} />
+        <Route path="/impressum" component={Impressum} />
       </Fragment>
     );
   }

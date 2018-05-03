@@ -1,23 +1,22 @@
-import React, { Component } from 'react';
-import SectionHeader from './partials/SectionHeader';
-import './Impressum.css';
+import React from 'react';
+import { Paper, Typography } from 'material-ui';
 
-class Impressum extends Component {
-  render() {
-    return (
-      <section className='impressum'>
-        <SectionHeader sectionTitle='Impressum' className='sectionHeader' />
-
-        <h4>Impressum laut §5 TMG</h4>
-        <ul>
+export default () => {
+  return (
+    <Paper style={{ marginTop: 70, padding: 20 }} xs={12}>
+      <Typography variant="display1" component="h3" gutterBottom>
+        Impressum laut §5 TMG
+      </Typography>
+      <Typography variant="subheading" component="h3" gutterBottom>
+        <ul style={{ listStyleType: 'none' }}>
           <li>Tobias Leinss</li>
           <li>Lorcher Strasse 36</li>
           <li>73033 Göppingen</li>
           <li>Germany</li>
+          <br />
+          <li>leinsst-at-web.de</li>
         </ul>
-      </section>
-    );
-  }
-}
-
-export default Impressum;
+      </Typography>
+    </Paper>
+  );
+};
