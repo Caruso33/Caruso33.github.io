@@ -1,8 +1,7 @@
 import React from 'react';
-
-import { AppBar, Toolbar, Typography, Button } from 'material-ui';
-import IconButton from 'material-ui/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
+import { Link } from 'react-router-dom';
+import { AppBar, Toolbar, Typography, IconButton } from 'material-ui';
+import { Menu } from '@material-ui/icons';
 import { withStyles } from 'material-ui/styles';
 
 const styles = theme => ({
@@ -12,7 +11,8 @@ const styles = theme => ({
   },
   h1: {
     color: 'inherit'
-  }
+  },
+  banner: { textDecoration: 'none', color: 'inherit' }
 });
 
 export default withStyles(styles)(({ classes, onDrawerToggle }) => (
@@ -23,12 +23,16 @@ export default withStyles(styles)(({ classes, onDrawerToggle }) => (
         color="inherit"
         aria-label="Menu"
       >
-        <MenuIcon onClick={() => onDrawerToggle(true)} />
+        <Menu aria-label="Menu" onClick={() => onDrawerToggle(true)} />
       </IconButton>
       <Typography variant="display1" component="h1" className={classes.h1}>
-        traveltobi.de
+        <Link to="/" className={classes.banner}>
+          traveltobi.de
+        </Link>
       </Typography>
-      <Button color="inherit">Travel and Work</Button>
+      <Typography variant="headline" color="inherit">
+        Travel and Work
+      </Typography>
     </Toolbar>
   </AppBar>
 ));
