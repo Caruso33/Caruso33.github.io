@@ -12,10 +12,10 @@ import { Mail } from '@material-ui/icons';
 import { withStyles } from 'material-ui/styles';
 import withWidth from 'material-ui/utils/withWidth';
 
-import backgroundImg from '../img/dist/src/background-crop-400.webp';
-import profilImg from '../img/dist/src/profil-400.webp';
-// import ronjaImg from '../img/dist/src/withRonja-400.webp';
-import muiImg from '../img/dist/src/withMui-400.webp';
+import backgroundImg from '../img/dist/landing/sizes/background-crop-400.webp';
+import profilImg from '../img/dist/landing/sizes/profil-400.webp';
+// import ronjaImg from '../img/dist/landing/sizes/withRonja-400.webp';
+import muiImg from '../img/dist/landing/sizes/withMui-400.webp';
 
 import Clipboard from '../../node_modules/clipboard/dist/clipboard.min.js';
 

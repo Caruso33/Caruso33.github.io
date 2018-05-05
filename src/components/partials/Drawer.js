@@ -39,13 +39,15 @@ const sideList = (
         <ListItemIcon>
           <BusinessCenter />
         </ListItemIcon>
-      </ListItem>
-      <ListItem button>
-        <ListItemIcon>
-          <Dashboard />
-        </ListItemIcon>
-        <ListItemText primary="Portfolio" />
-      </ListItem>
+      </ListItem>{' '}
+      <Link to="/portfolio">
+        <ListItem button>
+          <ListItemIcon>
+            <Dashboard />
+          </ListItemIcon>
+          <ListItemText primary="Portfolio" />
+        </ListItem>
+      </Link>
       <ListItem button>
         <ListItemIcon>
           <ContactMail />
