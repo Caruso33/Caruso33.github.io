@@ -25,12 +25,12 @@ export default withStyles(styles)(({ classes, onDrawerToggle }) => (
       >
         <Menu aria-label="Menu" onClick={() => onDrawerToggle(true)} />
       </IconButton>
-      <Typography variant="display1" component="h1" className={classes.h1}>
+      <Typography variant="title" component="h1" className={classes.h1}>
         <Link to="/" className={classes.banner}>
-          traveltobi.de
+          leinss.eu
         </Link>
       </Typography>
-      <Typography variant="headline" color="inherit">
+      <Typography variant="subheading" color="inherit">
         Travel and Work
       </Typography>
     </Toolbar>

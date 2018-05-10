@@ -93,7 +93,7 @@ const sideList = (
           <ListItemIcon>
             <Gavel />
           </ListItemIcon>
-          <ListItemText primary="Impressum" />
+          <ListItemText primary="Legal Notice" />
         </ListItem>
       </Link>
       <Divider />

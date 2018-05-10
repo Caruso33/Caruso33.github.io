@@ -3,7 +3,7 @@ import { Route } from 'react-router-dom';
 import AppBar from './partials/AppBar';
 import Drawer from './partials/Drawer';
 
-import Landing from './Landing';
+import Home from './home';
 import Portfolio from './portfolio';
 import FotoList from './reisefotos/FotoList';
 import Impressum from './impressum/';
@@ -27,7 +27,7 @@ class App extends Component {
           exact
           path="/"
           render={() => (
-            <Landing
+            <Home
               drawerOpen={this.state.open}
               onDrawerToggle={this.onDrawerToggle}
             />

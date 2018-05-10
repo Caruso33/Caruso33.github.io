@@ -3,7 +3,7 @@ import { Paper, Card, Typography } from 'material-ui';
 import { CardContent, CardMedia } from 'material-ui/Card';
 import { withStyles } from 'material-ui/styles';
 
-import ImgPomodoR from '../../img/src/pomodor-min.png';
+import ImgPomodoR from '../../img/dist/portfolio/pomodor-min.webp';
 
 const styles = theme => ({
   Paper: {
@@ -21,8 +21,12 @@ const styles = theme => ({
     margin: 'auto'
   },
   Media: {
-    height: 600,
-    width: 'auto'
+    minWidth: '100%',
+    maxHeight: '100%',
+    height: 550
+    // width: 'auto',
+    // backgroundRepeat: 'no-repeat',
+    // backgroundAttachment: 'fixed'
   }
 });
 export default withStyles(styles)(props => {

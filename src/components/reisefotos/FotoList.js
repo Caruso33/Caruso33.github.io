@@ -67,4 +67,3 @@ export default withStyles(styles)(({ classes }) => (
     ))}
   </Paper>
 ));
-// {/* <SectionHeader sectionTitle="Reisefotoalben" className="sectionHeader" /> */}

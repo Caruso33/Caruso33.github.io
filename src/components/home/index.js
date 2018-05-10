@@ -1,30 +1,60 @@
-import React, { Component } from 'react';
+import compose from 'recompose/compose';
+import React, { Component, Fragment } from 'react';
+import { Paper } from 'material-ui';
 
-import Navbar from '../partials/Navbar';
-import Title from '../partials/Title';
-// import TestForm from './testForm';
-import FotoList from './reisefotos/FotoList';
-import Themen from '../themen/';
-import Kontakt from '../kontakt/';
-import Impressum from '../impressum/';
-import Footer from '../partials/Footer';
-import './Home.css';
+import { withStyles } from 'material-ui/styles';
+import withWidth from 'material-ui/utils/withWidth';
 
-export default class Home extends Component {
+import {
+  CardBackground,
+  CardIntro,
+  CardProfil,
+  CardMore,
+  CardWhoAmI
+} from './cards';
+
+import Clipboard from '../../../node_modules/clipboard/dist/clipboard.min.js';
+let clipboard = null;
+
+const styles = theme => ({
+  // toolbar: theme.mixins.toolbar
+  Paper: { padding: 20 },
+  Card: {
+    '@media screen and (max-width: 600px)': {
+      marginTop: 58
+    },
+    marginTop: 68
+  },
+  CardContentHeading: {
+    margin: '20px auto'
+  },
+  a: { color: 'inherit' }
+});
+
+class Landing extends Component {
+  componentDidMount() {
+    clipboard = new Clipboard('#copyMail');
+  }
+  copyMail = () => {
+    clipboard.on('success', e => {
+      console.info('Copied:', e.text);
+    });
+  };
   render() {
-    // {this.props.children}
+    const { classes, width } = this.props;
+
     return (
-      <div className="app">
-        {/* <Navbar />
-        <main>
-          <Title />
-          <FotoList />
-          <Themen />
-          <Kontakt />
-          <Impressum />
-        </main>
-        <Footer footer="Footer" /> */}
-      </div>
+      <Fragment>
+        <CardBackground classes={classes} width={width} />
+        <Paper className={classes.Paper} xs={12}>
+          <CardIntro classes={classes} />
+          <CardProfil classes={classes} width={width} />
+          <CardMore classes={classes} width={width} />
+          <CardWhoAmI classes={classes} width={width} />
+        </Paper>
+      </Fragment>
     );
   }
 }
+
+export default compose(withStyles(styles), withWidth())(Landing);
