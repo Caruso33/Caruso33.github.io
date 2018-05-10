@@ -84,7 +84,7 @@ const profil = ({ classes, width }) => {
                   <a className={classes.a} href="www.material.io">
                     material
                   </a>{' '}
-                  and
+                  and{' '}
                   <a className={classes.a} href="www.reactjs.org">
                     reactjs
                   </a>

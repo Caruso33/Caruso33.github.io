@@ -27,7 +27,7 @@ export default withStyles(styles)(({ classes, onDrawerToggle }) => (
       </IconButton>
       <Typography variant="title" component="h1" className={classes.h1}>
         <Link to="/" className={classes.banner}>
-          leinss.eu
+          traveltobi
         </Link>
       </Typography>
       <Typography variant="subheading" color="inherit">
