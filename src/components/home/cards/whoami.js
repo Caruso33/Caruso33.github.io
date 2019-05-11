@@ -1,12 +1,12 @@
-import React from 'react';
-import { Typography, Tooltip, Button, Grid } from 'material-ui';
-import Card, { CardContent, CardMedia } from 'material-ui/Card';
-import { Mail } from '@material-ui/icons';
+import React from "react";
+import { Typography, Tooltip, Button, Grid } from "material-ui";
+import Card, { CardContent, CardMedia } from "material-ui/Card";
+import { Mail } from "@material-ui/icons";
 
 let imageSize;
-export default ({ classes, width }) => {
-  if (width === 'xs') imageSize = 300;
-  if (width === 'md' || width === 'sm' || width === 'lg' || width === 'xl')
+export default ({ classes, width, copyMail }) => {
+  if (width === "xs") imageSize = 300;
+  if (width === "md" || width === "sm" || width === "lg" || width === "xl")
     imageSize = 500;
 
   const muiImg = require(`../../../img/dist/landing/sizes/withMui-${imageSize +
@@ -36,7 +36,7 @@ export default ({ classes, width }) => {
               className={classes.CardMediaMui}
               style={{
                 height: imageSize,
-                width: 'auto',
+                width: "auto",
                 maxWidth: 370
               }}
             />
@@ -65,7 +65,7 @@ export default ({ classes, width }) => {
               <Typography
                 variant="subheading"
                 component="p"
-                style={{ textAlign: 'center' }}
+                style={{ textAlign: "center" }}
                 className={classes.CardContentHeading}
               >
                 Thanks!
@@ -80,7 +80,7 @@ export default ({ classes, width }) => {
                     variant="raised"
                     color="primary"
                     style={{ padding: 15, margin: 20 }}
-                    onClick={this.copyMail}
+                    onClick={copyMail}
                   >
                     Mail
                     <Mail

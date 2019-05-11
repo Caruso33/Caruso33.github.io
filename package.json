@@ -1,28 +1,28 @@
 {
-  "name": "traveltobi",
-  "homepage": "https://www.traveltobi.de",
-  "version": "0.1.1",
+  "name": "Caruso33",
+  "homepage": "https://caruso33.github.io/",
+  "version": "0.1.2",
   "private": true,
   "bugs": {
-    "url": "https://github.com/Caruso33/traveltobi/issues",
+    "url": "https://github.com/Caruso33/caruso33.github.io/issues",
     "email": "leinsst@web.de"
   },
   "author": "Tobias Leinss",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Caruso33/traveltobi.git"
+    "url": "https://github.com/Caruso33/caruso33.github.io.git"
   },
   "dependencies": {
     "@material-ui/icons": "^1.0.0-beta.43",
-    "clipboard": "^2.0.0",
+    "clipboard": "^2.0.4",
     "material-ui": "^1.0.0-beta.42",
-    "npm": "^6.0.0",
-    "prop-types": "^15.6.1",
-    "react": "^16.3.2",
-    "react-dom": "^16.3.2",
-    "react-router": "^4.2.0",
-    "react-router-dom": "^4.2.2",
-    "react-scripts": "1.1.1",
+    "npm": "^6.4.1",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-router": "^5.0.0",
+    "react-router-dom": "^5.0.0",
+    "react-scripts": "^3.0.1",
     "recompose": "^0.27.0"
   },
   "scripts": {
@@ -39,5 +39,17 @@
     "gulp-rename": "^1.2.2",
     "gulp-responsive": "^2.9.0",
     "gulp-webp": "^3.0.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
