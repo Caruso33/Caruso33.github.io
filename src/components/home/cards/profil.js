@@ -1,12 +1,14 @@
-import React from 'react';
-import Card, { CardContent, CardMedia } from 'material-ui/Card';
-import { Typography, Grid } from 'material-ui';
-import ExpansionPanel, {
-  ExpansionPanelSummary,
-  ExpansionPanelDetails
-} from 'material-ui/ExpansionPanel';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import profilImg from '../../../img/dist/landing/sizes/profil-400.webp';
+import React from "react";
+import Card from "@material-ui/core/Card";
+import CardContent from "@material-ui/core/CardContent";
+import CardMedia from "@material-ui/core/CardMedia";
+import Grid from "@material-ui/core/Grid";
+import Typography from "@material-ui/core/Typography";
+import ExpansionPanel from "@material-ui/core/ExpansionPanel";
+import ExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary";
+import ExpansionPanelDetails from "@material-ui/core/ExpansionPanelDetails";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import profilImg from "../../../img/dist/landing/sizes/profil-400.webp";
 
 const profil = ({ classes, width }) => {
   return (
@@ -31,9 +33,9 @@ const profil = ({ classes, width }) => {
             title="It's me, professionally"
             className={classes.CardMediaProfil}
             style={{
-              backgroundSize: 'contain',
+              backgroundSize: "contain",
               height: 291,
-              width: 'auto'
+              width: "auto"
             }}
           />
         </Grid>
@@ -68,7 +70,8 @@ const profil = ({ classes, width }) => {
                 <Typography>
                   I mainly use reactjs on the frontend side, nodejs & express on
                   the backend and mongodb as database of choice.
-                  <br />Of course there can be another setup if need be.
+                  <br />
+                  Of course there can be another setup if need be.
                 </Typography>
               </ExpansionPanelDetails>
             </ExpansionPanel>
@@ -83,8 +86,8 @@ const profil = ({ classes, width }) => {
                 <Typography>
                   <a className={classes.a} href="www.material.io">
                     material
-                  </a>{' '}
-                  and{' '}
+                  </a>{" "}
+                  and{" "}
                   <a className={classes.a} href="www.reactjs.org">
                     reactjs
                   </a>

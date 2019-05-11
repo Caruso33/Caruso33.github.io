@@ -1,26 +1,27 @@
-import React from 'react';
-import Card, { CardMedia } from 'material-ui/Card';
+import React from "react";
+import Card from "@material-ui/core/Card";
+import CardMedia from "@material-ui/core/CardMedia";
 
 const background = ({ classes, width }) => {
   let imageSize, imageHeight;
 
-  if (width === 'xs') {
+  if (width === "xs") {
     imageHeight = 400;
     imageSize = 400;
   }
-  if (width === 'sm') {
+  if (width === "sm") {
     imageHeight = 400;
     imageSize = 600;
   }
-  if (width === 'md') {
+  if (width === "md") {
     imageHeight = 400;
     imageSize = 800;
   }
-  if (width === 'lg') {
+  if (width === "lg") {
     imageHeight = 500;
     imageSize = 1000;
   }
-  if (width === 'xl') {
+  if (width === "xl") {
     imageHeight = 600;
     imageSize = 1200;
   }

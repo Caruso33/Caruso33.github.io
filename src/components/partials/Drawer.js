@@ -1,9 +1,11 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-
-import SwipeableDrawer from 'material-ui/SwipeableDrawer';
-import { List, Divider } from 'material-ui';
-import { ListItem, ListItemIcon, ListItemText } from 'material-ui/List';
+import React from "react";
+import { Link } from "react-router-dom";
+import List from "@material-ui/core/List";
+import Divider from "@material-ui/core/Divider";
+import ListItem from "@material-ui/core/ListItem";
+import ListItemIcon from "@material-ui/core/ListItemIcon";
+import ListItemText from "@material-ui/core/ListItemText";
+import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
 
 import {
   Home,
@@ -16,7 +18,7 @@ import {
   TrendingUp,
   BusinessCenter,
   SentimentVerySatisfied
-} from '@material-ui/icons';
+} from "@material-ui/icons";
 
 const sideList = (
   <div>
@@ -39,7 +41,7 @@ const sideList = (
         <ListItemIcon>
           <BusinessCenter />
         </ListItemIcon>
-      </ListItem>{' '}
+      </ListItem>{" "}
       <Link to="/portfolio">
         <ListItem button>
           <ListItemIcon>

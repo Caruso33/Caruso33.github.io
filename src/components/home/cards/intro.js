@@ -1,5 +1,6 @@
 import React from 'react';
-import { Typography, Grid } from 'material-ui';
+import Grid from "@material-ui/core/Grid";
+import Typography from "@material-ui/core/Typography";
 
 const intro = ({ classes }) => (
   <Grid item md={8} lg={6} style={{ margin: '20px auto' }}>

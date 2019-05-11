@@ -1,7 +1,9 @@
 import React from 'react';
-import { Paper, Typography } from 'material-ui';
-import Card, { CardContent } from 'material-ui/Card';
-import { withStyles } from 'material-ui/styles';
+import { withStyles } from '@material-ui/core/styles';
+import Typography from "@material-ui/core/Typography";
+import Paper from '@material-ui/core/Paper';
+import Card from "@material-ui/core/Card";
+import CardContent from "@material-ui/core/CardContent";
 
 const styles = theme => ({
   Paper: { padding: 20, height: '100vh' },

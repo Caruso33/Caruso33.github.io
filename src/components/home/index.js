@@ -1,8 +1,8 @@
 import compose from "recompose/compose";
 import React, { Component, Fragment } from "react";
-import { Paper } from "material-ui";
-import { withStyles } from "material-ui/styles";
-import withWidth from "material-ui/utils/withWidth";
+import Paper from "@material-ui/core/Paper";
+import { withStyles } from "@material-ui/core/styles";
+import withWidth from "@material-ui/core/withWidth";
 import {
   CardBackground,
   CardIntro,
@@ -43,6 +43,7 @@ class Landing extends Component {
     return (
       <Fragment>
         <CardBackground classes={classes} width={width} />
+
         <Paper className={classes.Paper} xs={12}>
           <CardIntro classes={classes} />
           <CardProfil classes={classes} width={width} />

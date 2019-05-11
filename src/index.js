@@ -1,20 +1,15 @@
-import React from 'react';
-import { render } from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
-import App from './components/App';
-import registerServiceWorker from './registerServiceWorker';
-import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles';
-import CssBaseline from 'material-ui/CssBaseline';
-
-const theme = createMuiTheme({});
+import React from "react";
+import { render } from "react-dom";
+import { BrowserRouter } from "react-router-dom";
+import App from "./components/App";
+import registerServiceWorker from "./registerServiceWorker";
+import CssBaseline from "@material-ui/core/CssBaseline";
 
 render(
   <BrowserRouter>
-    <MuiThemeProvider theme={theme}>
-      <CssBaseline />
-      <App />
-    </MuiThemeProvider>
+    <CssBaseline />
+    <App />
   </BrowserRouter>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 registerServiceWorker();

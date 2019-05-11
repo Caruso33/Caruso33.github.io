@@ -1,6 +1,11 @@
 import React from "react";
-import { Typography, Tooltip, Button, Grid } from "material-ui";
-import Card, { CardContent, CardMedia } from "material-ui/Card";
+import Tooltip from "@material-ui/core/Tooltip";
+import Button from "@material-ui/core/Button";
+import Grid from "@material-ui/core/Grid";
+import Typography from "@material-ui/core/Typography";
+import Card from "@material-ui/core/Card";
+import CardContent from "@material-ui/core/CardContent";
+import CardMedia from "@material-ui/core/CardMedia";
 import { Mail } from "@material-ui/icons";
 
 let imageSize;
@@ -77,7 +82,7 @@ export default ({ classes, width, copyMail }) => {
                     id="copyMail"
                     data-clipboard-text="leinsst@web.de"
                     className={classes.button}
-                    variant="raised"
+                    variant="contained"
                     color="primary"
                     style={{ padding: 15, margin: 20 }}
                     onClick={copyMail}

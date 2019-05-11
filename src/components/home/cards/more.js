@@ -1,7 +1,8 @@
 import React from 'react';
-import { Typography, Grid } from 'material-ui';
-import Card, { CardContent } from 'material-ui/Card';
-
+import Grid from "@material-ui/core/Grid";
+import Typography from "@material-ui/core/Typography";
+import Card from "@material-ui/core/Card";
+import CardContent from "@material-ui/core/CardContent";
 // import ronjaImg from '../../img/dist/landing/sizes/withRonja-400.webp';
 
 const more = ({ classes, width }) => {
