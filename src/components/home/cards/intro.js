@@ -74,7 +74,11 @@ class Intro extends Component {
           </a>{" "}
           here or switch to my{" "}
           <a href="/portfolio">
-            <i class="fas fa-project-diagram" /> portfolio
+            <i className="fas fa-project-diagram" /> portfolio
+          </a>{" "}
+          or{" "}
+          <a href="https://github.com/caruso33/">
+            <i className="fab fa-github fa-2x" /> GitHub
           </a>
           .
         </Typography>

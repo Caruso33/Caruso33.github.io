@@ -5,7 +5,6 @@ import Drawer from "./partials/Drawer";
 
 import Home from "./home";
 import Portfolio from "./portfolio";
-import FotoList from "./reisefotos/FotoList";
 import Impressum from "./impressum/";
 
 class App extends Component {
@@ -30,7 +29,6 @@ class App extends Component {
             />
           )}
         />
-        <Route path="/bilder" component={FotoList} />
         <Route path="/impressum" component={Impressum} />
         <Route path="/portfolio" component={Portfolio} />
       </Fragment>
