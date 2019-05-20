@@ -1,22 +1,16 @@
 import compose from "recompose/compose";
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import Paper from "@material-ui/core/Paper";
 import { withStyles } from "@material-ui/core/styles";
 import withWidth from "@material-ui/core/withWidth";
-import {
-  CardBackground,
-  CardIntro,
-  CardProfil,
-  CardMore,
-  CardWhoAmI
-} from "./cards";
+import { CardIntro, CardProfil, CardMore, CardWhoAmI } from "./cards";
 import Clipboard from "clipboard";
-let clipboard = null;
+import "./index.css";
 
 const styles = theme => ({
   // toolbar: theme.mixins.toolbar
-  Paper: { padding: 20 },
-  Card: {
+  Paper: {
+    padding: 20,
     "@media screen and (max-width: 600px)": {
       marginTop: 58
     },
@@ -29,32 +23,28 @@ const styles = theme => ({
 });
 
 class Landing extends Component {
-  componentDidMount() {
-    clipboard = new Clipboard("#copyMail");
+  constructor(props) {
+    super(props);
+
+    this.clipboard = new Clipboard("#copyMail");
   }
+
   copyMail = () => {
-    clipboard.on("success", e => {
+    this.clipboard.on("success", e => {
       console.info("Copied:", e.text);
     });
   };
+
   render() {
     const { classes, width } = this.props;
 
     return (
-      <Fragment>
-        <CardBackground classes={classes} width={width} />
-
-        <Paper className={classes.Paper} xs={12}>
-          <CardIntro classes={classes} />
-          <CardProfil classes={classes} width={width} />
-          <CardMore classes={classes} width={width} />
-          <CardWhoAmI
-            classes={classes}
-            width={width}
-            copyMail={this.copyMail}
-          />
-        </Paper>
-      </Fragment>
+      <Paper className={classes.Paper} xs={12}>
+        <CardIntro classes={classes} />
+        <CardProfil classes={classes} width={width} />
+        <CardMore classes={classes} width={width} />
+        <CardWhoAmI classes={classes} width={width} copyMail={this.copyMail} />
+      </Paper>
     );
   }
 }
