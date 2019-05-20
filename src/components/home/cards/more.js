@@ -8,11 +8,11 @@ import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import { Mail } from "@material-ui/icons";
 
-let imageSize;
+let imageSize = 300;
 export default ({ classes, width, copyMail }) => {
-  if (width === "xs") imageSize = 300;
-  if (width === "md" || width === "sm" || width === "lg" || width === "xl")
-    imageSize = 500;
+  // if (width === "xs") imageSize = 300;
+  // if (width === "md" || width === "sm" || width === "lg" || width === "xl")
+  // imageSize = 500;
 
   const muiImg = require(`../../../img/dist/landing/sizes/withMui-${imageSize +
     100}.webp`);
@@ -43,7 +43,6 @@ export default ({ classes, width, copyMail }) => {
                 height: imageSize,
                 backgroundSize: "contain",
                 width: "auto",
-                height: 291,
                 marginTop: 40
               }}
             />
