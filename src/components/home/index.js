@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import Paper from "@material-ui/core/Paper";
 import { withStyles } from "@material-ui/core/styles";
 import withWidth from "@material-ui/core/withWidth";
-import { CardIntro, CardProfil, CardMore, CardWhoAmI } from "./cards";
+import { CardIntro, CardProfil, CardMore } from "./cards";
 import Clipboard from "clipboard";
 import "./index.css";
 
@@ -16,10 +16,12 @@ const styles = theme => ({
     },
     marginTop: 68
   },
+  Card: {
+    marginTop: 20
+  },
   CardContentHeading: {
     margin: "20px auto"
-  },
-  a: { color: "inherit" }
+  }
 });
 
 class Landing extends Component {
@@ -42,8 +44,7 @@ class Landing extends Component {
       <Paper className={classes.Paper} xs={12}>
         <CardIntro classes={classes} />
         <CardProfil classes={classes} width={width} />
-        <CardMore classes={classes} width={width} />
-        <CardWhoAmI classes={classes} width={width} copyMail={this.copyMail} />
+        <CardMore classes={classes} width={width} copyMail={this.copyMail} />
       </Paper>
     );
   }

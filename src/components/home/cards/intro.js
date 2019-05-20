@@ -63,15 +63,20 @@ class Intro extends Component {
           and improving myself, always keen in getting more experience in
           various technological fields like{" "}
           <span className="changing-text">{skill}</span> while giving{" "}
-          <span className="linkColor">100%</span>{" "}
-          helping you to reach your goals.
+          <span className="linkColor">100%</span> helping you to reach your
+          goals.
         </Typography>
 
         <Typography variant="subheading" component="p" gutterBottom>
-          You can find my linkedIn profile here{" "}
+          You can find my{" "}
           <a href="https://www.linkedin.com/in/tobias-leinss/">
-            <i className="fab fa-linkedin" />
+            <i className="fab fa-linkedin" /> linkedIn profile
+          </a>{" "}
+          here or switch to my{" "}
+          <a href="/portfolio">
+            <i class="fas fa-project-diagram" /> portfolio
           </a>
+          .
         </Typography>
       </Grid>
     );

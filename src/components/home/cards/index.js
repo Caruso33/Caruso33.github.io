@@ -1,6 +1,5 @@
 import CardIntro from './intro';
-import CardMore from './more';
 import CardProfil from './profil';
-import CardWhoAmI from './whoami';
+import CardMore from './more';
 
-export { CardIntro, CardMore, CardWhoAmI, CardProfil };
+export { CardIntro, CardMore, CardProfil };
