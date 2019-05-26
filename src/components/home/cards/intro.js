@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
-
+import { Link } from "react-router-dom";
 class Intro extends Component {
   state = { interval: null, adjective: null, skill: null };
 
@@ -73,9 +73,9 @@ class Intro extends Component {
             <i className="fab fa-linkedin" /> linkedIn profile
           </a>{" "}
           here or switch to my{" "}
-          <a href="/portfolio">
+          <Link to="/portfolio">
             <i className="fas fa-project-diagram" /> portfolio
-          </a>{" "}
+          </Link>{" "}
           or{" "}
           <a href="https://github.com/caruso33/">
             <i className="fab fa-github fa-2x" /> GitHub
