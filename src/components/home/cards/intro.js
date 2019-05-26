@@ -62,9 +62,11 @@ class Intro extends Component {
           <a href="http://appysphere.com/">AppySphere</a>. I enjoy writing code
           and improving myself, always keen in getting more experience in
           various technological fields like{" "}
-          <span className="changing-text">{skill}</span> while giving{" "}
-          <span className="linkColor">100%</span> helping you to reach your
-          goals.
+          <span className="changing-text" style={{ minWidth: 150 }}>
+            {skill}
+          </span>{" "}
+          while giving <span className="linkColor">100%</span> helping you to
+          reach your goals.
         </Typography>
 
         <Typography variant="subheading" component="p" gutterBottom>
@@ -128,11 +130,11 @@ const skillset = [
   "Blockchain",
   "MongoDB",
   "Git",
-  "Cascading Style Sheets (CSS)",
+  "CSS",
   "HTML5",
   "jQuery",
   "GitHub",
-  "redux",
+  "Redux",
   "React Native",
   "Gulp.js",
   "API",
@@ -145,5 +147,7 @@ const skillset = [
   "D3",
   "PyTorch",
   "AI",
-  "Internet of Things (IoT)"
+  "Internet of Things (IoT)",
+  "NodeJs",
+  "ReactJs"
 ];

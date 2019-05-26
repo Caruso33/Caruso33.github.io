@@ -13,16 +13,19 @@ const styles = theme => ({
     paddingTop: 30,
     paddingBottom: 20,
     textAlign: "center",
-    height: "90vh",
-    display: "flex"
+    minHeight: "90vh",
+    display: "flex",
+    flexWrap: "wrap"
   },
   Card: {
     width: 300,
-    margin: "auto"
+    margin: "auto",
+    marginBottom: 30
   },
   CardHorizontal: {
     width: 500,
-    margin: "auto"
+    margin: "auto",
+    marginBottom: 30
   },
   Media: {
     height: 550,

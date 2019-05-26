@@ -49,7 +49,21 @@ export default ({ classes, width, copyMail }) => {
           </Grid>
 
           <Grid item xs={12} sm={7} md={8}>
-            <CardContent>
+            <CardContent style={{ paddingRight: 50 }}>
+              <Typography
+                variant="subheading"
+                component="p"
+                className={classes.CardContentHeading}
+              >
+                After traveling through Nepal and Thailand with my backpack for
+                some time, I realized that I enjoy the combination of living
+                abroad, working on my laptop and traveling on free time very much.
+                <br />
+                So much in fact, that I decided to sell most of my things back
+                home in Germany in order to pursue this life. Now I am living in
+                Bangkok with my girlfriend.
+              </Typography>
+
               <Typography
                 variant="subheading"
                 component="p"
@@ -60,18 +74,6 @@ export default ({ classes, width, copyMail }) => {
                 <br />
                 If it's something, I assure that we'll get things successfully
                 and compassionately done.
-              </Typography>
-
-              <Typography
-                variant="subheading"
-                component="p"
-                className={classes.CardContentHeading}
-              >
-                I am a digital nomad having my base in Bangkok and living here
-                with my girlfriend. I am enjoying the combination of working on
-                my laptop and traveling on free time so much that I decided to
-                sell most of my things back home in Germany in order to pursue
-                this life.
               </Typography>
 
               <Typography
