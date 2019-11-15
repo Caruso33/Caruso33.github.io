@@ -1,31 +1,15 @@
-import React, { useState } from "react";
-import { Route } from "react-router-dom";
-import AppBar from "./partials/AppBar";
-import Drawer from "./partials/Drawer";
-import Home from "./home/Home";
-import Portfolio from "./portfolio/Portfolio";
-import Impressum from "./impressum/Impressum";
+import React from "react"
+import { Route } from "react-router-dom"
+import Home from "./home/Home"
+import AppBar from "./partials/AppBar"
 
 const App = () => {
-  const [open, setOpen] = useState(false);
-
-  const toggleDrawer = () => setOpen(!open);
-
   return (
     <>
-      <AppBar onDrawerToggle={toggleDrawer} />
-      <Drawer open={open} onDrawerToggle={toggleDrawer} />
-      <Route
-        exact
-        path="/"
-        render={() => (
-          <Home drawerOpen={open} onDrawerToggle={toggleDrawer} />
-        )}
-      />
-      <Route path="/impressum" component={Impressum} />
-      <Route path="/portfolio" component={Portfolio} />
+      <AppBar />
+      <Route exact path="/" component={Home} />
     </>
-  );
-};
+  )
+}
 
-export default App;
+export default App

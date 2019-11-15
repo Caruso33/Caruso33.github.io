@@ -1,4 +1,5 @@
-a, .linkColor {
+a,
+.linkColor {
   color: rgb(218, 139, 90);
   text-decoration: none;
 }
@@ -9,7 +10,7 @@ a, .linkColor {
   color: #ce4343;
   text-align: center;
 
-  animation: trans-opa 2.0s infinite;
+  animation: trans-opa 2s infinite;
 }
 @keyframes trans-opa {
   0% {
@@ -21,4 +22,16 @@ a, .linkColor {
   100% {
     opacity: 0;
   }
+}
+
+.fp-controlArrow.fp-prev {
+  left: 15px;
+  width: 0;
+  border-width: 38.5px 34px 38.5px 0;
+  border-color: transparent #3f51b5 transparent transparent;
+}
+.fp-controlArrow.fp-next {
+  right: 15px;
+  border-width: 38.5px 0 38.5px 34px;
+  border-color: transparent transparent transparent #3f51b5;
 }
