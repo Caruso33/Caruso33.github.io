@@ -12,7 +12,7 @@ const styles = theme => ({
       marginTop: 58
     },
     marginTop: 68,
-    height: '100%'
+    height: "100%"
   },
   Card: {
     marginTop: 20
@@ -28,10 +28,10 @@ export default withStyles(styles)(({ classes }) => {
     <Paper className={classes.Paper}>
       <Card className={classes.Card}>
         <CardContent>
-          <Typography variant="display1" component="h3" gutterBottom>
+          <Typography variant="h2" component="h4" gutterBottom>
             Impressum
           </Typography>
-          <Typography variant="subheading" component="h3" gutterBottom>
+          <Typography variant="subtitle1" component="h3" gutterBottom>
             <ul style={{ listStyleType: "none" }}>
               <li>Tobias Leinss</li>
               <li>Lorcher Strasse 36</li>

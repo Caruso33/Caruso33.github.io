@@ -1,18 +1,19 @@
-import React from "react";
-import Tooltip from "@material-ui/core/Tooltip";
 import Button from "@material-ui/core/Button";
-import Grid from "@material-ui/core/Grid";
-import Typography from "@material-ui/core/Typography";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
+import Grid from "@material-ui/core/Grid";
+import { useTheme } from "@material-ui/core/styles";
+import Tooltip from "@material-ui/core/Tooltip";
+import Typography from "@material-ui/core/Typography";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
 import { Mail } from "@material-ui/icons";
+import React from "react";
 
-let imageSize = 300;
-export default ({ classes, width, copyMail }) => {
-  // if (width === "xs") imageSize = 300;
-  // if (width === "md" || width === "sm" || width === "lg" || width === "xl")
-  // imageSize = 500;
+export default ({ classes, copyMail }) => {
+  const theme = useTheme();
+  const largerSM = useMediaQuery(theme.breakpoints.up("sm"));
+  let imageSize = largerSM ? 500 : 300;
 
   const muiImg = require(`../../../img/dist/landing/sizes/withMui-${imageSize +
     100}.webp`);
@@ -24,8 +25,7 @@ export default ({ classes, width, copyMail }) => {
           <Grid item xs={12}>
             <Typography
               gutterBottom
-              variant="headline"
-              component="h2"
+              variant="h4"
               className={classes.CardContentHeading}
               align="center"
               style={{ marginBottom: 30 }}
@@ -51,13 +51,14 @@ export default ({ classes, width, copyMail }) => {
           <Grid item xs={12} sm={7} md={8}>
             <CardContent style={{ paddingRight: 50 }}>
               <Typography
-                variant="subheading"
+                variant="subtitle1"
                 component="p"
                 className={classes.CardContentHeading}
               >
                 After traveling through Nepal and Thailand with my backpack for
                 some time, I realized that I enjoy the combination of living
-                abroad, working on my laptop and traveling on free time very much.
+                abroad, working on my laptop and traveling on free time very
+                much.
                 <br />
                 So much in fact, that I decided to sell most of my things back
                 home in Germany in order to pursue this life. Now I am living in
@@ -65,7 +66,7 @@ export default ({ classes, width, copyMail }) => {
               </Typography>
 
               <Typography
-                variant="subheading"
+                variant="subtitle1"
                 component="p"
                 className={classes.CardContentHeading}
               >
@@ -77,14 +78,14 @@ export default ({ classes, width, copyMail }) => {
               </Typography>
 
               <Typography
-                variant="subheading"
+                variant="subtitle1"
                 component="p"
                 className={classes.CardContentHeading}
               >
                 If you have ANY questions, don't hesitate to send me a message.
               </Typography>
               <Typography
-                variant="subheading"
+                variant="subtitle1"
                 component="p"
                 style={{ textAlign: "center" }}
                 className={classes.CardContentHeading}

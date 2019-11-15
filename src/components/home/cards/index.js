@@ -1,5 +1,5 @@
-import CardIntro from './intro';
-import CardProfil from './profil';
-import CardMore from './more';
+import CardIntro from './Intro';
+import CardProfil from './Profil';
+import CardMore from './More';
 
 export { CardIntro, CardMore, CardProfil };

@@ -5,12 +5,11 @@ import { withStyles } from "@material-ui/core/styles";
 import withWidth from "@material-ui/core/withWidth";
 import { CardIntro, CardProfil, CardMore } from "./cards";
 import Clipboard from "clipboard";
-import "./index.css";
+import "./home.css";
 
-const styles = theme => ({
-  // toolbar: theme.mixins.toolbar
+const styles = () => ({
   Paper: {
-    padding: 20,
+    padding: 50,
     "@media screen and (max-width: 600px)": {
       marginTop: 58
     },
@@ -25,11 +24,7 @@ const styles = theme => ({
 });
 
 class Landing extends Component {
-  constructor(props) {
-    super(props);
-
-    this.clipboard = new Clipboard("#copyMail");
-  }
+  clipboard = new Clipboard("#copyMail");
 
   copyMail = () => {
     this.clipboard.on("success", e => {
@@ -43,14 +38,11 @@ class Landing extends Component {
     return (
       <Paper className={classes.Paper} xs={12}>
         <CardIntro classes={classes} />
-        <CardProfil classes={classes} width={width} />
+        <CardProfil classes={classes} />
         <CardMore classes={classes} width={width} copyMail={this.copyMail} />
       </Paper>
     );
   }
 }
 
-export default compose(
-  withStyles(styles),
-  withWidth()
-)(Landing);
+export default compose(withStyles(styles), withWidth())(Landing);

@@ -1,39 +1,31 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import { Route } from "react-router-dom";
 import AppBar from "./partials/AppBar";
 import Drawer from "./partials/Drawer";
-
-import Home from "./home";
+import Home from "./home/home";
 import Portfolio from "./portfolio";
 import Impressum from "./impressum/";
 
-class App extends Component {
-  state = {
-    open: false
-  };
+const App = () => {
+  const [open, setOpen] = useState(false);
 
-  onDrawerToggle = isOpen => this.setState({ open: isOpen });
+  const toggleDrawer = () => setOpen(!open);
 
-  render() {
-    return (
-      <>
-        <AppBar onDrawerToggle={this.onDrawerToggle} />
-        <Drawer open={this.state.open} onDrawerToggle={this.onDrawerToggle} />
-        <Route
-          exact
-          path="/"
-          render={() => (
-            <Home
-              drawerOpen={this.state.open}
-              onDrawerToggle={this.onDrawerToggle}
-            />
-          )}
-        />
-        <Route path="/impressum" component={Impressum} />
-        <Route path="/portfolio" component={Portfolio} />
-      </>
-    );
-  }
-}
+  return (
+    <>
+      <AppBar onDrawerToggle={toggleDrawer} />
+      <Drawer open={open} onDrawerToggle={toggleDrawer} />
+      <Route
+        exact
+        path="/"
+        render={() => (
+          <Home drawerOpen={open} onDrawerToggle={toggleDrawer} />
+        )}
+      />
+      <Route path="/impressum" component={Impressum} />
+      <Route path="/portfolio" component={Portfolio} />
+    </>
+  );
+};
 
 export default App;

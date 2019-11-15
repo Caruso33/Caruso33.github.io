@@ -16,7 +16,7 @@ export default function pomodor({ classes }) {
         />
       </a>
       <CardContent>
-        <Typography gutterBottom variant="headline" component="h2">
+        <Typography gutterBottom variant="h5">
           Tomatoe Timer
         </Typography>
         <Typography component="p">

@@ -18,11 +18,11 @@ export default function d3barChart({ classes }) {
         />
       </a>
       <CardContent>
-        <Typography gutterBottom variant="headline" component="h2">
+        <Typography gutterBottom variant="h5">
           D3 Bar Chart
         </Typography>
         <Typography component="p">
-          Created with <a href="https://d3js.org">D3Js</a>
+          Created with <a href="https://d3js.org">D3.js</a>
         </Typography>
       </CardContent>
     </Card>

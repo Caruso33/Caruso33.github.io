@@ -19,9 +19,7 @@ class Intro extends Component {
     clearInterval(this.state.interval);
   }
 
-  pickRandomIndex = length => {
-    return Math.floor(Math.random() * length);
-  };
+  pickRandomIndex = length => Math.floor(Math.random() * length);
 
   getChangingText = () => {
     const adjectiveIndex = this.pickRandomIndex(bangkokAdjectives.length);
@@ -35,29 +33,26 @@ class Intro extends Component {
   render() {
     const { classes } = this.props;
     const { adjective, skill } = this.state;
+
     return (
       <Grid item md={8} lg={6} style={{ margin: "20px auto" }}>
-        <Typography
-          variant="display1"
-          component="h3"
-          className={classes.Typography}
-          gutterBottom
-        >
+        <Typography variant="h3" className={classes.Typography} gutterBottom>
           Hi,
         </Typography>
-        <Typography variant="subheading" component="p" gutterBottom>
+
+        <Typography variant="subtitle1" component="p" gutterBottom>
           my name is Tobias, I am a fullstack developer based in{" "}
           <span className="changing-text">{adjective}</span> Bangkok, Thailand.
         </Typography>
 
-        <Typography variant="subheading" component="p" gutterBottom>
+        <Typography variant="subtitle1" component="p" gutterBottom>
           Originally, I've studied Industrial Management and specialized in IT
           with an thesis related to the field of{" "}
           <a href="https://en.wikipedia.org/wiki/Industry_4.0">Industrie 4.0</a>{" "}
           in a mid-sized German manufacturer.
         </Typography>
 
-        <Typography variant="subheading" component="p" gutterBottom>
+        <Typography variant="subtitle1" component="p" gutterBottom>
           Currently, I work as a Senior Web Developer for{" "}
           <a href="http://appysphere.com/">AppySphere</a>. I enjoy writing code
           and improving myself, always keen in getting more experience in
@@ -69,7 +64,7 @@ class Intro extends Component {
           reach your goals.
         </Typography>
 
-        <Typography variant="subheading" component="p" gutterBottom>
+        <Typography variant="subtitle1" component="p" gutterBottom>
           You can find my{" "}
           <a href="https://www.linkedin.com/in/tobias-leinss/">
             <i className="fab fa-linkedin" /> linkedIn profile

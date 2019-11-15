@@ -18,8 +18,7 @@ const profil = ({ classes }) => {
           <Typography
             align="center"
             gutterBottom
-            variant="headline"
-            component="h2"
+            variant="h4"
             className={classes.CardContentHeading}
           >
             What I can do
