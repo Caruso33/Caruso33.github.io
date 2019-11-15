@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { Route } from "react-router-dom";
 import AppBar from "./partials/AppBar";
 import Drawer from "./partials/Drawer";
-import Home from "./home/home";
-import Portfolio from "./portfolio";
-import Impressum from "./impressum/";
+import Home from "./home/Home";
+import Portfolio from "./portfolio/Portfolio";
+import Impressum from "./impressum/Impressum";
 
 const App = () => {
   const [open, setOpen] = useState(false);

@@ -54,30 +54,34 @@ class Intro extends Component {
 
         <Typography variant="subtitle1" component="p" gutterBottom>
           Currently, I work as a Senior Web Developer for{" "}
-          <a href="http://appysphere.com/">AppySphere</a>. I enjoy writing code
-          and improving myself, always keen in getting more experience in
-          various technological fields like{" "}
+          <a href="http://appy.town/">AppySphere</a>. I enjoy writing code and
+          improving myself, always keen in getting more experience in various
+          technological fields like{" "}
           <span className="changing-text" style={{ minWidth: 150 }}>
             {skill}
-          </span>{" "}
-          while giving <span className="linkColor">100%</span> helping you to
-          reach your goals.
+          </span>
         </Typography>
 
         <Typography variant="subtitle1" component="p" gutterBottom>
-          You can find my{" "}
-          <a href="https://www.linkedin.com/in/tobias-leinss/">
-            <i className="fab fa-linkedin" /> linkedIn profile
-          </a>{" "}
-          here or switch to my{" "}
+          Recently, I am totally immersed into{" "}
+          <span className="linkColor">Artificial Intelligence</span>, impressed
+          by recent deep learning accomplishments.
+        </Typography>
+
+        <Typography variant="subtitle1" component="p" gutterBottom>
+          You can switch to my portfolio{" "}
           <Link to="/portfolio">
             <i className="fas fa-project-diagram" /> portfolio
           </Link>{" "}
-          or{" "}
+          or see my{" "}
+          <a href="https://www.linkedin.com/in/tobias-leinss/">
+            <i className="fab fa-linkedin" /> linkedIn
+          </a>{" "}
+          /{" "}
           <a href="https://github.com/caruso33/">
-            <i className="fab fa-github fa-2x" /> GitHub
-          </a>
-          .
+            <i className="fab fa-github" /> GitHub
+          </a>{" "}
+          profile.
         </Typography>
       </Grid>
     );
@@ -98,27 +102,24 @@ const bangkokAdjectives = [
   "large",
   "small",
   "interesting",
-  "boring",
   "exciting",
   "beautiful",
-  "ugly",
   "expensive",
   "cheap",
-  "polluted",
-  "clean",
-  "noisy",
   "quiet",
   "calm",
   "crowded",
   "busy",
   "pleasant",
-  "unpleasant",
   "warm",
   "cool",
   "huge"
 ];
 
 const skillset = [
+  "JavaScript",
+  "Webpack",
+  "GraphQL",
   "Software Development",
   "Web Development",
   "Backend",
@@ -127,22 +128,22 @@ const skillset = [
   "Git",
   "CSS",
   "HTML5",
-  "jQuery",
-  "GitHub",
   "Redux",
-  "React Native",
-  "Gulp.js",
-  "API",
+  "React-Native.js",
+  "REST",
   "Solidity",
   "PWA",
   "TypeScript",
   "MobX",
   "Firebase",
-  "Ethereum",
+  "AWS",
+  "GCP",
   "D3",
-  "PyTorch",
+  "Python",
   "AI",
-  "Internet of Things (IoT)",
-  "NodeJs",
-  "ReactJs"
+  "IoT",
+  "Node.js",
+  "React.js",
+  "Docker",
+  "Kubernetes"
 ];

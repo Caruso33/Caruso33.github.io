@@ -1,8 +1,8 @@
 import Paper from "@material-ui/core/Paper";
 import { withStyles } from "@material-ui/core/styles";
 import React from "react";
-import D3barChart from "./projects/d3barChart";
-import Pomodor from "./projects/pomodor";
+import D3barChart from "./projects/D3barChart";
+import Pomodor from "./projects/Pomodor";
 
 const styles = theme => ({
   Paper: {

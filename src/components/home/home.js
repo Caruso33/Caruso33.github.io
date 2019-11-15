@@ -38,8 +38,7 @@ class Landing extends Component {
     return (
       <Paper className={classes.Paper} xs={12}>
         <CardIntro classes={classes} />
-        <CardProfil classes={classes} />
-        <CardMore classes={classes} width={width} copyMail={this.copyMail} />
+        <CardProfil classes={classes} copyMail={this.copyMail}  />
       </Paper>
     );
   }

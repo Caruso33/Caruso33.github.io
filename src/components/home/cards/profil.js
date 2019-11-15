@@ -1,16 +1,19 @@
-import React from "react";
+import Button from "@material-ui/core/Button";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
-import Grid from "@material-ui/core/Grid";
-import Typography from "@material-ui/core/Typography";
 import ExpansionPanel from "@material-ui/core/ExpansionPanel";
-import ExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary";
 import ExpansionPanelDetails from "@material-ui/core/ExpansionPanelDetails";
+import ExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary";
+import Grid from "@material-ui/core/Grid";
+import Tooltip from "@material-ui/core/Tooltip";
+import Typography from "@material-ui/core/Typography";
+import { Mail } from "@material-ui/icons";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import React from "react";
 import profilImg from "../../../img/dist/landing/sizes/profil-400.webp";
 
-const profil = ({ classes }) => {
+const profil = ({ classes, copyMail }) => {
   return (
     <Card className={classes.Card} style={{ paddingBottom: 24 }}>
       <Grid container justify="center" alignItems="center">
@@ -21,7 +24,7 @@ const profil = ({ classes }) => {
             variant="h4"
             className={classes.CardContentHeading}
           >
-            What I can do
+            What I do
           </Typography>
         </Grid>
         <Grid item xs={12} sm={5} md={3} style={{ alignSelf: "flex-start" }}>
@@ -41,25 +44,29 @@ const profil = ({ classes }) => {
           <CardContent>
             <ExpansionPanel>
               <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-                <Typography>Build websites</Typography>
+                <Typography>
+                  Build or extend <span className="linkColor">websites</span>
+                </Typography>
               </ExpansionPanelSummary>
               <ExpansionPanelDetails>
                 <Typography>
-                  I build landing pages, portfolio-pages, contact-pages, blogs,
-                  etc. from ground up
+                  I build e.g. landing pages, dashboards, blogs from ground up
+                  <br />
+                  and extend them with authentification, payments,
+                  email-subscriptions
                 </Typography>
               </ExpansionPanelDetails>
             </ExpansionPanel>
+
             <ExpansionPanel>
               <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-                <Typography>Build Mobile Apps</Typography>
+                <Typography>
+                  Build <span className="linkColor">mobile apps</span>
+                </Typography>
               </ExpansionPanelSummary>
               <ExpansionPanelDetails>
                 <Typography>
-                  In my previous company I've built an social media app for{" "}
-                  <a href="https://itunes.apple.com/th/app/sandbox-play/id1262396310?mt=8">
-                    iOS
-                  </a>{" "}
+                  In my previous company I've built an social media app for iOS
                   and{" "}
                   <a href="https://play.google.com/store/apps/details?id=com.sandboxglobal.sandboxplay">
                     Android
@@ -72,57 +79,46 @@ const profil = ({ classes }) => {
                 </Typography>
               </ExpansionPanelDetails>
             </ExpansionPanel>
+
             <ExpansionPanel>
               <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-                <Typography>Extend present websites</Typography>
-              </ExpansionPanelSummary>
-              <ExpansionPanelDetails>
                 <Typography>
-                  I enhance your website with authentification, payments, etc.
+                  Build a{" "}
+                  <span className="linkColor">
+                    solid website infrastructure
+                  </span>{" "}
+                  using widely accepted design languages
                 </Typography>
-              </ExpansionPanelDetails>
-            </ExpansionPanel>
-            <ExpansionPanel>
-              <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-                <Typography>Build a solid website infrastructure</Typography>
               </ExpansionPanelSummary>
               <ExpansionPanelDetails>
                 <Typography>
-                  I mainly use <a href="https://reactjs.org/">reactjs</a> on the
-                  frontend side, <a href="https://nodejs.org/en/">nodejs</a> &{" "}
-                  <a href="https://expressjs.com/">expressjs</a> on the backend
+                  I mainly use <a href="https://reactjs.org/">react.js</a> on
+                  the frontend side,{" "}
+                  <a href="https://nodejs.org/en/">node.js</a> &{" "}
+                  <a href="https://expressjs.com/">express.js</a> on the backend
+                  <br />
                   and <a href="https://www.mongodb.com/">mongodb</a> as database
                   or <a href="https://firebase.google.com/">firebase</a> as
                   serverless solution of choice.
                   <br />
-                  Of course there can be any other setup.
+                  <br />
+                  Design e.g.{" "}
+                  <a href="https://material-ui.com/">Material Design</a>{" "}
+                  originally by google.
                 </Typography>
               </ExpansionPanelDetails>
             </ExpansionPanel>
+
             <ExpansionPanel>
               <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
                 <Typography>
-                  Using widely accepted design languages and state-of-the-art
-                  frontend components
-                </Typography>
-              </ExpansionPanelSummary>
-              <ExpansionPanelDetails>
-                <Typography>
-                  E.g. <a href="https://material-ui.com/">Material Design</a>{" "}
-                  originally by google or{" "}
-                  <a href="https://ant.design/">Ant-Design</a> together with{" "}
-                  <a href="www.reactjs.org">reactjs</a> of facebook
-                </Typography>
-              </ExpansionPanelDetails>
-            </ExpansionPanel>
-            <ExpansionPanel>
-              <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-                <Typography>
-                  Making the website PWA mobile-ready as taught by Google and
-                  Udacity by the <br />
-                  <a href="https://www.udacity.com/course/mobile-web-specialist-nanodegree--nd024">
+                  Making websites PWA{" "}
+                  <span className="linkColor">mobile-ready</span> as taught by
+                  Google and Udacity by the
+                  <br />
+                  <span className="linkColor">
                     Mobile Web Specialist Nano-degree
-                  </a>
+                  </span>
                 </Typography>
               </ExpansionPanelSummary>
               <ExpansionPanelDetails>
@@ -132,17 +128,54 @@ const profil = ({ classes }) => {
                     Google's Developer Challenge Scholarship
                   </a>{" "}
                   to deepen my understanding of modern mobile websites and to
-                  align projects to best practices.
-                  <br />I can support you through developing a{" "}
-                  <a href="https://en.wikipedia.org/wiki/Progressive_web_app">
-                    PWA (Progressive Web Apps)
-                  </a>
-                  , providing you with best practices in terms of
+                  align projects to best practices regarding e.g.
                   responsiveness, accessibility, offline functionality, low-fi
-                  connectivity, etc.
+                  connectivity.
                 </Typography>
               </ExpansionPanelDetails>
             </ExpansionPanel>
+
+            <br />
+            <Typography
+              variant="subtitle1"
+              component="p"
+              className={classes.CardContentHeading}
+            >
+              If you are unsure if I can help you, just send me a message to see
+              if it's something I can do.
+              <br />
+              <br />
+              If you have ANY questions, don't hesitate to send me a message.
+            </Typography>
+
+            <Typography
+              variant="subtitle1"
+              component="p"
+              style={{ textAlign: "center" }}
+              className={classes.CardContentHeading}
+            >
+              Thanks!
+              <Tooltip
+                title="Click to Copy my Mail to Clipboard"
+                placement="right-end"
+              >
+                <Button
+                  id="copyMail"
+                  data-clipboard-text="leinsst@web.de"
+                  className={classes.button}
+                  variant="contained"
+                  color="primary"
+                  style={{ padding: 15, margin: 20 }}
+                  onClick={copyMail}
+                >
+                  Mail
+                  <Mail
+                    className={classes.rightIcon}
+                    style={{ marginLeft: 20 }}
+                  />
+                </Button>
+              </Tooltip>
+            </Typography>
           </CardContent>
         </Grid>
       </Grid>
