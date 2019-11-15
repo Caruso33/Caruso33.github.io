@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import { Route } from "react-router-dom";
 import AppBar from "./partials/AppBar";
 import Drawer from "./partials/Drawer";
@@ -16,7 +16,7 @@ class App extends Component {
 
   render() {
     return (
-      <Fragment>
+      <>
         <AppBar onDrawerToggle={this.onDrawerToggle} />
         <Drawer open={this.state.open} onDrawerToggle={this.onDrawerToggle} />
         <Route
@@ -31,7 +31,7 @@ class App extends Component {
         />
         <Route path="/impressum" component={Impressum} />
         <Route path="/portfolio" component={Portfolio} />
-      </Fragment>
+      </>
     );
   }
 }
