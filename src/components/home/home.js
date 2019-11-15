@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import Paper from "@material-ui/core/Paper";
 import { withStyles } from "@material-ui/core/styles";
 import withWidth from "@material-ui/core/withWidth";
-import { CardIntro, CardProfil, CardMore } from "./cards";
+import { CardIntro, CardProfil } from "./cards";
 import Clipboard from "clipboard";
 import "./home.css";
 
@@ -33,12 +33,12 @@ class Landing extends Component {
   };
 
   render() {
-    const { classes, width } = this.props;
+    const { classes } = this.props;
 
     return (
       <Paper className={classes.Paper} xs={12}>
         <CardIntro classes={classes} />
-        <CardProfil classes={classes} copyMail={this.copyMail}  />
+        <CardProfil classes={classes} copyMail={this.copyMail} />
       </Paper>
     );
   }
