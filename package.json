@@ -37,7 +37,7 @@
     "recompose": "^0.30.0"
   },
   "devDependencies": {
-    "gh-pages": "^1.1.0",
+    "gh-pages": "^2.1.1",
     "gulp": "^4.0.0",
     "gulp-image-resize": "^0.13.0",
     "gulp-rename": "^1.4.0",
