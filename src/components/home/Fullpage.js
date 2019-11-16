@@ -2,6 +2,7 @@ import React from "react"
 import ReactFullpage from "@fullpage/react-fullpage"
 
 const Fullpage = ({
+  apiRef,
   children,
   anchors = [],
   navigation = false,
@@ -10,6 +11,7 @@ const Fullpage = ({
   scrollingSpeed = 700
 }) => (
   <ReactFullpage
+    ref={apiRef}
     licenseKey={"00000000-00000000-00000000-00000000"}
     scrollingSpeed={scrollingSpeed}
     navigation={navigation}

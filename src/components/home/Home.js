@@ -7,7 +7,7 @@ import { CardIntro, CardProfil } from "./cards"
 import { Fullpage, FullPageSection } from "./Fullpage"
 import "./home.css"
 
-const Landing = ({ classes }) => {
+const Landing = ({ classes, fullpageApiRef }) => {
   const clipboard = new Clipboard("#copyMail")
 
   const copyMail = () => {
@@ -22,7 +22,7 @@ const Landing = ({ classes }) => {
       )
     },
     {
-      name: "profil",
+      name: "profile",
       component: () => <CardProfil classes={classes} copyMail={copyMail} />
     },
     { name: "portfolio", component: () => <Portfolio /> }
@@ -31,6 +31,7 @@ const Landing = ({ classes }) => {
   return (
     <Paper className={classes.Paper} xs={9}>
       <Fullpage
+        apiRef={fullpageApiRef}
         navigation
         slidesNavigation
         anchors={sections.map(({ name }) => name)}
@@ -59,10 +60,14 @@ function styles() {
       }
     },
     Card: {
-      marginTop: 20
+      paddingTop: 20,
+      marginRight: 20
     },
     CardContentHeading: {
       margin: "20px auto"
+    },
+    Typography: {
+      marginBottom: 20
     }
   }
 }
