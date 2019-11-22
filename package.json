@@ -1,24 +1,19 @@
 {
   "name": "caruso33",
-  "homepage": "https://caruso33.github.io/",
-  "version": "0.1.6",
-  "private": true,
-  "bugs": {
-    "url": "https://github.com/Caruso33/caruso33.github.io/issues",
-    "email": "caruso33@web.de"
-  },
   "author": "Tobias Leinss",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Caruso33/caruso33.github.io.git"
-  },
+  "homepage": "https://caruso33.github.io/",
+  "version": "0.1.7",
+  "description": "My homepage",
+  "private": true,
+  "license": "MIT",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -b master -d build",
+    "build": "gatsby build",
+    "develop": "env-cmd -f .env.dev gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
     "gulp": "npx gulp"
   },
   "dependencies": {
@@ -26,17 +21,18 @@
     "@material-ui/core": "^4.6.1",
     "@material-ui/icons": "^4.5.1",
     "clipboard": "^2.0.4",
+    "gatsby": "^2.17.11",
+    "gatsby-plugin-sass": "^2.1.23",
+    "gatsby-source-filesystem": "^2.1.38",
+    "gatsby-transformer-remark": "^2.6.37",
     "jss": "^10.0.0",
-    "npm": "^6.13.0",
     "prop-types": "^15.7.2",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "react-router": "^5.0.0",
-    "react-router-dom": "^5.1.2",
-    "react-scripts": "^3.2.0"
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0",
+    "typeface-roboto": "0.0.75"
   },
   "devDependencies": {
-    "gh-pages": "^2.1.1",
+    "env-cmd": "^10.0.1",
     "gulp": "^4.0.0",
     "gulp-image-resize": "^0.13.0",
     "gulp-rename": "^1.4.0",
@@ -45,6 +41,14 @@
     "husky": "^3.0.9",
     "lint-staged": "^9.4.3",
     "prettier": "^1.19.1"
+  },
+  "bugs": {
+    "url": "https://github.com/Caruso33/caruso33.github.io/issues",
+    "email": "caruso33@web.de"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Caruso33/caruso33.github.io.git"
   },
   "browserslist": {
     "production": [
@@ -63,7 +67,7 @@
       "pre-commit": "lint-staged"
     }
   },
-  "lint-staged": {
+ "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
       "prettier --write",
       "git add"

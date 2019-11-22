@@ -1,28 +1,28 @@
-import Button from "@material-ui/core/Button";
-import Card from "@material-ui/core/Card";
-import CardContent from "@material-ui/core/CardContent";
-import CardMedia from "@material-ui/core/CardMedia";
-import ExpansionPanel from "@material-ui/core/ExpansionPanel";
-import ExpansionPanelDetails from "@material-ui/core/ExpansionPanelDetails";
-import ExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary";
-import Grid from "@material-ui/core/Grid";
-import Tooltip from "@material-ui/core/Tooltip";
-import Typography from "@material-ui/core/Typography";
-import { Mail } from "@material-ui/icons";
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import React from "react";
-import profilImg from "../../../img/dist/landing/sizes/profil-400.webp";
+import Button from "@material-ui/core/Button"
+import Card from "@material-ui/core/Card"
+import CardContent from "@material-ui/core/CardContent"
+import CardMedia from "@material-ui/core/CardMedia"
+import ExpansionPanel from "@material-ui/core/ExpansionPanel"
+import ExpansionPanelDetails from "@material-ui/core/ExpansionPanelDetails"
+import ExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary"
+import Grid from "@material-ui/core/Grid"
+import Tooltip from "@material-ui/core/Tooltip"
+import Typography from "@material-ui/core/Typography"
+import { Mail } from "@material-ui/icons"
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore"
+import React from "react"
+import profilImg from "../../../img/dist/landing/sizes/profil-400.webp"
 
 const profil = ({ classes, copyMail }) => {
   return (
-    <Card className={classes.Card} style={{ paddingBottom: 24 }}>
+    <Card className={classes.card} style={{ paddingBottom: 24 }}>
       <Grid container justify="center" alignItems="center">
         <Grid item sm={12}>
           <Typography
             align="center"
             gutterBottom
             variant="h4"
-            className={classes.CardContentHeading}
+            className={classes.cardContentHeading}
           >
             What I do
           </Typography>
@@ -31,7 +31,6 @@ const profil = ({ classes, copyMail }) => {
           <CardMedia
             image={profilImg}
             title="It's me, professionally"
-            className={classes.CardMediaProfil}
             style={{
               backgroundSize: "contain",
               height: 291,
@@ -139,7 +138,7 @@ const profil = ({ classes, copyMail }) => {
             <Typography
               variant="subtitle1"
               component="p"
-              className={classes.CardContentHeading}
+              className={classes.cardContentHeading}
             >
               If you are unsure if I can help you, just send me a message to see
               if it's something I can do.
@@ -152,7 +151,7 @@ const profil = ({ classes, copyMail }) => {
               variant="subtitle1"
               component="p"
               style={{ textAlign: "center" }}
-              className={classes.CardContentHeading}
+              className={classes.cardContentHeading}
             >
               Thanks!
               <Tooltip
@@ -162,17 +161,13 @@ const profil = ({ classes, copyMail }) => {
                 <Button
                   id="copyMail"
                   data-clipboard-text="leinsst@web.de"
-                  className={classes.button}
                   variant="contained"
                   color="primary"
                   style={{ padding: 15, margin: 20 }}
                   onClick={copyMail}
                 >
                   Mail
-                  <Mail
-                    className={classes.rightIcon}
-                    style={{ marginLeft: 20 }}
-                  />
+                  <Mail style={{ marginLeft: 20 }} />
                 </Button>
               </Tooltip>
             </Typography>
@@ -180,7 +175,7 @@ const profil = ({ classes, copyMail }) => {
         </Grid>
       </Grid>
     </Card>
-  );
-};
+  )
+}
 
-export default profil;
+export default profil

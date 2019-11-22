@@ -1,10 +1,10 @@
-import CardContent from "@material-ui/core/CardContent";
-import CardMedia from "@material-ui/core/CardMedia";
-import Typography from "@material-ui/core/Typography";
-import React from "react";
+import CardContent from "@material-ui/core/CardContent"
+import CardMedia from "@material-ui/core/CardMedia"
+import Typography from "@material-ui/core/Typography"
+import React from "react"
 // import ImgBarChart from "../../../img/dist/portfolio/d3barChart.webp";
-import ImgBarChart from "../../../img/src/portfolio/d3barChart.png";
-import Card from "@material-ui/core/Card";
+import ImgBarChart from "../../../../img/src/portfolio/d3barChart.png"
+import Card from "@material-ui/core/Card"
 
 export default function d3barChart({ classes }) {
   return (
@@ -26,5 +26,5 @@ export default function d3barChart({ classes }) {
         </Typography>
       </CardContent>
     </Card>
-  );
+  )
 }

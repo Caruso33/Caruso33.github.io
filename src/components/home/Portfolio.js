@@ -1,8 +1,8 @@
 import { withStyles } from "@material-ui/core/styles"
 import React from "react"
-import D3barChart from "./projects/D3barChart"
-import Pomodor from "./projects/Pomodor"
-import { FullPageSlide } from "../home/Fullpage"
+import D3barChart from "./portfolio/projects/D3barChart"
+import Pomodor from "./portfolio/projects/Pomodor"
+import { FullPageSlide } from "./Fullpage"
 
 export default withStyles(styles)(props => {
   const { classes } = props

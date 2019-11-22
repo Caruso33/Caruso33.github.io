@@ -7,7 +7,7 @@ import GitHubIcon from "@material-ui/icons/GitHub"
 import LinkedInIcon from "@material-ui/icons/LinkedIn"
 import React, { useEffect, useRef, useState } from "react"
 
-const Intro = ({ fullpageApi, classes, ...props }) => {
+const Intro = ({ fullpageApi, classes }) => {
   const [adjective, setAdjective] = useState(null)
   const [skill, setSkill] = useState(null)
 
@@ -29,14 +29,14 @@ const Intro = ({ fullpageApi, classes, ...props }) => {
   const pickRandomIndex = length => Math.floor(Math.random() * length)
 
   return (
-    <Card className={classes.Card} style={{ padding: "0 20px 24px 20px" }}>
+    <Card className={classes.card} style={{ padding: "0 20px 24px 20px" }}>
       <Grid item md={8} lg={6} style={{ margin: "20px auto" }}>
-        <Typography variant="h3" className={classes.Typography} gutterBottom>
+        <Typography variant="h3" className={classes.typography} gutterBottom>
           Hi,
         </Typography>
 
         <Typography
-          className={classes.Typography}
+          className={classes.typography}
           variant="subtitle1"
           gutterBottom
         >
@@ -45,7 +45,7 @@ const Intro = ({ fullpageApi, classes, ...props }) => {
         </Typography>
 
         <Typography
-          className={classes.Typography}
+          className={classes.typography}
           variant="subtitle1"
           gutterBottom
         >
@@ -56,7 +56,7 @@ const Intro = ({ fullpageApi, classes, ...props }) => {
         </Typography>
 
         <Typography
-          className={classes.Typography}
+          className={classes.typography}
           variant="subtitle1"
           gutterBottom
         >
@@ -70,7 +70,7 @@ const Intro = ({ fullpageApi, classes, ...props }) => {
         </Typography>
 
         <Typography
-          className={classes.Typography}
+          className={classes.typography}
           variant="subtitle1"
           gutterBottom
         >

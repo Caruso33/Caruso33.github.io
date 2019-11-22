@@ -1,13 +1,13 @@
-import Paper from "@material-ui/core/Paper"
+import Container from "@material-ui/core/Container"
 import { withStyles } from "@material-ui/core/styles"
 import Clipboard from "clipboard"
 import React from "react"
-import Portfolio from "../portfolio/Portfolio"
+import Portfolio from "./Portfolio"
 import { CardIntro, CardProfil } from "./cards"
 import { Fullpage, FullPageSection } from "./Fullpage"
 import "./home.css"
 
-const Landing = ({ classes, fullpageApiRef }) => {
+const Home = ({ classes, fullpageApiRef }) => {
   const clipboard = new Clipboard("#copyMail")
 
   const copyMail = () => {
@@ -29,7 +29,7 @@ const Landing = ({ classes, fullpageApiRef }) => {
   ]
 
   return (
-    <Paper className={classes.Paper} xs={9}>
+    <Container className={classes.paper}>
       <Fullpage
         apiRef={fullpageApiRef}
         navigation
@@ -44,29 +44,29 @@ const Landing = ({ classes, fullpageApiRef }) => {
           ))
         }}
       </Fullpage>
-    </Paper>
+    </Container>
   )
 }
 
-export default withStyles(styles)(Landing)
+export default withStyles(styles)(Home)
 
 function styles() {
   return {
-    Paper: {
+    paper: {
       padding: 50,
       paddingTop: 68,
       "@media screen and (max-width: 600px)": {
         paddingTop: 58
       }
     },
-    Card: {
+    card: {
       paddingTop: 20,
       marginRight: 20
     },
-    CardContentHeading: {
+    cardContentHeading: {
       margin: "20px auto"
     },
-    Typography: {
+    typography: {
       marginBottom: 20
     }
   }
