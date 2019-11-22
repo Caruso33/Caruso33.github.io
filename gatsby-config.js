@@ -6,8 +6,7 @@
 
 module.exports = {
   siteMetadata: {
-    title: "Blog",
-    author: "Tobias Leinss",
+    title: "Blog"
   },
   plugins: [
     "gatsby-plugin-sass",
@@ -15,9 +14,9 @@ module.exports = {
       resolve: "gatsby-source-filesystem",
       options: {
         name: " src",
-        path: `${__dirname}/src/`,
-      },
+        path: `${__dirname}/src/`
+      }
     },
-    "gatsby-transformer-remark",
-  ],
+    "gatsby-transformer-remark"
+  ]
 }
