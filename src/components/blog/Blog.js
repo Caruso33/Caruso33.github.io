@@ -32,7 +32,7 @@ function Blog({ classes }) {
 
       <ol>
         {data.allMarkdownRemark.edges.map(({ node }) => (
-          <li>
+          <li key={node.frontmatter.title}>
             <h2>{node.frontmatter.title}</h2>
             <p>{node.frontmatter.date}</p>
           </li>

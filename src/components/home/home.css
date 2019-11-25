@@ -12,6 +12,7 @@ a,
 
   animation: trans-opa 2s infinite;
 }
+
 @keyframes trans-opa {
   0% {
     opacity: 0;
@@ -30,6 +31,7 @@ a,
   border-width: 38.5px 34px 38.5px 0;
   border-color: transparent #1de9b6 transparent transparent;
 }
+
 .fp-controlArrow.fp-next {
   right: 15px;
   border-width: 38.5px 0 38.5px 34px;

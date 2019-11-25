@@ -97,6 +97,7 @@ const getAppBarContent = (type, classes, moveTo) => {
     <div style={{ minWidth: 64 }}>
       {rightButtons.map(({ moveWhere, icon }) => (
         <IconButton
+          key={moveWhere}
           className={classes.onHover}
           color="inherit"
           aria-label="Menu"
