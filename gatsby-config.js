@@ -9,7 +9,6 @@ module.exports = {
     title: "Blog"
   },
   plugins: [
-    "gatsby-plugin-material-ui",
     "gatsby-plugin-sass",
     {
       resolve: "gatsby-source-filesystem",

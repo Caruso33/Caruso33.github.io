@@ -1,13 +1,13 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import List from "@material-ui/core/List";
-import Divider from "@material-ui/core/Divider";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemIcon from "@material-ui/core/ListItemIcon";
-import ListItemText from "@material-ui/core/ListItemText";
-import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
+import React from "react"
+import { Link } from "gatbsy"
+import List from "@material-ui/core/List"
+import Divider from "@material-ui/core/Divider"
+import ListItem from "@material-ui/core/ListItem"
+import ListItemIcon from "@material-ui/core/ListItemIcon"
+import ListItemText from "@material-ui/core/ListItemText"
+import SwipeableDrawer from "@material-ui/core/SwipeableDrawer"
 
-import { Home, Gavel, Dashboard } from "@material-ui/icons";
+import { Home, Gavel, Dashboard } from "@material-ui/icons"
 
 const sideList = (
   <div>
@@ -45,7 +45,7 @@ const sideList = (
       <Divider />
     </List>
   </div>
-);
+)
 
 export default ({ onDrawerToggle, open }) => (
   <div>
@@ -64,4 +64,4 @@ export default ({ onDrawerToggle, open }) => (
       </div>
     </SwipeableDrawer>
   </div>
-);
+)

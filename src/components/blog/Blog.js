@@ -12,7 +12,8 @@ function Blog({ classes }) {
           title
         }
       }
-      allMarkdownRemark {
+      allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+        totalCount
         edges {
           node {
             frontmatter {
