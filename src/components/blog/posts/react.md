@@ -4,3 +4,5 @@ date: "2019-11-22"
 ---
 
 React is beautifly declarative.
+
+![alt](path)

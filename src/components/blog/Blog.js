@@ -1,7 +1,8 @@
 import React from "react"
 import Container from "@material-ui/core/Container"
 import { withStyles } from "@material-ui/core/styles"
-import { graphql, useStaticQuery } from "gatsby"
+import { graphql, useStaticQuery, Link } from "gatsby"
+// import './blog.scss'
 
 function Blog({ classes }) {
   const data = useStaticQuery(graphql`
@@ -20,6 +21,9 @@ function Blog({ classes }) {
             }
             html
             excerpt
+            fields {
+              slug
+            }
           }
         }
       }
@@ -33,8 +37,10 @@ function Blog({ classes }) {
       <ol>
         {data.allMarkdownRemark.edges.map(({ node }) => (
           <li key={node.frontmatter.title}>
-            <h2>{node.frontmatter.title}</h2>
-            <p>{node.frontmatter.date}</p>
+            <Link to={`/blog/${node.fields.slug}`}>
+              <h2>{node.frontmatter.title}</h2>
+              <p>{node.frontmatter.date}</p>
+            </Link>
           </li>
         ))}
       </ol>

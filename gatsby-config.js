@@ -9,6 +9,7 @@ module.exports = {
     title: "Blog"
   },
   plugins: [
+    "gatsby-plugin-material-ui",
     "gatsby-plugin-sass",
     {
       resolve: "gatsby-source-filesystem",
@@ -17,8 +18,23 @@ module.exports = {
         path: `${__dirname}/src/`
       }
     },
-    "gatsby-transformer-remark",
-    "gatsby-plugin-react-helmet",
+    "gatsby-plugin-sharp",
+    {
+      resolve: "gatsby-transformer-remark",
+      options: {
+        plugins: [
+          "gatsby-remark-relative-images",
+          {
+            resolve: "gatsby-remark-images",
+            options: {
+              maxWidth: 750,
+              linkImagesToOriginal: false
+            }
+          }
+        ]
+      }
+    },
+    "gatsby-plugin-react-helmet"
     // {
     //   resolve: `gatsby-source-wordpress`,
     //   options: {

@@ -5,7 +5,7 @@ import React from "react"
 import Portfolio from "./Portfolio"
 import { CardIntro, CardProfil } from "./cards"
 import { Fullpage, FullPageSection } from "./Fullpage"
-// import "./home.css"
+import "./home.css"
 
 const Home = ({ classes, fullpageApiRef }) => {
   const clipboard = new Clipboard("#copyMail")
