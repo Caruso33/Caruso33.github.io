@@ -6,8 +6,8 @@ module.exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
 
   if (node.internal.type === "MarkdownRemark") {
-    const slug = createFilePath({ node, getNode, basePath: `pages` })
-    // path.basename(node.fileAbsolutePath, ".md")
+    const slug = path.basename(node.fileAbsolutePath, ".md")
+    // createFilePath({ node, getNode, basePath: `pages` })
 
     createNodeField({
       node,
@@ -19,9 +19,8 @@ module.exports.onCreateNode = ({ node, actions, getNode }) => {
 
 module.exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
-  const blogTemplate = path.resolve(`./src/templates/Blog.js`)
+  const markdownTemplate = path.resolve(`./src/templates/MarkDown.js`)
 
-  // query content for WordPress posts
   const result = await graphql(`
     query {
       allMarkdownRemark {
@@ -33,24 +32,43 @@ module.exports.createPages = async ({ graphql, actions }) => {
           }
         }
       }
-      #   allWordpressPost {
-      #     edges {
-      #       node {
-      #         id
-      #         slug
-      #       }
-      #     }
-      #   }
     }
   `)
 
+  // allContentfulBlogPost {
+  //   edges {
+  //     node {
+  //       slug
+  //     }
+  //   }
+  // }
+
+  //  allWordpressPost {
+  //  edges {
+  //  node {
+  //  id
+  //  slug
+  //  }
+  //  }
+  //  }
+
   result.data.allMarkdownRemark.edges.forEach(edge => {
     createPage({
-      component: blogTemplate,
+      component: markdownTemplate,
       path: `blog/${edge.node.fields.slug}`,
       context: { slug: edge.node.fields.slug }
     })
   })
+
+  // result.data.allContentfulBlogPost.edges.forEach(edge => {
+  //   createPage({
+  //     component: blogTemplate,
+  //     path: `/blog/${edge.node.slug}`,
+  //     context: {
+  //       slug: edge.node.slug
+  //     }
+  //   })
+  // })
 
   //   const postTemplate = path.resolve(`./src/templates/post.js`)
   //   result.data.allWordpressPost.edges.forEach(edge => {

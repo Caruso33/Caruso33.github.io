@@ -21,10 +21,15 @@ const useStyles = makeStyles({
   onHover: { color: "inherit", "&:hover": { color: color.secondary.main } }
 })
 
-export default ({ moveTo, type }) => {
+export default ({ moveTo, type, title: passedTitle }) => {
   const classes = useStyles()
 
-  const [left, title, right] = getAppBarContent(type, classes, moveTo)
+  const [left, title, right] = getAppBarContent({
+    type,
+    classes,
+    moveTo,
+    passedTitle
+  })
 
   return (
     <AppBar position="fixed">
@@ -39,7 +44,7 @@ export default ({ moveTo, type }) => {
   )
 }
 
-const getAppBarContent = (type, classes, moveTo) => {
+const getAppBarContent = ({ type, classes, moveTo, passedTitle }) => {
   let left = "",
     title = "",
     right = ""
@@ -47,7 +52,7 @@ const getAppBarContent = (type, classes, moveTo) => {
   let leftLinkTo = "",
     leftLinkTitle = "",
     titleWhereTo = "",
-    titleText = "",
+    titleText = passedTitle || "",
     rightButtons = []
 
   switch (type) {
@@ -68,7 +73,16 @@ const getAppBarContent = (type, classes, moveTo) => {
       leftLinkTitle = "<<"
       titleWhereTo = "/blog"
       titleText = "Blog"
-      rightButtons = []
+      break
+
+    case "blogPost":
+      leftLinkTo = "/blog"
+      leftLinkTitle = "<<"
+      break
+
+    case "404":
+      titleWhereTo = "/"
+      titleText = "404"
       break
 
     default:
@@ -87,7 +101,12 @@ const getAppBarContent = (type, classes, moveTo) => {
 
   title = (
     <Button onClick={() => moveTo(titleWhereTo)} className={classes.onHover}>
-      <Typography variant="h4" component="h1" className={classes.capitalize}>
+      <Typography
+        variant="h4"
+        component="h1"
+        style={{ paddingTop: 10 }}
+        className={classes.capitalize}
+      >
         {titleText}
       </Typography>
     </Button>

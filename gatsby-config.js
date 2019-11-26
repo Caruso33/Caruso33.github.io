@@ -6,7 +6,7 @@
 
 module.exports = {
   siteMetadata: {
-    title: "Blog"
+    title: "tobiasleinss.ml"
   },
   plugins: [
     "gatsby-plugin-sass",
@@ -44,6 +44,13 @@ module.exports = {
     //     hostingWPCOM: false,
     //     // does your site use the Advanced Custom Fields Plugin?
     //     useACF: false
+    //   }
+    // }
+    // {
+    //   resolve: "gatsby-source-contentful",
+    //   options: {
+    //     spaceId: process.env.CONTENTFUL_SPACE_ID,
+    //     accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
     //   }
     // }
   ]
