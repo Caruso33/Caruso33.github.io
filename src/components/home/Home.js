@@ -8,10 +8,14 @@ import { Fullpage, FullPageSection } from "./Fullpage"
 import "./home.css"
 
 const Home = ({ classes, fullpageApiRef }) => {
-  const clipboard = new Clipboard("#copyMail")
+  let clipboard,
+    copyMail = () => {}
+  if (typeof window !== "undefined" && window.document) {
+    clipboard = new Clipboard("#copyMail")
 
-  const copyMail = () => {
-    clipboard.on("success", e => console.info("Copied:", e.text))
+    copyMail = () => {
+      clipboard.on("success", e => console.info("Copied:", e.text))
+    }
   }
 
   const sections = [
