@@ -1,4 +1,3 @@
-import Container from "@material-ui/core/Container"
 import { withStyles } from "@material-ui/core/styles"
 import Clipboard from "clipboard"
 import React from "react"
@@ -6,6 +5,7 @@ import Portfolio from "./Portfolio"
 import { CardIntro, CardProfil } from "./cards"
 import { Fullpage, FullPageSection } from "./Fullpage"
 import "./home.css"
+import Container from "../partials/Container"
 
 const Home = ({ classes, fullpageApiRef }) => {
   let clipboard,
@@ -33,7 +33,7 @@ const Home = ({ classes, fullpageApiRef }) => {
   ]
 
   return (
-    <Container className={classes.paper}>
+    <Container>
       <Fullpage
         apiRef={fullpageApiRef}
         navigation

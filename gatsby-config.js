@@ -6,18 +6,34 @@
 
 module.exports = {
   siteMetadata: {
-    title: "tobiasleinss.ml"
+    title: "tobiasleinss.ml",
+    siteUrl: "https://www.tobiasleinss.ml"
   },
   plugins: [
     "gatsby-plugin-sass",
+    "gatsby-plugin-offline",
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
+    "gatsby-plugin-react-helmet",
+    "gatsby-plugin-sitemap",
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        name: "src",
-        path: `${__dirname}/src/`
+        name: "content",
+        path: `${__dirname}/content/`
       }
     },
-    "gatsby-plugin-sharp",
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `tobiasleinss.ml`,
+        short_name: `tobias`,
+        start_url: `/`,
+        background_color: "#fff",
+        theme_color: "#1de9b6",
+        display: `standalone`
+      }
+    },
     {
       resolve: "gatsby-transformer-remark",
       options: {
@@ -32,8 +48,7 @@ module.exports = {
           }
         ]
       }
-    },
-    "gatsby-plugin-react-helmet"
+    }
     // {
     //   resolve: `gatsby-source-wordpress`,
     //   options: {

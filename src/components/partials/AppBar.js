@@ -24,7 +24,7 @@ const useStyles = makeStyles({
 export default ({ moveTo, type, title: passedTitle }) => {
   const classes = useStyles()
 
-  const [left, title, right] = getAppBarContent({
+  const [leftComponent, titleComponent, rightComponent] = getAppBarContent({
     type,
     classes,
     moveTo,
@@ -34,11 +34,11 @@ export default ({ moveTo, type, title: passedTitle }) => {
   return (
     <AppBar position="fixed">
       <Toolbar className={classes.toolbar}>
-        {left}
+        {leftComponent}
 
-        {title}
+        {titleComponent}
 
-        {right}
+        {rightComponent}
       </Toolbar>
     </AppBar>
   )
