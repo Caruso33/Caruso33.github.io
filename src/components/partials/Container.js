@@ -2,9 +2,9 @@ import React from "react"
 import { withStyles } from "@material-ui/styles"
 import MuiContainer from "@material-ui/core/Container"
 
-function Container({ children, classes, classStyles = {}, style = {} }) {
+function Container({ children, classes, style = {} }) {
   return (
-    <MuiContainer className={[classes.paper, classStyles]} style={style}>
+    <MuiContainer className={classes.paper} style={style}>
       {children}
     </MuiContainer>
   )

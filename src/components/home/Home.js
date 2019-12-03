@@ -1,7 +1,7 @@
 import { withStyles } from "@material-ui/core/styles"
 import Clipboard from "clipboard"
 import React from "react"
-import Portfolio from "./Portfolio"
+import Portfolio from "./portfolio/Portfolio"
 import { CardIntro, CardProfil } from "./cards"
 import { Fullpage, FullPageSection } from "./Fullpage"
 import "./home.css"

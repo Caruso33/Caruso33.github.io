@@ -22,7 +22,7 @@ gulp.task('default', () => {
 
 gulp.task('imgs', () =>
   gulp
-    .src('src/img/src/*.jpg')
+    .src('src/img/src/**/*.{jpg,png}')
     .pipe(webp())
     .pipe(gulp.dest('src/img/dist/'))
 );
