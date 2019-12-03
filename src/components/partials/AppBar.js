@@ -74,18 +74,16 @@ const getAppBarContent = ({
       leftLinkTo = "/blog"
       titleWhereTo = "intro"
       titleText = isSmallestViewport ? "<Hi />" : "<Welcome />"
+
+      if (isMobileViewport) break
       rightButtons = [
         {
           moveWhere: "profile",
-          icon: <BuildIcon fontSize={isMobileViewport ? "small" : "default"} />
+          icon: <BuildIcon fontSize={"default"} />
         },
         {
           moveWhere: "portfolio",
-          icon: (
-            <AccountTreeIcon
-              fontSize={isMobileViewport ? "small" : "default"}
-            />
-          )
+          icon: <AccountTreeIcon fontSize={"default"} />
         }
       ]
 

@@ -1,4 +1,5 @@
-import { withStyles } from "@material-ui/core/styles"
+import { makeStyles } from "@material-ui/core/styles"
+import useMediaQuery from "@material-ui/core/useMediaQuery"
 import React from "react"
 import imgCalculator from "../../../img/dist/portfolio/calculator.webp"
 import imgBarChart from "../../../img/dist/portfolio/d3barChart.webp"
@@ -7,10 +8,31 @@ import imgPomodoR from "../../../img/dist/portfolio/pomodor-min.webp"
 import { FullPageSlide } from "../../fullpage/Fullpage"
 import "./portfolio.scss"
 import PortfolioCard from "./PortfolioCard"
-import useMediaQuery from "@material-ui/core/useMediaQuery"
 
-export default withStyles(styles)(({ classes }) => {
+const useStyles = (viewportWidth = 999) =>
+  makeStyles({
+    CardVertical: {
+      width: Math.min(300, viewportWidth),
+      margin: "auto",
+      marginBottom: 30
+    },
+    CardHorizontal: {
+      width: Math.min(500, viewportWidth),
+      margin: "auto",
+      marginBottom: 30
+    },
+    Media: {
+      height: 550
+    }
+  })
+
+export default () => {
   const isMobileViewport = useMediaQuery("(max-width:840px)")
+  const viewportWidth =
+    typeof window !== "undefined" &&
+    window.document.documentElement.clientWidth - 40
+
+  const classes = useStyles(viewportWidth)()
 
   return portfolioData.map(d => (
     <PortfolioCardWrapper key={d.key} isMobileViewport={isMobileViewport}>
@@ -25,32 +47,12 @@ export default withStyles(styles)(({ classes }) => {
       />
     </PortfolioCardWrapper>
   ))
-})
+}
 
 const PortfolioCardWrapper = ({ isMobileViewport, children }) => {
   if (isMobileViewport) return <>{children}</>
 
   return <FullPageSlide>{children}</FullPageSlide>
-}
-
-function styles() {
-  const viewportWidth = document.documentElement.clientWidth - 40
-
-  return {
-    CardVertical: {
-      width: Math.min(300, viewportWidth),
-      margin: "auto",
-      marginBottom: 30
-    },
-    CardHorizontal: {
-      width: Math.min(500, viewportWidth),
-      margin: "auto",
-      marginBottom: 30
-    },
-    Media: {
-      height: 550
-    }
-  }
 }
 
 const portfolioData = [
