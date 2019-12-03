@@ -1,0 +1,1 @@
+{"data":{"allMarkdownRemark":{"totalCount":2,"edges":[{"node":{"frontmatter":{"title":"My first Blog post","date":"27. November, 2019"},"fields":{"slug":"gatsby"}}},{"node":{"frontmatter":{"title":"React is beautiful","date":"26. November, 2019"},"fields":{"slug":"react"}}}]}}}
