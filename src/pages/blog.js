@@ -1,10 +1,10 @@
+import { withStyles } from "@material-ui/styles"
+import { graphql, Link } from "gatsby"
 import React from "react"
-import { Link } from "gatsby"
 import AppBar from "../components/partials/AppBar"
+import Container from "../components/partials/Container"
 import Layout from "../components/partials/Layout"
 import Metatags from "../components/partials/MetaTags"
-import Container from "../components/partials/Container"
-import { withStyles } from "@material-ui/styles"
 
 const Blog = props => {
   const moveTo = location => props.navigate(location)
