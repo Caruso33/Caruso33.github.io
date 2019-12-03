@@ -29,7 +29,11 @@ const Intro = ({ fullpageApi, classes }) => {
   const pickRandomIndex = length => Math.floor(Math.random() * length)
 
   return (
-    <Card className={classes.card} style={{ padding: "0 20px 24px 20px" }}>
+    <Card
+      className={classes.card}
+      style={{ padding: "24px 20px 24px 20px" }}
+      raised
+    >
       <Grid item md={8} lg={6} style={{ margin: "20px auto" }}>
         <Typography variant="h3" className={classes.typography} gutterBottom>
           Hi,

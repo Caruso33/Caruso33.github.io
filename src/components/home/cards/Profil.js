@@ -15,7 +15,7 @@ import profilImg from "../../../img/dist/landing/sizes/profil-400.webp"
 
 const profil = ({ classes, copyMail }) => {
   return (
-    <Card className={classes.card} style={{ paddingBottom: 24 }}>
+    <Card className={classes.card} style={{ paddingBottom: 24 }} raised>
       <Grid container justify="center" alignItems="center">
         <Grid item sm={12}>
           <Typography

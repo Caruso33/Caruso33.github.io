@@ -21,7 +21,7 @@ export default function CardVertical({
   const mediaStyle = isVertical ? { height: "auto" } : { height: 300 }
 
   return (
-    <Card className={`${cardClass} portfolio-card`}>
+    <Card className={`${cardClass} portfolio-card`} raised>
       <CardActionArea onClick={() => (window.location.href = linkTo)}>
         <CardMedia
           component="img"

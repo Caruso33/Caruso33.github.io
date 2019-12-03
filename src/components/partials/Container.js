@@ -23,7 +23,7 @@ function styles() {
       },
 
       "@media screen and (max-width: 840px)": {
-        padding: "70px 20px 20px 20px"
+        padding: "78px 20px 20px 20px"
       }
     }
   }
