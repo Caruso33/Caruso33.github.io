@@ -101,12 +101,7 @@ const getAppBarContent = ({ type, classes, moveTo, passedTitle }) => {
 
   title = (
     <Button onClick={() => moveTo(titleWhereTo)} className={classes.onHover}>
-      <Typography
-        variant="h4"
-        component="h1"
-        style={{ paddingTop: 10 }}
-        className={classes.capitalize}
-      >
+      <Typography variant="h4" component="h1" className={classes.capitalize}>
         {titleText}
       </Typography>
     </Button>

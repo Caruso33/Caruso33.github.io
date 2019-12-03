@@ -16,16 +16,17 @@ export const query = graphql`
         title
         tags
         date(formatString: "DD. MMMM, YYYY")
-        image {
-          childImageSharp {
-            resize(width: 1500, height: 1500) {
-              src
-            }
-            fluid(maxWidth: 750) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
+        image
+        # {
+        # childImageSharp {
+        #   resize(width: 1500, height: 1500) {
+        #     src
+        #   }
+        #   fluid(maxWidth: 750) {
+        #     ...GatsbyImageSharpFluid
+        #   }
+        # }
+        # }
       }
     }
 

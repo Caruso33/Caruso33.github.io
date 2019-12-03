@@ -6,8 +6,11 @@ import { CardIntro, CardProfil } from "./cards"
 import { Fullpage, FullPageSection } from "./Fullpage"
 import "./home.css"
 import Container from "../partials/Container"
+import useMediaQuery from "@material-ui/core/useMediaQuery"
 
 const Home = ({ classes, fullpageApiRef }) => {
+  const isMobileViewport = useMediaQuery("(max-width:840px)")
+
   let clipboard,
     copyMail = () => {}
   if (typeof window !== "undefined" && window.document) {
@@ -34,20 +37,26 @@ const Home = ({ classes, fullpageApiRef }) => {
 
   return (
     <Container>
-      <Fullpage
-        apiRef={fullpageApiRef}
-        navigation
-        slidesNavigation
-        anchors={sections.map(({ name }) => name)}
-      >
-        {(_state, fullpageApi) => {
-          return sections.map(({ name, component }) => (
-            <FullPageSection key={name} className={name}>
-              {component(fullpageApi)}
-            </FullPageSection>
-          ))
-        }}
-      </Fullpage>
+      {isMobileViewport ? (
+        sections.map(({ name, component: Component }) => (
+          <Component key={name} />
+        ))
+      ) : (
+        <Fullpage
+          apiRef={fullpageApiRef}
+          navigation
+          slidesNavigation
+          anchors={sections.map(({ name }) => name)}
+        >
+          {(_state, fullpageApi) => {
+            return sections.map(({ name, component }) => (
+              <FullPageSection key={name} className={name}>
+                {component(fullpageApi)}
+              </FullPageSection>
+            ))
+          }}
+        </Fullpage>
+      )}
     </Container>
   )
 }
@@ -65,7 +74,10 @@ function styles() {
     },
     card: {
       paddingTop: 20,
-      marginRight: 20
+      marginRight: 20,
+      "@media screen and (max-width: 840px)": {
+        marginBottom: 20
+      }
     },
     cardContentHeading: {
       margin: "20px auto"
