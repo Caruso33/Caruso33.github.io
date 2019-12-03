@@ -4,6 +4,7 @@ import IconButton from "@material-ui/core/IconButton"
 import { makeStyles } from "@material-ui/core/styles"
 import Toolbar from "@material-ui/core/Toolbar"
 import Typography from "@material-ui/core/Typography"
+import useMediaQuery from "@material-ui/core/useMediaQuery"
 import AccountTreeIcon from "@material-ui/icons/AccountTree"
 import BuildIcon from "@material-ui/icons/Build"
 import { Link } from "gatsby"
@@ -24,11 +25,16 @@ const useStyles = makeStyles({
 export default ({ moveTo, type, title: passedTitle }) => {
   const classes = useStyles()
 
+  const isMobileViewport = useMediaQuery("(max-width:840px)")
+  const isSmallestViewport = useMediaQuery("(max-width:600px)")
+
   const [leftComponent, titleComponent, rightComponent] = getAppBarContent({
     type,
     classes,
     moveTo,
-    passedTitle
+    passedTitle,
+    isMobileViewport,
+    isSmallestViewport
   })
 
   return (
@@ -44,7 +50,14 @@ export default ({ moveTo, type, title: passedTitle }) => {
   )
 }
 
-const getAppBarContent = ({ type, classes, moveTo, passedTitle }) => {
+const getAppBarContent = ({
+  type,
+  classes,
+  moveTo,
+  passedTitle,
+  isMobileViewport,
+  isSmallestViewport
+}) => {
   let left = "",
     title = "",
     right = ""
@@ -60,10 +73,20 @@ const getAppBarContent = ({ type, classes, moveTo, passedTitle }) => {
       leftLinkTitle = "Blog"
       leftLinkTo = "/blog"
       titleWhereTo = "intro"
-      titleText = "<Welcome />"
+      titleText = isSmallestViewport ? "<Hi />" : "<Welcome />"
       rightButtons = [
-        { moveWhere: "profile", icon: <BuildIcon /> },
-        { moveWhere: "portfolio", icon: <AccountTreeIcon /> }
+        {
+          moveWhere: "profile",
+          icon: <BuildIcon fontSize={isMobileViewport ? "small" : "default"} />
+        },
+        {
+          moveWhere: "portfolio",
+          icon: (
+            <AccountTreeIcon
+              fontSize={isMobileViewport ? "small" : "default"}
+            />
+          )
+        }
       ]
 
       break

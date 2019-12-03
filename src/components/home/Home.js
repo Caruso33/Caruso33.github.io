@@ -3,7 +3,7 @@ import Clipboard from "clipboard"
 import React from "react"
 import Portfolio from "./portfolio/Portfolio"
 import { CardIntro, CardProfil } from "./cards"
-import { Fullpage, FullPageSection } from "./Fullpage"
+import { Fullpage, FullPageSection } from "../fullpage/Fullpage"
 import "./home.css"
 import Container from "../partials/Container"
 import useMediaQuery from "@material-ui/core/useMediaQuery"
@@ -76,7 +76,8 @@ function styles() {
       paddingTop: 20,
       marginRight: 20,
       "@media screen and (max-width: 840px)": {
-        marginBottom: 20
+        marginBottom: 20,
+        marginRight: 0
       }
     },
     cardContentHeading: {

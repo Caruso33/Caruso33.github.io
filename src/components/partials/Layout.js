@@ -1,9 +1,13 @@
 import React from "react"
 import CssBaseline from "@material-ui/core/CssBaseline"
-import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles"
+import {
+  createMuiTheme,
+  ThemeProvider,
+  responsiveFontSizes
+} from "@material-ui/core/styles"
 import color from "../../utils/color"
 
-const theme = createMuiTheme({
+let theme = createMuiTheme({
   palette: {
     primary: {
       light: color.primary.light,
@@ -22,6 +26,8 @@ const theme = createMuiTheme({
     danger: color.danger
   }
 })
+
+theme = responsiveFontSizes(theme)
 
 export default function Layout({ children }) {
   return (

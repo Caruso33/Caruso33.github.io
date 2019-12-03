@@ -17,8 +17,13 @@ function styles() {
     paper: {
       padding: 50,
       paddingTop: 78,
+
       "@media screen and (max-width: 600px)": {
         paddingTop: 70
+      },
+
+      "@media screen and (max-width: 840px)": {
+        padding: "70px 20px 20px 20px"
       }
     }
   }
