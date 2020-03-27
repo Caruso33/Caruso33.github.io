@@ -22,7 +22,6 @@ const MainContent = styled(AntLayout)`
 `
 
 const Content = styled(AntLayout.Content)`
-  background: ${colors.contentBackground};
   grid-column: 3 / span 1;
 `
 

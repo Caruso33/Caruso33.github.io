@@ -3,6 +3,7 @@
  *
  * See: https://www.gatsbyjs.org/docs/gatsby-config/
  */
+const color = require("./src/utils/color")
 
 module.exports = {
   siteMetadata: {
@@ -11,12 +12,26 @@ module.exports = {
   },
   plugins: [
     "gatsby-plugin-styled-components",
-    "gatsby-plugin-antd",
     "gatsby-plugin-offline",
     // "gatsby-plugin-sharp",
     // "gatsby-transformer-sharp",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sitemap",
+    {
+      resolve: "gatsby-plugin-antd",
+      options: {
+        style: true
+      }
+    },
+    {
+      resolve: `gatsby-plugin-less`,
+      options: {
+        javascriptEnabled: true,
+        modifyVars: {
+          ...color
+        }
+      }
+    },
     {
       resolve: "gatsby-source-filesystem",
       options: {

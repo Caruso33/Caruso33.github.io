@@ -1,5 +1,7 @@
 const url = {
-    tags: '/tags'
+  about: "/about",
+  portfolio: "/portfolio",
+  tags: "/tags"
 }
 
-export default url 
+export default url

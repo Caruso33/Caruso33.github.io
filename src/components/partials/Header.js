@@ -8,12 +8,23 @@ import { navigate } from "gatsby"
 const AntHeader = styled(Layout.Header)`
   display: flex;
   justify-content: space-between;
+
+  &.ant-layout-header {
+    padding: 0 10rem;
+    @media only screen and (max-width: 1000px) {
+      padding: 0 5rem;
+    }
+  }
 `
 
 const Logo = styled.div`
   color: ${colors.colorContrast};
   font-size: 4rem;
   font-family: "Great Vibes", cursive;
+
+  @media only screen and (max-width: 800px) {
+    font-size: 3rem;
+  }
 `
 
 const MenuItem = styled(Menu.Item)`
@@ -37,15 +48,19 @@ const MenuItem = styled(Menu.Item)`
 `
 
 export default function Header() {
-  const navigateTags = () => navigate(url.tags)
+  const navigatePortfolio = () => navigate(url.portfolio)
+  const navigateAbout = () => navigate(url.about)
 
   return (
     <AntHeader>
       <Logo>{"<Tobias Leinss/>"}</Logo>
 
       <Menu theme="dark" mode="horizontal">
-        <MenuItem key="1" onClick={navigateTags}>
-          Tags
+        <MenuItem key="portfolio" onClick={navigatePortfolio}>
+          Portfolio
+        </MenuItem>
+        <MenuItem key="about" onClick={navigateAbout}>
+          About
         </MenuItem>
       </Menu>
     </AntHeader>

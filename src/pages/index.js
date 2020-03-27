@@ -1,8 +1,9 @@
-import { graphql, Link } from "gatsby"
+import { graphql } from "gatsby"
 import React from "react"
-import Container from "../components/partials/Container"
 import Metatags from "../components/partials/MetaTags"
 import Layout from "../components/partials/Layout"
+import BlogItem from "./home/BlogItem"
+import { BlogItems } from "./home/styled"
 
 const Home = props => {
   const { data, location } = props
@@ -10,26 +11,17 @@ const Home = props => {
   return (
     <Layout>
       <Metatags
-        title={"Blog List"}
-        description={"list of blog posts"}
+        title={"Tobias Leinss"}
+        description={"personal details and blog list"}
         url={data.site.siteMetadata.siteUrl}
         pathname={location.pathname}
       />
 
-      <Container>
-        <Link to="tags/">Posts by Tags</Link>
-
-        <ol>
-          {data.allMarkdownRemark.edges.map(({ node }) => (
-            <li key={node.frontmatter.title}>
-              <Link to={`/${node.fields.slug}`}>
-                <h2>{node.frontmatter.title}</h2>
-                <p>{node.frontmatter.date}</p>
-              </Link>
-            </li>
-          ))}
-        </ol>
-      </Container>
+      <BlogItems>
+        {data.allMarkdownRemark.edges.map(({ node }) => (
+          <BlogItem node={node} />
+        ))}
+      </BlogItems>
     </Layout>
   )
 }
@@ -48,9 +40,11 @@ export const pageQuery = graphql`
           frontmatter {
             title
             date(formatString: "DD. MMMM, YYYY")
+            image
+            # description(pruneLength: 250)
           }
           # html
-          # excerpt(pruneLength: 250)
+          excerpt(pruneLength: 250)
         }
       }
     }

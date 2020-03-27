@@ -60,7 +60,7 @@ function Metatags(props) {
         { property: "og:type", content: "website" },
         { name: "robots", content: "index, follow" },
 
-        { name: "twitter:creator", content: "@saigowthamr" },
+        { name: "twitter:creator", content: "@caruso33" },
         { property: "og:site_name", content: "yoursitename" }
       ]}
     >
