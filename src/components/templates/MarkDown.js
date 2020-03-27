@@ -2,7 +2,7 @@ import { withStyles } from "@material-ui/core/styles"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
 import React from "react"
-import AppBar from "../partials/AppBar"
+import Header from "../partials/Header"
 import Layout from "../partials/Layout"
 import PrevNext from "../partials/PrevNext"
 import Metatags from "../partials/MetaTags"
@@ -11,7 +11,7 @@ import Container from "../partials/Container"
 export const query = graphql`
   query($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
-      html
+      # html
       frontmatter {
         title
         tags
@@ -58,7 +58,7 @@ function MarkDownTemplate(props) {
         pathname={location.pathname}
       />
 
-      <AppBar
+      <Header
         moveTo={location => navigate(location)}
         type="blogPost"
         title={blogPost.frontmatter.title}
@@ -81,11 +81,7 @@ function MarkDownTemplate(props) {
           <div>
             <span>Tagged in </span>
             {tags.map((tag, i) => (
-              <a
-                href={`/blog/tags/${tag}`}
-                key={i}
-                style={{ marginLeft: "10px" }}
-              >
+              <a href={`/tags/${tag}`} key={i} style={{ marginLeft: "10px" }}>
                 {tag}
               </a>
             ))}

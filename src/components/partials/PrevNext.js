@@ -7,16 +7,12 @@ const PrevNext = props => {
     <ul>
       {prev && (
         <li>
-          <a href={"/blog/" + prev.fields.slug}>
-            Previous {prev.frontmatter.title}
-          </a>
+          <a href={`/${prev.fields.slug}`}>Previous {prev.frontmatter.title}</a>
         </li>
       )}
       {next && (
         <li>
-          <a href={"/blog/" + next.fields.slug}>
-            Next {next.frontmatter.title}
-          </a>
+          <a href={`/${next.fields.slug}`}>Next {next.frontmatter.title}</a>
         </li>
       )}
     </ul>

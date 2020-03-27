@@ -10,10 +10,11 @@ module.exports = {
     siteUrl: "https://www.tobiasleinss.ml"
   },
   plugins: [
-    "gatsby-plugin-sass",
+    "gatsby-plugin-styled-components",
+    "gatsby-plugin-antd",
     "gatsby-plugin-offline",
-    "gatsby-plugin-sharp",
-    "gatsby-transformer-sharp",
+    // "gatsby-plugin-sharp",
+    // "gatsby-transformer-sharp",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sitemap",
     {
@@ -30,24 +31,24 @@ module.exports = {
         short_name: `tobias`,
         start_url: `/`,
         background_color: "#fff",
-        theme_color: "#1de9b6",
+        theme_color: "#000",
         display: `standalone`
       }
     },
     {
-      resolve: "gatsby-transformer-remark",
-      options: {
-        plugins: [
-          "gatsby-remark-relative-images",
-          {
-            resolve: "gatsby-remark-images",
-            options: {
-              maxWidth: 750,
-              linkImagesToOriginal: false
-            }
-          }
-        ]
-      }
+      resolve: "gatsby-transformer-remark"
+      // options: {
+      //   plugins: [
+      //     "gatsby-remark-relative-images",
+      //     {
+      //       resolve: "gatsby-remark-images",
+      //       options: {
+      //         maxWidth: 750,
+      //         linkImagesToOriginal: false
+      //       }
+      //     }
+      //   ]
+      // }
     }
     // {
     //   resolve: `gatsby-source-wordpress`,

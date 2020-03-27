@@ -6,7 +6,7 @@ import imgBarChart from "../../../img/dist/portfolio/d3barChart.webp"
 import imgMarkdownPreviewer from "../../../img/dist/portfolio/markdown-previewer.webp"
 import imgPomodoR from "../../../img/dist/portfolio/pomodor-min.webp"
 import { FullPageSlide } from "../../fullpage/Fullpage"
-import "./portfolio.scss"
+// import "./portfolio.scss"
 import PortfolioCard from "./PortfolioCard"
 
 const useStyles = (viewportWidth = 999) =>

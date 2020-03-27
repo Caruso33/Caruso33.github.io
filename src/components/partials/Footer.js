@@ -1,17 +1,12 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import './Footer.css';
+import React from "react"
+import styled from "styled-components"
+import { Layout } from "antd"
 
-const Footer = props => (
-  <footer>
-    <h4>Created by Tobi Bobi</h4>
-  </footer>
-);
+const Footer = styled(Layout.Footer)`
+  height: 7rem;
+  text-align: center;
+`
 
-Footer.propTypes = {
-  footer: PropTypes.string.isRequired
-}
+const Foot = () => <Footer>Created by Tobi Bobi</Footer>
 
-
-export default Footer
-//stateless functional Component
+export default Foot

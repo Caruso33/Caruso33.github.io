@@ -1,6 +1,6 @@
 import { Link } from "gatsby"
 import React from "react"
-import AppBar from "../components/partials/AppBar"
+import Header from "../components/partials/Header"
 import Layout from "../components/partials/Layout"
 import Metatags from "../components/partials/MetaTags"
 
@@ -9,7 +9,7 @@ const NotFound = ({ moveTo }) => {
     <Layout>
       <Metatags title="NotFound" />
 
-      <AppBar moveTo={moveTo} type={"404"} />
+      <Header moveTo={moveTo} type={"404"} />
 
       <h1>Page not found</h1>
       <p>

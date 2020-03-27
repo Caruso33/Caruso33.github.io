@@ -1,40 +1,45 @@
 import React from "react"
-import CssBaseline from "@material-ui/core/CssBaseline"
-import {
-  createMuiTheme,
-  ThemeProvider,
-  responsiveFontSizes
-} from "@material-ui/core/styles"
-import color from "../../utils/color"
+import { Layout as AntLayout } from "antd"
+import Header from "./Header"
+import Footer from "./Footer"
+import Sidebar from "./Sidebar"
+import styled from "styled-components"
+import colors from "../../utils/color"
+import GlobalStyle from "./GlobalStyle"
 
-let theme = createMuiTheme({
-  palette: {
-    primary: {
-      light: color.primary.light,
-      main: color.primary.main,
-      dark: color.primary.dark,
-      contrastText: color.primary.contrastText
-    },
-    secondary: {
-      light: color.secondary.light,
-      main: color.secondary.main,
-      dark: color.secondary.dark,
-      contrastText: color.secondary.contrastText
-    }
-  },
-  status: {
-    danger: color.danger
+const MainContent = styled(AntLayout)`
+  padding: 24px 0;
+  margin: auto;
+  overflow-y: auto;
+  display: grid;
+  grid-template-columns: 1fr 20rem minmax(max-content, 80rem) 1fr;
+  grid-gap: 3rem;
+
+  @media (max-width: 600em) {
+    grid-template-columns: 1fr 20rem minmax(max-content, 80rem) 1fr;
+    grid-gap: 2rem;
   }
-})
+`
 
-theme = responsiveFontSizes(theme)
+const Content = styled(AntLayout.Content)`
+  background: ${colors.contentBackground};
+  grid-column: 3 / span 1;
+`
 
 export default function Layout({ children }) {
   return (
-    <>
-      <CssBaseline />
+    <AntLayout style={{ height: "100%" }}>
+      <GlobalStyle />
 
-      <ThemeProvider theme={theme}>{children}</ThemeProvider>
-    </>
+      <Header />
+
+      <MainContent>
+        <Sidebar />
+
+        <Content>{children}</Content>
+      </MainContent>
+
+      <Footer />
+    </AntLayout>
   )
 }

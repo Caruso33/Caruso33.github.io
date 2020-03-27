@@ -1,7 +1,7 @@
 import { withStyles } from "@material-ui/styles"
 import { graphql, Link } from "gatsby"
 import React from "react"
-import AppBar from "../components/partials/AppBar"
+import Header from "../components/partials/Header"
 import Container from "../components/partials/Container"
 import Layout from "../components/partials/Layout"
 import Metatags from "../components/partials/MetaTags"
@@ -21,15 +21,15 @@ const Blog = props => {
         pathname={location.pathname}
       />
 
-      <AppBar moveTo={moveTo} type="blog" />
+      <Header moveTo={moveTo} type="blog" />
 
       <Container>
-        <Link to="/blog/tags/">Posts by Tags</Link>
+        <Link to="/tags/">Posts by Tags</Link>
 
         <ol>
           {data.allMarkdownRemark.edges.map(({ node }) => (
             <li key={node.frontmatter.title}>
-              <Link to={`/blog/${node.fields.slug}`}>
+              <Link to={`/${node.fields.slug}`}>
                 <h2>{node.frontmatter.title}</h2>
                 <p>{node.frontmatter.date}</p>
               </Link>
@@ -44,31 +44,31 @@ const Blog = props => {
 
 export default withStyles(styles)(Blog)
 
-export const pageQuery = graphql`
-  query {
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-      totalCount
-      edges {
-        node {
-          frontmatter {
-            title
-            date(formatString: "DD. MMMM, YYYY")
-          }
-          # html
-          excerpt(pruneLength: 250)
-          fields {
-            slug
-          }
-        }
-      }
-    }
-    site {
-      siteMetadata {
-        siteUrl
-      }
-    }
-  }
-`
+// export const pageQuery = graphql`
+//   query {
+//     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+//       totalCount
+//       edges {
+//         node {
+//           frontmatter {
+//             title
+//             date(formatString: "DD. MMMM, YYYY")
+//           }
+//           # html
+//           # excerpt(pruneLength: 250)
+//           fields {
+//             slug
+//           }
+//         }
+//       }
+//     }
+//     site {
+//       siteMetadata {
+//         siteUrl
+//       }
+//     }
+//   }
+// `
 
 function styles() {
   return {}

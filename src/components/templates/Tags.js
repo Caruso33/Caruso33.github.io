@@ -1,7 +1,7 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 import Layout from "../partials/Layout"
-import AppBar from "../partials/AppBar"
+import Header from "../partials/Header"
 import Metatags from "../partials/MetaTags"
 import Container from "../partials/Container"
 
@@ -19,7 +19,7 @@ function Tags(props) {
         pathname={props.location.pathname}
       />
 
-      <AppBar
+      <Header
         moveTo={location => props.navigate(location)}
         type="tagList"
         title="TagList"
@@ -30,7 +30,7 @@ function Tags(props) {
 
         <div>
           {blogPost.map(({ node }, i) => (
-            <Link to={"/blog/" + node.fields.slug} key={i}>
+            <Link to={`/${node.fields.slug}`} key={i}>
               {node.frontmatter.title}
             </Link>
           ))}
