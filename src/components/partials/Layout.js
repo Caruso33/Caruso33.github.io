@@ -1,7 +1,6 @@
 import React from "react"
 import { Layout as AntLayout } from "antd"
 import Header from "./Header"
-import Footer from "./Footer"
 import styled from "styled-components"
 import GlobalStyle from "./GlobalStyle"
 
@@ -35,8 +34,6 @@ export default function Layout({ children, sidebar }) {
 
         <Content>{children}</Content>
       </MainContent>
-
-      <Footer />
     </AntLayout>
   )
 }

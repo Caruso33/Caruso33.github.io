@@ -2,6 +2,7 @@ import { Tag, Layout, Typography } from "antd"
 import styled from "styled-components"
 import profilImg from "../../../img/dist/landing/sizes/profil-400.webp"
 import color from "../../../utils/color"
+import { Link } from "gatsby"
 
 export const Sider = styled(Layout.Sider).attrs(() => ({
   width: 200
@@ -53,7 +54,12 @@ export const PostsByTags = styled.div`
 export const LatestArticlesTitle = styled.div``
 export const LatestArticles = styled.div`
   min-height: 2rem;
+  margin-bottom: 2rem;
 `
 export const TagLink = styled(Tag)`
   cursor: pointer;
+`
+
+export const LatestArtLink = styled(Link)`
+  display: inline-block;
 `

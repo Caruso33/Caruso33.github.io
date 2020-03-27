@@ -1,28 +1,29 @@
+import { Divider } from "antd"
 import { navigate } from "gatsby"
+import React from "react"
 import {
   AiFillGithub,
+  AiOutlineCheck,
   AiOutlineMail,
-  AiOutlineTwitter,
-  AiOutlineCheck
+  AiOutlineTwitter
 } from "react-icons/ai"
-import { Divider } from "antd"
-import React from "react"
+import { mapTopicToImage } from "../../pages/home/mapTopicToImage"
 import {
   iconStyle,
   IconWrapper,
   LatestArticles,
+  LatestArticlesTitle,
+  LatestArtLink,
   NumberArticles,
   PostsByTags,
   ProfileDescription,
   ProfileImage,
-  LatestArticlesTitle,
   ProfileTitle,
   Sider,
   TagLink
 } from "./sidebar/styled"
-import { mapTopicToImage } from "../../pages/home/mapTopicToImage"
 
-export default function Sidebar({ totalCount, tags }) {
+export default function Sidebar({ totalCount, tags, lastArticles }) {
   const onGithub = () => {}
   const onTwitter = () => {}
   const onMail = () => {}
@@ -66,7 +67,15 @@ export default function Sidebar({ totalCount, tags }) {
 
       <LatestArticlesTitle>Latest Articles</LatestArticlesTitle>
 
-      <LatestArticles></LatestArticles>
+      <LatestArticles>
+        {lastArticles.map(({ node }) => {
+          return (
+            <LatestArtLink to={`/${node.fields.slug}`}>
+              {node.frontmatter.title}
+            </LatestArtLink>
+          )
+        })}
+      </LatestArticles>
     </Sider>
   )
 }

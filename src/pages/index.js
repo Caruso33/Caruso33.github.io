@@ -25,6 +25,7 @@ const Home = ({ data, location }) => {
         <Sidebar
           totalCount={data.allMarkdownRemark.totalCount}
           tags={Array.from(tags)}
+          lastArticles={data.allMarkdownRemark.edges.slice(0, 5)}
         />
       }
     >
@@ -58,7 +59,7 @@ export const pageQuery = graphql`
             tags
           }
           # html
-          excerpt(pruneLength: 250)
+          excerpt(pruneLength: 350)
         }
       }
     }

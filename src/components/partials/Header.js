@@ -3,7 +3,7 @@ import { Layout, Menu } from "antd"
 import styled from "styled-components"
 import colors from "../../utils/color"
 import url from "../../utils/url"
-import { navigate } from "gatsby"
+import { navigate, Link } from "gatsby"
 
 const AntHeader = styled(Layout.Header)`
   display: flex;
@@ -53,7 +53,9 @@ export default function Header() {
 
   return (
     <AntHeader>
-      <Logo>{"<Tobias Leinss/>"}</Logo>
+      <Link to="/">
+        <Logo>{"<Tobias Leinss/>"}</Logo>
+      </Link>
 
       <Menu theme="dark" mode="horizontal">
         <MenuItem key="portfolio" onClick={navigatePortfolio}>

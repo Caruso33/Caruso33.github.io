@@ -4,12 +4,19 @@ import {
   BlogListItem,
   BlogImage,
   ImageExcerptWrapper,
-  DateNTags
+  DateNTags,
+  BlogTitle,
+  BlogExcerpt,
+  ReadFull,
+  ExcerptNReadFull
 } from "./styled"
 import { mapTopicToImage } from "./mapTopicToImage"
 import { Tag } from "antd"
 
 export default function BlogItem({ node }) {
+  const blogUrl = `/${node.fields.slug}`
+  const hasImage = node.frontmatter.image
+
   return (
     <BlogListItem key={node.frontmatter.title}>
       <>
@@ -20,7 +27,7 @@ export default function BlogItem({ node }) {
               const Mapping = mapTopicToImage(topic)
 
               return (
-                <Tag>
+                <Tag key={topic}>
                   {Mapping && <Mapping />} {topic}
                 </Tag>
               )
@@ -28,14 +35,18 @@ export default function BlogItem({ node }) {
           </p>
         </DateNTags>
 
-        <Link to={`/${node.fields.slug}`}>
-          <h2>{node.frontmatter.title}</h2>
+        <Link to={blogUrl}>
+          <BlogTitle>{node.frontmatter.title}</BlogTitle>
         </Link>
 
-        <ImageExcerptWrapper>
-          {node.frontmatter.image && <BlogImage src={node.frontmatter.image} />}
+        <ImageExcerptWrapper hasImage={hasImage}>
+          {hasImage && <BlogImage src={node.frontmatter.image} />}
 
-          <p>{node.excerpt}</p>
+          <ExcerptNReadFull>
+            <BlogExcerpt>{node.excerpt}</BlogExcerpt>
+
+            <ReadFull to={blogUrl}>...read full article</ReadFull>
+          </ExcerptNReadFull>
         </ImageExcerptWrapper>
       </>
     </BlogListItem>

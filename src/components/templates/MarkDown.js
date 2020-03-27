@@ -1,4 +1,3 @@
-import { withStyles } from "@material-ui/core/styles"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
 import React from "react"
@@ -45,15 +44,16 @@ function MarkDownTemplate(props) {
   const blogPost = data.markdownRemark
 
   const url = data.site.siteMetadata.siteUrl
-  const { title, tags, image } = blogPost.frontmatter
-  const thumbnail = image && image.childImageSharp.resize.src
+  const { title, tags } = blogPost.frontmatter
+  // const { title, tags, image } = blogPost.frontmatter
+  // const thumbnail = image && image.childImageSharp.resize.src
 
   return (
     <Layout>
       <Metatags
         title={title}
         description={blogPost.excerpt}
-        thumbnail={thumbnail && url + thumbnail}
+        // thumbnail={thumbnail && url + thumbnail}
         url={url}
         pathname={location.pathname}
       />
@@ -69,12 +69,12 @@ function MarkDownTemplate(props) {
         <h1>{blogPost.frontmatter.title}</h1>
         <p>{blogPost.frontmatter.date}</p>
 
-        {thumbnail && (
+        {/* {thumbnail && (
           <>
             <Img fluid={blogPost.frontmatter.image.childImageSharp.fluid} />
             <p>Photo by eric combeau on Unsplash</p>
           </>
-        )}
+        )} */}
 
         <div dangerouslySetInnerHTML={{ __html: blogPost.html }} />
         {tags && (
@@ -94,8 +94,4 @@ function MarkDownTemplate(props) {
   )
 }
 
-export default withStyles(styles)(MarkDownTemplate)
-
-function styles() {
-  return {}
-}
+export default MarkDownTemplate
