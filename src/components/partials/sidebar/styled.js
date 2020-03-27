@@ -1,4 +1,4 @@
-import { Layout, Typography } from "antd"
+import { Tag, Layout, Typography } from "antd"
 import styled from "styled-components"
 import profilImg from "../../../img/dist/landing/sizes/profil-400.webp"
 import color from "../../../utils/color"
@@ -34,11 +34,11 @@ export const ProfileDescription = styled(Typography.Text).attrs(() => ({
 export const IconWrapper = styled.div`
   margin: 1.8rem;
 
-  & span {
+  & svg {
     margin-right: 15px;
     transition: transform 0.5s ease-in-out;
   }
-  & span:hover {
+  & svg:hover {
     color: ${color["primary-color"]};
     transform: scale(1.7);
   }
@@ -47,8 +47,13 @@ export const IconWrapper = styled.div`
 export const iconStyle = { fontSize: "25px" }
 
 export const NumberArticles = styled.div``
-export const PostsByTags = styled.div``
+export const PostsByTags = styled.div`
+  margin: 10px;
+`
 export const LatestArticlesTitle = styled.div``
 export const LatestArticles = styled.div`
   min-height: 2rem;
+`
+export const TagLink = styled(Tag)`
+  cursor: pointer;
 `

@@ -2,9 +2,7 @@ import React from "react"
 import { Layout as AntLayout } from "antd"
 import Header from "./Header"
 import Footer from "./Footer"
-import Sidebar from "./Sidebar"
 import styled from "styled-components"
-import colors from "../../utils/color"
 import GlobalStyle from "./GlobalStyle"
 
 const MainContent = styled(AntLayout)`
@@ -25,7 +23,7 @@ const Content = styled(AntLayout.Content)`
   grid-column: 3 / span 1;
 `
 
-export default function Layout({ children }) {
+export default function Layout({ children, sidebar }) {
   return (
     <AntLayout style={{ height: "100%" }}>
       <GlobalStyle />
@@ -33,7 +31,7 @@ export default function Layout({ children }) {
       <Header />
 
       <MainContent>
-        <Sidebar />
+        {sidebar}
 
         <Content>{children}</Content>
       </MainContent>

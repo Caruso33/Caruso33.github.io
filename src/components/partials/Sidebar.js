@@ -1,10 +1,10 @@
-import { Link } from "gatsby"
+import { navigate } from "gatsby"
 import {
-  GithubOutlined,
-  MailOutlined,
-  TwitterOutlined,
-  CheckOutlined
-} from "@ant-design/icons"
+  AiFillGithub,
+  AiOutlineMail,
+  AiOutlineTwitter,
+  AiOutlineCheck
+} from "react-icons/ai"
 import { Divider } from "antd"
 import React from "react"
 import {
@@ -17,12 +17,12 @@ import {
   ProfileImage,
   LatestArticlesTitle,
   ProfileTitle,
-  Sider
+  Sider,
+  TagLink
 } from "./sidebar/styled"
+import { mapTopicToImage } from "../../pages/home/mapTopicToImage"
 
-export default function Sidebar({ data }) {
-  const numberArticles = data
-
+export default function Sidebar({ totalCount, tags }) {
   const onGithub = () => {}
   const onTwitter = () => {}
   const onMail = () => {}
@@ -34,23 +34,33 @@ export default function Sidebar({ data }) {
       <ProfileTitle>Tobias Leinss</ProfileTitle>
 
       <ProfileDescription>
-        ReactJS <CheckOutlined /> NodeJS <CheckOutlined /> Python
+        ReactJS <AiOutlineCheck /> NodeJS <AiOutlineCheck /> Python
       </ProfileDescription>
       <ProfileDescription>Fullstack Developer</ProfileDescription>
 
       <IconWrapper>
-        <GithubOutlined style={iconStyle} onClick={onGithub} />
-        <TwitterOutlined style={iconStyle} onClick={onTwitter} />
-        <MailOutlined style={iconStyle} onClick={onMail} />
+        <AiFillGithub style={iconStyle} onClick={onGithub} />
+        <AiOutlineTwitter style={iconStyle} onClick={onTwitter} />
+        <AiOutlineMail style={iconStyle} onClick={onMail} />
 
         {/* TODO: Add Kaggle, freecodecamp */}
       </IconWrapper>
 
       <Divider />
 
-      <NumberArticles>{numberArticles} Articles</NumberArticles>
+      <NumberArticles>{totalCount} Articles</NumberArticles>
+
       <PostsByTags>Show posts by topics</PostsByTags>
-      <Link to="tags/">Posts by Tags</Link>
+
+      {tags.map(topic => {
+        const Mapping = mapTopicToImage(topic)
+
+        return (
+          <TagLink onClick={() => navigate(`tags/${topic}`)}>
+            {Mapping && <Mapping />} {topic}
+          </TagLink>
+        )
+      })}
 
       <Divider />
 

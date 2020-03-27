@@ -26,3 +26,8 @@ export const BlogImage = styled.img`
 export const ImageExcerptWrapper = styled.div`
   display: flex;
 `
+
+export const DateNTags = styled.div`
+  display: flex;
+  justify-content: space-between;
+`
