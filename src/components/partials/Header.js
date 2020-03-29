@@ -1,29 +1,40 @@
+import { Menu } from "antd"
+import { Link, navigate } from "gatsby"
 import React from "react"
-import { Layout, Menu } from "antd"
 import styled from "styled-components"
-import colors from "../../utils/color"
+import color from "../../utils/color"
 import url from "../../utils/url"
-import { navigate, Link } from "gatsby"
 
-const AntHeader = styled(Layout.Header)`
+const Head = styled.header`
+  background: ${color["primary-color"]};
+
+  grid-column: 1 / -1;
+  grid-row: 1 / span 1;
+
   display: flex;
   justify-content: space-between;
+  align-items: center;
 
-  &.ant-layout-header {
-    padding: 0 10rem;
-    @media only screen and (max-width: 1000px) {
-      padding: 0 5rem;
+  padding: 0 10rem;
+  @media only screen and (max-width: 1000px) {
+    padding: 0 5rem;
+
+    & .ant-menu-item {
+      padding: 0 10px;
     }
   }
 `
 
 const Logo = styled.div`
-  color: ${colors.colorContrast};
-  font-size: 4rem;
+  color: ${color.colorContrast};
   font-family: "Great Vibes", cursive;
 
+  font-size: 4rem;
   @media only screen and (max-width: 800px) {
     font-size: 3rem;
+  }
+  @media only screen and (max-width: 600px) {
+    font-size: 2.5rem;
   }
 `
 
@@ -52,7 +63,7 @@ export default function Header() {
   const navigateAbout = () => navigate(url.about)
 
   return (
-    <AntHeader>
+    <Head>
       <Link to="/">
         <Logo>{"<Tobias Leinss/>"}</Logo>
       </Link>
@@ -65,6 +76,6 @@ export default function Header() {
           About
         </MenuItem>
       </Menu>
-    </AntHeader>
+    </Head>
   )
 }

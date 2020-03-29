@@ -1,39 +1,68 @@
-import React from "react"
 import { Layout as AntLayout } from "antd"
-import Header from "./Header"
+import React from "react"
 import styled from "styled-components"
+import Footer from "./Footer"
 import GlobalStyle from "./GlobalStyle"
+import Header from "./Header"
 
-const MainContent = styled(AntLayout)`
-  padding: 24px 0;
-  margin: auto;
-  overflow-y: auto;
+const PageLayout = styled(AntLayout)`
   display: grid;
-  grid-template-columns: 1fr 20rem minmax(max-content, 80rem) 1fr;
+  grid-template-columns: 1fr 25rem minmax(min-content, 80rem) 1fr;
+  grid-template-rows: 6.4rem 1fr 5rem;
   grid-gap: 3rem;
+  min-height: 100%;
 
-  @media (max-width: 600em) {
-    grid-template-columns: 1fr 20rem minmax(max-content, 80rem) 1fr;
+  @media only screen and (max-width: 1000px) {
+    grid-template-columns: 1fr minmax(min-content, max-content) 1fr;
+    grid-template-rows: 6.4rem min-content 1fr 5rem;
     grid-gap: 2rem;
+    overflow-y: auto;
   }
 `
 
-const Content = styled(AntLayout.Content)`
+const Content = styled.main`
+  overflow-y: auto;
+
   grid-column: 3 / span 1;
+  grid-row: 2 / span 1;
+
+  @media only screen and (max-width: 1000px) {
+    /* overflow-y: unset; */
+    grid-column: 2 / -2;
+    grid-row: 3 / span 1;
+  }
 `
 
-export default function Layout({ children, sidebar }) {
+export default function Layout({ children, sidebar, data }) {
+  console.log({ data })
+
   return (
-    <AntLayout style={{ height: "100%" }}>
+    <PageLayout>
       <GlobalStyle />
 
       <Header />
 
-      <MainContent>
-        {sidebar}
+      {sidebar}
 
-        <Content>{children}</Content>
-      </MainContent>
-    </AntLayout>
+      <Content>{children}</Content>
+
+      <Footer />
+    </PageLayout>
   )
 }
+
+export const pageQuery = graphql`
+  query {
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+      totalCount
+      edges {
+        node {
+          frontmatter {
+            title
+          }
+          excerpt(pruneLength: 350)
+        }
+      }
+    }
+  }
+`

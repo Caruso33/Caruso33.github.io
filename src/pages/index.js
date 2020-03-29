@@ -1,13 +1,18 @@
-import _get from "lodash/get"
 import { graphql } from "gatsby"
+import _get from "lodash/get"
 import React from "react"
-import Metatags from "../components/partials/MetaTags"
 import Layout from "../components/partials/Layout"
+import Metatags from "../components/partials/MetaTags"
+import Sidebar from "../components/partials/Sidebar"
+import useWindowDimensions from "../components/utils/useWindowDimensions"
 import BlogItem from "./home/BlogItem"
 import { BlogItems } from "./home/styled"
-import Sidebar from "../components/partials/Sidebar"
 
 const Home = ({ data, location }) => {
+  const { width } = useWindowDimensions()
+
+  const isMobileSize = width < 1000
+
   const tags = new Set()
   const blogItems = []
 
@@ -26,6 +31,7 @@ const Home = ({ data, location }) => {
           totalCount={data.allMarkdownRemark.totalCount}
           tags={Array.from(tags)}
           lastArticles={data.allMarkdownRemark.edges.slice(0, 5)}
+          isMobileSize={isMobileSize}
         />
       }
     >

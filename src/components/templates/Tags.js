@@ -3,7 +3,6 @@ import { Link, graphql } from "gatsby"
 import Layout from "../partials/Layout"
 import Header from "../partials/Header"
 import Metatags from "../partials/MetaTags"
-import Container from "../partials/Container"
 
 function Tags(props) {
   const blogPost = props.data.allMarkdownRemark.edges
@@ -25,17 +24,15 @@ function Tags(props) {
         title="TagList"
       />
 
-      <Container>
-        <h1>{`Available posts in ${tag}`}</h1>
+      <h1>{`Available posts in ${tag}`}</h1>
 
-        <div>
-          {blogPost.map(({ node }, i) => (
-            <Link to={`/${node.fields.slug}`} key={i}>
-              {node.frontmatter.title}
-            </Link>
-          ))}
-        </div>
-      </Container>
+      <div>
+        {blogPost.map(({ node }, i) => (
+          <Link to={`/${node.fields.slug}`} key={i}>
+            {node.frontmatter.title}
+          </Link>
+        ))}
+      </div>
     </Layout>
   )
 }

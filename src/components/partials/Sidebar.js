@@ -20,24 +20,36 @@ import {
   ProfileImage,
   ProfileTitle,
   Sider,
-  TagLink
+  TagLink,
+  ProfileSkills,
+  ProfileTexts,
+  PostTagsWrapper,
+  LatestArticlesWrapper
 } from "./sidebar/styled"
 
-export default function Sidebar({ totalCount, tags, lastArticles }) {
+export default function Sidebar({
+  totalCount,
+  tags,
+  lastArticles,
+  isMobileSize
+}) {
   const onGithub = () => {}
   const onTwitter = () => {}
   const onMail = () => {}
 
   return (
-    <Sider>
+    <Sider isMobileSize={isMobileSize}>
       <ProfileImage />
 
-      <ProfileTitle>Tobias Leinss</ProfileTitle>
+      <ProfileTexts>
+        <ProfileTitle>Tobias Leinss</ProfileTitle>
 
-      <ProfileDescription>
-        ReactJS <AiOutlineCheck /> NodeJS <AiOutlineCheck /> Python
-      </ProfileDescription>
-      <ProfileDescription>Fullstack Developer</ProfileDescription>
+        <ProfileSkills>
+          ReactJS <AiOutlineCheck /> NodeJS <AiOutlineCheck /> Python
+        </ProfileSkills>
+
+        <ProfileDescription>Fullstack Developer</ProfileDescription>
+      </ProfileTexts>
 
       <IconWrapper>
         <AiFillGithub style={iconStyle} onClick={onGithub} />
@@ -47,35 +59,39 @@ export default function Sidebar({ totalCount, tags, lastArticles }) {
         {/* TODO: Add Kaggle, freecodecamp */}
       </IconWrapper>
 
-      <Divider />
+      {!isMobileSize && <Divider />}
 
       <NumberArticles>{totalCount} Articles</NumberArticles>
 
-      <PostsByTags>Show posts by topics</PostsByTags>
+      <PostTagsWrapper>
+        <PostsByTags>Show posts by topics</PostsByTags>
 
-      {tags.map(topic => {
-        const Mapping = mapTopicToImage(topic)
+        {tags.map(topic => {
+          const Mapping = mapTopicToImage(topic)
 
-        return (
-          <TagLink onClick={() => navigate(`tags/${topic}`)}>
-            {Mapping && <Mapping />} {topic}
-          </TagLink>
-        )
-      })}
-
-      <Divider />
-
-      <LatestArticlesTitle>Latest Articles</LatestArticlesTitle>
-
-      <LatestArticles>
-        {lastArticles.map(({ node }) => {
           return (
-            <LatestArtLink to={`/${node.fields.slug}`}>
-              {node.frontmatter.title}
-            </LatestArtLink>
+            <TagLink onClick={() => navigate(`tags/${topic}`)}>
+              {Mapping && <Mapping />} {topic}
+            </TagLink>
           )
         })}
-      </LatestArticles>
+      </PostTagsWrapper>
+
+      {!isMobileSize && <Divider />}
+
+      <LatestArticlesWrapper>
+        <LatestArticlesTitle>Latest Articles</LatestArticlesTitle>
+
+        <LatestArticles>
+          {lastArticles.map(({ node }) => {
+            return (
+              <LatestArtLink to={`/${node.fields.slug}`}>
+                {node.frontmatter.title}
+              </LatestArtLink>
+            )
+          })}
+        </LatestArticles>
+      </LatestArticlesWrapper>
     </Sider>
   )
 }

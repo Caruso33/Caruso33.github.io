@@ -13,8 +13,8 @@ module.exports = {
   plugins: [
     "gatsby-plugin-styled-components",
     "gatsby-plugin-offline",
-    // "gatsby-plugin-sharp",
-    // "gatsby-transformer-sharp",
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sitemap",
     {
@@ -51,19 +51,19 @@ module.exports = {
       }
     },
     {
-      resolve: "gatsby-transformer-remark"
-      // options: {
-      //   plugins: [
-      //     "gatsby-remark-relative-images",
-      //     {
-      //       resolve: "gatsby-remark-images",
-      //       options: {
-      //         maxWidth: 750,
-      //         linkImagesToOriginal: false
-      //       }
-      //     }
-      //   ]
-      // }
+      resolve: "gatsby-transformer-remark",
+      options: {
+        plugins: [
+          "gatsby-remark-relative-images",
+          {
+            resolve: "gatsby-remark-images",
+            options: {
+              maxWidth: 750,
+              linkImagesToOriginal: false
+            }
+          }
+        ]
+      }
     }
     // {
     //   resolve: `gatsby-source-wordpress`,
