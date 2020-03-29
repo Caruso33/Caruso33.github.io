@@ -2,6 +2,7 @@ import styled from "styled-components"
 import color from "../../utils/color"
 import { Typography } from "antd"
 import { Link } from "gatsby"
+import { boxShadow } from "../../components/partials/GlobalStyle"
 
 export const BlogItems = styled.ol`
   list-style: none;
@@ -16,7 +17,7 @@ export const BlogListItem = styled.li`
   transition: box-shadow 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
 
   &:hover {
-    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
+    box-shadow: ${boxShadow};
   }
 `
 

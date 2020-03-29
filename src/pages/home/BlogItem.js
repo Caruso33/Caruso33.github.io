@@ -15,15 +15,18 @@ import { Tag } from "antd"
 
 export default function BlogItem({ node }) {
   const blogUrl = `/${node.fields.slug}`
-  const hasImage = node.frontmatter.image
+
+  const { title, date, tags, image, imageUrl } = node.frontmatter
+  const hasImage = image || imageUrl
+  const thumbnail = image && image.childImageSharp.resize.src
 
   return (
-    <BlogListItem key={node.frontmatter.title}>
+    <BlogListItem key={title}>
       <>
         <DateNTags>
-          <p>{node.frontmatter.date}</p>
+          <p>{date}</p>
           <p>
-            {(node.frontmatter.tags || []).map(topic => {
+            {(tags || []).map(topic => {
               const Mapping = mapTopicToImage(topic)
 
               return (
@@ -36,11 +39,11 @@ export default function BlogItem({ node }) {
         </DateNTags>
 
         <Link to={blogUrl}>
-          <BlogTitle>{node.frontmatter.title}</BlogTitle>
+          <BlogTitle>{title}</BlogTitle>
         </Link>
 
-        <ImageExcerptWrapper hasImage={hasImage}>
-          {hasImage && <BlogImage src={node.frontmatter.image} />}
+        <ImageExcerptWrapper hasImage={!!hasImage}>
+          {hasImage && <BlogImage src={thumbnail ? thumbnail : imageUrl} />}
 
           <ExcerptNReadFull>
             <BlogExcerpt>{node.excerpt}</BlogExcerpt>

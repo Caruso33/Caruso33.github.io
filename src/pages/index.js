@@ -1,40 +1,13 @@
 import { graphql } from "gatsby"
-import _get from "lodash/get"
 import React from "react"
 import Layout from "../components/partials/Layout"
 import Metatags from "../components/partials/MetaTags"
-import Sidebar from "../components/partials/Sidebar"
-import useWindowDimensions from "../components/utils/useWindowDimensions"
 import BlogItem from "./home/BlogItem"
 import { BlogItems } from "./home/styled"
 
 const Home = ({ data, location }) => {
-  const { width } = useWindowDimensions()
-
-  const isMobileSize = width < 1000
-
-  const tags = new Set()
-  const blogItems = []
-
-  data.allMarkdownRemark.edges.forEach(({ node }) => {
-    blogItems.push(<BlogItem node={node} />)
-
-    if (_get(node, "frontmatter.tags")) {
-      node.frontmatter.tags.forEach(tag => tags.add(tag))
-    }
-  })
-
   return (
-    <Layout
-      sidebar={
-        <Sidebar
-          totalCount={data.allMarkdownRemark.totalCount}
-          tags={Array.from(tags)}
-          lastArticles={data.allMarkdownRemark.edges.slice(0, 5)}
-          isMobileSize={isMobileSize}
-        />
-      }
-    >
+    <Layout>
       <Metatags
         title={"Tobias Leinss"}
         description={"personal details and blog list"}
@@ -42,7 +15,11 @@ const Home = ({ data, location }) => {
         pathname={location.pathname}
       />
 
-      <BlogItems>{blogItems}</BlogItems>
+      <BlogItems>
+        {data.allMarkdownRemark.edges.map(({ node }) => {
+          return <BlogItem node={node} />
+        })}
+      </BlogItems>
     </Layout>
   )
 }
@@ -52,7 +29,6 @@ export default Home
 export const pageQuery = graphql`
   query {
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-      totalCount
       edges {
         node {
           fields {
@@ -61,10 +37,16 @@ export const pageQuery = graphql`
           frontmatter {
             title
             date(formatString: "DD. MMMM, YYYY")
-            image
+            image {
+              childImageSharp {
+                resize(width: 200, height: 130) {
+                  src
+                }
+              }
+            }
+            imageUrl
             tags
           }
-          # html
           excerpt(pruneLength: 350)
         }
       }

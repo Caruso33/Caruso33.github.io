@@ -1,11 +1,11 @@
 import React from "react"
 import { Layout } from "antd"
 import styled from "styled-components"
+import { Prev, Next } from "./PrevNext"
 
 const Foot = styled(Layout.Footer)`
-  padding: 0 !important;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 
   grid-column: 1 / -1;
@@ -15,6 +15,14 @@ const Foot = styled(Layout.Footer)`
   }
 `
 
-export default function Footer() {
-  return <Foot>I am footer</Foot>
+export default function Footer({ prev, next }) {
+  return (
+    <Foot>
+      <Prev prev={prev && prev.node} />
+
+      <div>I am Footer</div>
+
+      <Next next={next && next.node} />
+    </Foot>
+  )
 }

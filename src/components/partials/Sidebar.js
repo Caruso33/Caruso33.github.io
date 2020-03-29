@@ -1,5 +1,4 @@
 import { Divider } from "antd"
-import { navigate } from "gatsby"
 import React from "react"
 import {
   AiFillGithub,
@@ -7,7 +6,6 @@ import {
   AiOutlineMail,
   AiOutlineTwitter
 } from "react-icons/ai"
-import { mapTopicToImage } from "../../pages/home/mapTopicToImage"
 import {
   iconStyle,
   IconWrapper,
@@ -20,12 +18,12 @@ import {
   ProfileImage,
   ProfileTitle,
   Sider,
-  TagLink,
   ProfileSkills,
   ProfileTexts,
   PostTagsWrapper,
   LatestArticlesWrapper
 } from "./sidebar/styled"
+import TagLinks from "../TagLinks"
 
 export default function Sidebar({
   totalCount,
@@ -66,15 +64,7 @@ export default function Sidebar({
       <PostTagsWrapper>
         <PostsByTags>Show posts by topics</PostsByTags>
 
-        {tags.map(topic => {
-          const Mapping = mapTopicToImage(topic)
-
-          return (
-            <TagLink onClick={() => navigate(`tags/${topic}`)}>
-              {Mapping && <Mapping />} {topic}
-            </TagLink>
-          )
-        })}
+        <TagLinks tags={tags} />
       </PostTagsWrapper>
 
       {!isMobileSize && <Divider />}

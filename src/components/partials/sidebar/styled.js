@@ -1,14 +1,15 @@
-import { Tag, Typography } from "antd"
+import { Typography } from "antd"
 import { Link } from "gatsby"
 import styled from "styled-components"
 import profilImg from "../../../img/dist/landing/sizes/profil-400.webp"
 import color from "../../../utils/color"
+import { boxShadow } from "../GlobalStyle"
 
 export const Sider = styled.aside`
   align-self: flex-start;
   text-align: center;
   background: ${color.contentBackground};
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: ${boxShadow};
 
   grid-row: 2 / span 1;
   grid-column: 2 / 3;
@@ -31,7 +32,7 @@ export const ProfileImage = styled.img.attrs(() => ({
   object-fit: contain;
   border-radius: 50%;
   width: 50%;
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: ${boxShadow};
 
   @media only screen and (max-width: 1000px) {
     height: 11.5rem;
@@ -114,10 +115,6 @@ export const LatestArticlesTitle = styled.div`
 export const LatestArticles = styled.div`
   min-height: 2rem;
   margin-bottom: 2rem;
-`
-
-export const TagLink = styled(Tag)`
-  cursor: pointer;
 `
 
 export const LatestArtLink = styled(Link)`

@@ -46,7 +46,7 @@ module.exports = {
         short_name: `tobias`,
         start_url: `/`,
         background_color: "#fff",
-        theme_color: "#000",
+        theme_color: color["primary-color"],
         display: `standalone`
       }
     },
