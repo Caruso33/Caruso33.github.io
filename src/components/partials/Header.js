@@ -59,8 +59,7 @@ const MenuItem = styled(Menu.Item)`
 `
 
 export default function Header() {
-  const navigatePortfolio = () => navigate(url.portfolio)
-  const navigateAbout = () => navigate(url.about)
+  const navigateToUrl = ({ key }) => navigate(url[key])
 
   return (
     <Head>
@@ -68,13 +67,10 @@ export default function Header() {
         <Logo>{"<Tobias Leinss/>"}</Logo>
       </Link>
 
-      <Menu theme="dark" mode="horizontal">
-        <MenuItem key="portfolio" onClick={navigatePortfolio}>
-          Portfolio
-        </MenuItem>
-        <MenuItem key="about" onClick={navigateAbout}>
-          About
-        </MenuItem>
+      <Menu theme="dark" mode="horizontal" onClick={navigateToUrl}>
+        <MenuItem key="portfolio">Portfolio</MenuItem>
+
+        <MenuItem key="about">About</MenuItem>
       </Menu>
     </Head>
   )

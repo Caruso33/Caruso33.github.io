@@ -1,0 +1,4 @@
+- primsj
+- gitalk
+- nav bar menu underline
+- moving header onscroll

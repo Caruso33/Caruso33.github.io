@@ -1,4 +1,41 @@
 import React from "react"
+import styled from "styled-components"
+import color from "../utils/color"
+import { boxShadow } from "../components/partials/GlobalStyle"
+import Layout from "../components/partials/Layout"
+import Metatags from "../components/partials/MetaTags"
+
+const PortfolioDetails = styled.div`
+  background: ${color.contentBackground};
+  padding: 1.5rem;
+  margin: 1.5rem;
+  box-shadow: ${boxShadow};
+`
+
+export default function Portfolio({ data, location }) {
+  return (
+    <Layout>
+      <Metatags
+        title={"Portfolio"}
+        description={"selected works"}
+        url={data.site.siteMetadata.siteUrl}
+        pathname={location.pathname}
+      />
+
+      <PortfolioDetails>Coming soon...</PortfolioDetails>
+    </Layout>
+  )
+}
+
+export const pageQuery = graphql`
+  query {
+    site {
+      siteMetadata {
+        siteUrl
+      }
+    }
+  }
+`
 
 // const portfolioData = [
 //   {
@@ -63,7 +100,3 @@ import React from "react"
 //     )
 //   }
 // ]
-
-export default function Portfolio() {
-  return <div>Portfolio</div>
-}
