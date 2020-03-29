@@ -31,10 +31,6 @@ export default function Sidebar({
   lastArticles,
   isMobileSize
 }) {
-  const onGithub = () => {}
-  const onTwitter = () => {}
-  const onMail = () => {}
-
   return (
     <Sider isMobileSize={isMobileSize}>
       <ProfileImage />
@@ -50,9 +46,15 @@ export default function Sidebar({
       </ProfileTexts>
 
       <IconWrapper>
-        <AiFillGithub style={iconStyle} onClick={onGithub} />
-        <AiOutlineTwitter style={iconStyle} onClick={onTwitter} />
-        <AiOutlineMail style={iconStyle} onClick={onMail} />
+        <a href="https://github.com/caruso33">
+          <AiFillGithub style={iconStyle} />
+        </a>
+        <a href="https://twitter.com/caruso33">
+          <AiOutlineTwitter style={iconStyle} />
+        </a>
+        <a href="mailto:leinsst@web.de">
+          <AiOutlineMail style={iconStyle} />
+        </a>
 
         {/* TODO: Add Kaggle, freecodecamp */}
       </IconWrapper>

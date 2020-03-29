@@ -23,6 +23,14 @@ export const Sider = styled.aside`
     align-items: center;
     justify-items: center;
   }
+
+  @media only screen and (max-width: 600px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, min-content);
+    align-items: center;
+    justify-items: center;
+  }
 `
 
 export const ProfileImage = styled.img.attrs(() => ({
@@ -79,6 +87,10 @@ export const IconWrapper = styled.div`
   @media only screen and (max-width: 1000px) {
     display: flex;
   }
+  @media only screen and (max-width: 600px) {
+    grid-row: 2 / span 1;
+    grid-column: 2 / span 1;
+  }
 `
 
 export const iconStyle = { fontSize: "25px" }
@@ -95,6 +107,10 @@ export const PostTagsWrapper = styled.div`
     grid-row: 2 / span 1;
     grid-column: 2 / span 1;
   }
+  @media only screen and (max-width: 600px) {
+    grid-row: 3 / span 1;
+    grid-column: 1 / span 1;
+  }
 `
 
 export const PostsByTags = styled.div`
@@ -105,6 +121,10 @@ export const LatestArticlesWrapper = styled.div`
   @media only screen and (max-width: 1000px) {
     grid-row: 2 / span 1;
     grid-column: 3 / span 1;
+  }
+  @media only screen and (max-width: 600px) {
+    grid-row: 3 / span 1;
+    grid-column: 2 / span 1;
   }
 `
 
