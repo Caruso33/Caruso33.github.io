@@ -2,8 +2,8 @@ import { graphql } from "gatsby"
 import React from "react"
 import Layout from "../components/partials/Layout"
 import Metatags from "../components/partials/MetaTags"
-import BlogItem from "./home/BlogItem"
-import { BlogItems } from "./home/styled"
+import BlogItem from "../components/pages/home/BlogItem"
+import { BlogItems } from "../components/pages/home/styled"
 
 const Home = ({ data, location }) => {
   return (

@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { Tag } from "antd"
-import { mapTopicToImage } from "../pages/home/mapTopicToImage"
+import { mapTopicToImage } from "./pages/home/mapTopicToImage"
 import { navigate } from "gatsby"
 
 export const TagLink = styled(Tag)`

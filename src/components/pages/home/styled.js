@@ -1,8 +1,8 @@
 import styled from "styled-components"
-import color from "../../utils/color"
+import color from "../../../utils/color"
 import { Typography } from "antd"
 import { Link } from "gatsby"
-import { boxShadow } from "../../components/partials/GlobalStyle"
+import { boxShadow } from "../../partials/GlobalStyle"
 
 export const BlogItems = styled.ol`
   list-style: none;
