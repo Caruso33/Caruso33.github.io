@@ -22,6 +22,7 @@ module.exports = async ({ graphql, actions }) => {
   if (result.data) {
     const tags = createBlogPostPages(result, createPage)
     createTagsPages(tags, createPage)
+
     // createContentfulPages(result.data, createPage)
     // createWordpressPages(result.data, createPage)
   }
@@ -43,7 +44,7 @@ function createBlogPostPages(result, createPage) {
       context: {
         slug: edge.node.fields.slug,
         prev: index === 0 ? null : blogPosts[index - 1],
-        next: index === result.length - 1 ? null : blogPosts[index + 1]
+        next: index === blogPosts.length - 1 ? null : blogPosts[index + 1]
       }
     })
   })
@@ -66,6 +67,7 @@ query {
       }
     }
   }
+  
 }
 `
 

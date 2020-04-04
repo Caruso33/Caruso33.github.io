@@ -18,7 +18,7 @@ const WorldMap = () => {
   return (
     <Layout>
       <Map {...mapSettings}>
-        <Marker ref={markerRef} position={[location.at, location.lng]}>
+        <Marker ref={markerRef} position={[location.lat, location.lng]}>
           <Popup>Popup for any custom information.</Popup>
         </Marker>
 

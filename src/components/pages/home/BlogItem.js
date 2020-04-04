@@ -21,7 +21,7 @@ export default function BlogItem({ node }) {
   const thumbnail = image && image.childImageSharp.resize.src
 
   return (
-    <BlogListItem key={title}>
+    <BlogListItem>
       <>
         <DateNTags>
           <p>{date}</p>

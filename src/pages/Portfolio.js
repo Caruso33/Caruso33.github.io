@@ -1,10 +1,11 @@
+import { graphql, Link } from "gatsby"
+import _capitalize from "lodash/capitalize"
 import React from "react"
 import styled from "styled-components"
-import color from "../utils/color"
 import { boxShadow } from "../components/partials/GlobalStyle"
 import Layout from "../components/partials/Layout"
 import Metatags from "../components/partials/MetaTags"
-import { graphql } from "gatsby"
+import color from "../utils/color"
 
 const PortfolioDetails = styled.div`
   background: ${color.contentBackground};
@@ -13,7 +14,14 @@ const PortfolioDetails = styled.div`
   box-shadow: ${boxShadow};
 `
 
+const PortfolioContent = styled(Link)`
+  display: block;
+`
+
 export default function Portfolio({ data, location }) {
+  const portfolioContent = data.allFile.edges.filter(
+    edge => edge.node.sourceInstanceName === "portfolio"
+  )
   return (
     <Layout>
       <Metatags
@@ -23,13 +31,29 @@ export default function Portfolio({ data, location }) {
         pathname={location.pathname}
       />
 
-      <PortfolioDetails>Coming soon...</PortfolioDetails>
+      <PortfolioDetails>
+        {portfolioContent.map(({ node }) => {
+          return (
+            <PortfolioContent key={node.name} to={`/portfolio/${node.name}`}>
+              {_capitalize(node.name)}
+            </PortfolioContent>
+          )
+        })}
+      </PortfolioDetails>
     </Layout>
   )
 }
 
 export const pageQuery = graphql`
   query {
+    allFile {
+      edges {
+        node {
+          sourceInstanceName
+          name
+        }
+      }
+    }
     site {
       siteMetadata {
         siteUrl

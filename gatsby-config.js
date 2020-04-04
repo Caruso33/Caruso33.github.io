@@ -17,7 +17,7 @@ module.exports = {
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     "gatsby-plugin-react-helmet",
-    'gatsby-plugin-react-leaflet',
+    "gatsby-plugin-react-leaflet",
     "gatsby-plugin-sitemap",
     {
       resolve: "gatsby-plugin-antd",
@@ -39,6 +39,13 @@ module.exports = {
       options: {
         name: "content",
         path: `${__dirname}/content/`
+      }
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "portfolio",
+        path: `${__dirname}/src/pages/portfolio/`
       }
     },
     {

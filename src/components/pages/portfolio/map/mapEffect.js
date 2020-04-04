@@ -3,17 +3,11 @@ import L from "leaflet"
 
 const dataUrl = "https://corona.lmao.ninja/countries"
 
-export default async function mapEffect({ leafletElement: map, ...rest } = {}) {
+export default async function mapEffect({ leafletElement: map } = {}) {
   if (!map) return
-  let response
 
-  try {
-    response = await axios.get(dataUrl)
-  } catch (e) {
-    console.error(e)
-  }
+  const { data } = await axios.get(dataUrl).catch(e => console.error(e))
 
-  const { data } = response
   const hasData = Array.isArray(data) && data.length
 
   if (!hasData) return

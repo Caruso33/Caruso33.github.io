@@ -4,44 +4,15 @@ import React from "react"
 import Layout from "../partials/Layout"
 import Metatags from "../partials/MetaTags"
 import PrevNext from "../partials/PrevNext"
-import styled from "styled-components"
 import TagLinks from "../TagLinks"
-import color from "../../utils/color"
-import { boxShadow } from "../partials/GlobalStyle"
 
-const BlogWrapper = styled.div`
-  background: ${color.contentBackground};
-  box-shadow: ${boxShadow};
-
-  display: flex;
-  flex-direction: column;
-  padding: 1.5rem;
-  margin: 1.5rem;
-`
-
-const TitleNTags = styled.div`
-  display: flex;
-  justify-content: space-between;
-`
-
-const BlogDate = styled.span`
-  align-self: flex-end;
-  margin-bottom: 2rem;
-`
-
-const ThumbnailSrc = styled.img`
-  width: 100%;
-`
-
-const BlogHtml = styled.div`
-  & ol {
-    list-style-type: none;
-  }
-
-  & img {
-    width: 100%;
-  }
-`
+import {
+  BlogWrapper,
+  TitleNTags,
+  BlogDate,
+  ThumbnailSrc,
+  BlogHtml
+} from "./markdown/styled"
 
 function MarkDownTemplate({ data, pageContext, location }) {
   const { prev, next } = pageContext
@@ -51,6 +22,8 @@ function MarkDownTemplate({ data, pageContext, location }) {
   const { title, tags, image, imageUrl } = blogPost.frontmatter
   const thumbnail = image && image.childImageSharp.resize.src
 
+  console.log({prev})
+  console.log({next})
   return (
     <Layout {...{ prev, next }}>
       <Metatags

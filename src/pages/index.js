@@ -17,7 +17,7 @@ const Home = ({ data, location }) => {
 
       <BlogItems>
         {data.allMarkdownRemark.edges.map(({ node }) => {
-          return <BlogItem node={node} />
+          return <BlogItem key={node.frontmatter.title} node={node} />
         })}
       </BlogItems>
     </Layout>
