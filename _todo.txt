@@ -1,3 +1,6 @@
+- about
+- portfolio
+- update packages
 - primsj
 - gitalk
 - nav bar menu underline

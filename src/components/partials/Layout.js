@@ -7,7 +7,7 @@ import GlobalStyle from "./GlobalStyle"
 import Header from "./Header"
 import { useStaticQuery, graphql } from "gatsby"
 import Sidebar from "./Sidebar"
-import useWindowDimensions from "../utils/useWindowDimensions"
+import { useWindowDimensions } from "components/utils"
 
 const PageLayout = styled(AntLayout)`
   display: grid;

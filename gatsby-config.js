@@ -11,11 +11,13 @@ module.exports = {
     siteUrl: "https://www.tobiasleinss.ml"
   },
   plugins: [
+    "gatsby-plugin-resolve-src",
     "gatsby-plugin-styled-components",
     "gatsby-plugin-offline",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     "gatsby-plugin-react-helmet",
+    'gatsby-plugin-react-leaflet',
     "gatsby-plugin-sitemap",
     {
       resolve: "gatsby-plugin-antd",

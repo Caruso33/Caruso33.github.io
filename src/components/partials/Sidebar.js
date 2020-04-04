@@ -77,7 +77,7 @@ export default function Sidebar({
         <LatestArticles>
           {lastArticles.map(({ node }) => {
             return (
-              <LatestArtLink to={`/${node.fields.slug}`}>
+              <LatestArtLink key={node.fields.slug} to={`/${node.fields.slug}`}>
                 {node.frontmatter.title}
               </LatestArtLink>
             )
