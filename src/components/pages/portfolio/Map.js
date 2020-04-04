@@ -16,8 +16,7 @@ const Map = props => {
   const mapRef = useRef()
 
   useConfigureLeaflet()
-
-  useRefEffect({ ref: mapRef, effect: mapEffect })
+  useRefEffect({ ref: mapRef, effect: mapEffect }) // passes mapRef to mapEffect
 
   const services = useMapServices({ names: ["OpenStreetMap"] })
 

@@ -1,17 +1,21 @@
-import React from "react"
 import axios from "axios"
 import L from "leaflet"
 
-export default async function mapEffect({ leafletElement: map } = {}) {
+const dataUrl = "https://corona.lmao.ninja/countries"
+
+export default async function mapEffect({ leafletElement: map, ...rest } = {}) {
   if (!map) return
   let response
+
   try {
-    response = await axios.get("https://corona.lmao.ninja/countries")
+    response = await axios.get(dataUrl)
   } catch (e) {
     console.error(e)
   }
+
   const { data } = response
   const hasData = Array.isArray(data) && data.length
+
   if (!hasData) return
 
   const geoJson = {

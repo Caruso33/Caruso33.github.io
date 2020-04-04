@@ -4,6 +4,7 @@ import Metatags from "../components/partials/MetaTags"
 import styled from "styled-components"
 import color from "../utils/color"
 import { boxShadow } from "../components/partials/GlobalStyle"
+import { graphql } from "gatsby"
 
 const AboutDetails = styled.div`
   background: ${color.contentBackground};

@@ -4,6 +4,7 @@ import color from "../utils/color"
 import { boxShadow } from "../components/partials/GlobalStyle"
 import Layout from "../components/partials/Layout"
 import Metatags from "../components/partials/MetaTags"
+import { graphql } from "gatsby"
 
 const PortfolioDetails = styled.div`
   background: ${color.contentBackground};

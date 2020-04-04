@@ -1,28 +1,24 @@
 import React, { useRef } from "react"
 import { Marker } from "react-leaflet"
 import Map from "../../components/pages/portfolio/Map"
-import Layout from "../../components/partials/Layout"
 import mapEffect from "../../components/pages/portfolio/map/mapEffect"
-
-const location = { lat: 0, lng: 0 }
-
-const center = [location.lat, location.lng]
-const zoom = 2
-
-const mapSettings = {
-  center,
-  zoom,
-  defaultBaseMap: "OpenStreetMap",
-  mapEffect // mapEffect - fires a callback once the page renders
-}
+import Layout from "../../components/partials/Layout"
+import useGeolocation from "../../components/utils/useGeolocation"
 
 const Covid = () => {
   const markerRef = useRef()
+  const location = useGeolocation()
+
+  const mapSettings = {
+    center: [location.lat, location.lng],
+    zoom: 2,
+    mapEffect // mapEffect - fires a callback once the page renders
+  }
 
   return (
     <Layout>
       <Map {...mapSettings}>
-        <Marker ref={markerRef} position={center} />
+        <Marker ref={markerRef} position={[location.lat, location.lng]} />
       </Map>
     </Layout>
   )
