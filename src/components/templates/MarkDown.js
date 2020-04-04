@@ -22,8 +22,6 @@ function MarkDownTemplate({ data, pageContext, location }) {
   const { title, tags, image, imageUrl } = blogPost.frontmatter
   const thumbnail = image && image.childImageSharp.resize.src
 
-  console.log({prev})
-  console.log({next})
   return (
     <Layout {...{ prev, next }}>
       <Metatags

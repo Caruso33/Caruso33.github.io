@@ -4,10 +4,10 @@ import Layout from "../partials/Layout"
 import Header from "../partials/Header"
 import Metatags from "../partials/MetaTags"
 
-function Tags(props) {
-  const blogPost = props.data.allMarkdownRemark.edges
-  const url = props.data.site.siteMetadata.siteUrl
-  const { tag } = props.pageContext
+function Tags({ data, pageContext, navigate, location }) {
+  const blogPost = data.allMarkdownRemark.edges
+  const url = data.site.siteMetadata.siteUrl
+  const { tag } = pageContext
 
   return (
     <Layout>
@@ -15,11 +15,11 @@ function Tags(props) {
         title={tag}
         description={`list of blogs with tag ${tag}`}
         url={url}
-        pathname={props.location.pathname}
+        pathname={location.pathname}
       />
 
       <Header
-        moveTo={location => props.navigate(location)}
+        moveTo={location => navigate(location)}
         type="tagList"
         title="TagList"
       />

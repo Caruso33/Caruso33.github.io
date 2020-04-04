@@ -17,7 +17,7 @@ export const Sider = styled.aside`
     grid-column: 2 / -2;
     grid-row: 2 / span 1;
 
-    display: grid;
+    display: ${({ hideSidebar }) => (hideSidebar ? "none" : "grid")};
     grid-template-columns: 1fr max-content 1fr;
     grid-template-rows: min-content min-content;
     align-items: center;
@@ -25,7 +25,7 @@ export const Sider = styled.aside`
   }
 
   @media only screen and (max-width: 600px) {
-    display: grid;
+    display: ${({ hideSidebar }) => (hideSidebar ? "none" : "grid")};
     grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(3, min-content);
     align-items: center;

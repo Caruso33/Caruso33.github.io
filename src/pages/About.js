@@ -15,7 +15,7 @@ const AboutDetails = styled.div`
 
 export default function About({ data, location }) {
   return (
-    <Layout>
+    <Layout {...{ location }}>
       <Metatags
         title={"About"}
         description={"about me"}

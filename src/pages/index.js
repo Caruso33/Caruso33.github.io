@@ -7,7 +7,7 @@ import { BlogItems } from "../components/pages/home/styled"
 
 const Home = ({ data, location }) => {
   return (
-    <Layout>
+    <Layout {...{ location }}>
       <Metatags
         title={"Tobias Leinss"}
         description={"personal details and blog list"}

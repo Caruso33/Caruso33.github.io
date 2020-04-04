@@ -29,10 +29,11 @@ export default function Sidebar({
   totalCount,
   tags,
   lastArticles,
-  isMobileSize
+  isMobileSize,
+  hideSidebar
 }) {
   return (
-    <Sider isMobileSize={isMobileSize}>
+    <Sider isMobileSize={isMobileSize} hideSidebar={hideSidebar}>
       <ProfileImage />
 
       <ProfileTexts>
