@@ -17,6 +17,7 @@ export const PageLayout = styled(Layout)`
 
   @media only screen and (max-width: 700px) {
     grid-template-columns: 0rem 1fr 0rem;
+    grid-gap: 1rem;
   }
 `
 

@@ -11,6 +11,9 @@ export const Sider = styled.aside`
   background: ${color.contentBackground};
   box-shadow: ${boxShadow};
 
+  padding: 1.5rem;
+  margin: 0 1.5rem;
+
   grid-row: 2 / span 1;
   grid-column: 2 / 3;
   @media only screen and (max-width: 1000px) {

@@ -6,7 +6,6 @@ import { boxShadow } from "../../partials/GlobalStyle"
 
 export const BlogItems = styled.ol`
   list-style: none;
-  max-width: 80rem;
 `
 
 export const BlogListItem = styled.li`
