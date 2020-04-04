@@ -1,5 +1,9 @@
+import color from "../../../../utils/color"
+
 let isInitiated = false
 let p
+let time
+let counter = 0
 
 const dim = {
   x: 0,
@@ -10,9 +14,30 @@ const dim = {
   speed: 0
 }
 
-export default function playground(p5, {}) {
+export default function playground(p5, { extraCanvas }) {
   if (!p) p = p5
+  p.background(color["primary-color"])
 
+  const now = Math.round(new Date().getTime() / 100)
+  if (time !== now) {
+    time = now
+
+    counter++
+    drawSpots(extraCanvas)
+  }
+
+  drawWithNoTrails()
+
+  if (p.mouseIsPressed) {
+    extraCanvas.fill(255, 150)
+    extraCanvas.noStroke()
+    extraCanvas.ellipse(p.mouseX, p.mouseY, 25, 25)
+  }
+
+  p.image(extraCanvas, 0, 0)
+}
+
+function drawWithNoTrails() {
   p.fill(255, 0, 0, 150)
   p.stroke("#ccc")
   p.strokeWeight(3)
@@ -23,16 +48,15 @@ export default function playground(p5, {}) {
   p.rect(100, 50, 100, 75)
 
   p.fill(200, 20, 150, 10)
-  p.ellipse(650, 50, 250, 300)
+  p.ellipse(650, 150, 150, 200)
 
   p.fill(20, 200, 50, 10)
-  p.arc(250, 50, 80, 80, 0, p.PI + p.QUARTER_PI, p.PIE)
+  p.arc(250, 150, 80, 80, 0, p.PI + p.QUARTER_PI, p.PIE)
 
-  drawSpots()
   drawMovingCircle()
 }
 
-function drawSpots() {
+function drawSpots(extraCanvas) {
   const d = {
     r: p.random(100, 250),
     g: p.random(0, 50),
@@ -42,8 +66,8 @@ function drawSpots() {
     y: p.random(20, p.height - 20)
   }
 
-  p.fill(d.r, d.g, d.b, d.a)
-  p.ellipse(d.x, d.y, 25, 25)
+  extraCanvas.fill(d.r, d.g, d.b, d.a)
+  extraCanvas.ellipse(d.x, d.y, 25, 25)
 }
 
 function initializeDims() {
@@ -61,10 +85,9 @@ function drawMovingCircle() {
 
   p.fill(20, 20, 200, 100)
   p.circle(dim.x, dim.y, dim.r)
+  move(dim)
 
-  move(dim, {})
-
-  function move(selection, {}) {
+  function move(selection) {
     const { x, y, r, xDir, yDir, speed } = selection
 
     if (x + r >= p.width) selection.xDir = -1

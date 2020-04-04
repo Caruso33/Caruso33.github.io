@@ -2,27 +2,27 @@ import React from "react"
 import Layout from "../../components/partials/Layout"
 import getWindowDimensions from "../../components/utils/useWindowDimensions"
 import Sketch from "react-p5"
-import color from "../../utils/color"
 import playground from "../../components/pages/portfolio/p5/playground"
 
 export default function P5() {
-  const dimensions = getWindowDimensions()
+  const windowDim = getWindowDimensions()
 
-  const canvasDimensions = {
-    width: dimensions.width > 1100 ? 800 : dimensions.width - 250,
-    height: Math.min(500, dimensions.height)
+  const canvasDim = {
+    width: windowDim.width > 1100 ? 800 : windowDim.width - 250,
+    height: Math.min(500, windowDim.height)
   }
 
+  let extraCanvas
 
   const setup = (p5, canvasParentRef) => {
-    p5.createCanvas(canvasDimensions.width, canvasDimensions.height).parent(
-      canvasParentRef
-    )
-    p5.background(color["primary-color"])
+    p5.createCanvas(canvasDim.width, canvasDim.height).parent(canvasParentRef)
+
+    extraCanvas = p5.createGraphics(canvasDim.width, canvasDim.height)
+    extraCanvas.clear()
   }
 
   const draw = p5 => {
-    playground(p5, { canvasDimensions })
+    playground(p5, { extraCanvas })
   }
 
   return (
