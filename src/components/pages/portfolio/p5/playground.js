@@ -3,7 +3,7 @@ import color from "../../../../utils/color"
 let isInitiated = false
 let p
 let time
-let counter = 0
+// let counter = 0
 
 const dim = {
   x: 0,
@@ -22,7 +22,7 @@ export default function playground(p5, { extraCanvas }) {
   if (time !== now) {
     time = now
 
-    counter++
+    // counter++
     drawSpots(extraCanvas)
   }
 

@@ -9,7 +9,7 @@ export const PageLayout = styled(Layout)`
   min-height: 100%;
 
   @media only screen and (max-width: 1000px) {
-    grid-template-columns: 1rem 1fr 1rem;
+    grid-template-columns: 0rem 1fr 0rem;
     grid-template-rows: 6.4rem min-content 1fr 5rem;
     grid-gap: 2rem;
     overflow-y: auto;

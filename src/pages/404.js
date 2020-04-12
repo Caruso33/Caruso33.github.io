@@ -1,21 +1,19 @@
 import { Link } from "gatsby"
 import React from "react"
-import Header from "../components/partials/Header"
-import Layout from "../components/partials/Layout"
-import Metatags from "../components/partials/MetaTags"
 
-const NotFound = ({ moveTo }) => {
+import Metatags from "../components/partials/MetaTags"
+import { Typography } from "antd"
+
+const NotFound = () => {
   return (
-    <Layout>
+    <>
       <Metatags title="NotFound" />
 
-      <Header moveTo={moveTo} type={"404"} />
-
-      <h1>Page not found</h1>
+      <Typography.Title>Page not found</Typography.Title>
       <p>
         <Link to="/">Head home</Link>
       </p>
-    </Layout>
+    </>
   )
 }
 

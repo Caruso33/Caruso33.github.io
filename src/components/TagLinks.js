@@ -17,7 +17,8 @@ export default function TagLinks({ tags }) {
 
         return (
           <TagLink key={topic} onClick={() => navigate(`tags/${topic}`)}>
-            {Mapping && <Mapping />} {topic}
+            {Mapping && <Mapping style={{ verticalAlign: "-.125em" }} />}{" "}
+            {topic}
           </TagLink>
         )
       })}
