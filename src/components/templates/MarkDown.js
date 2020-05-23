@@ -72,9 +72,11 @@ function MarkDownTemplate({ data, pageContext, location }) {
           <TitleText>{blogPost.frontmatter.title}</TitleText>
           {tags && <TagLinks tags={Array.from(tags)} />}
         </TitleNTags>
+
         {blogPost.frontmatter.description && (
           <DescriptionText>{blogPost.frontmatter.description}</DescriptionText>
         )}
+
         {thumbnail ? (
           <GatsbyImage
             fadeIn
@@ -84,9 +86,11 @@ function MarkDownTemplate({ data, pageContext, location }) {
         ) : (
           imageUrl && <ThumbnailSrc src={imageUrl} />
         )}
+
         {imageAttribution && (
           <AttributionText>{imageAttribution}</AttributionText>
         )}
+
         <BlogHtml dangerouslySetInnerHTML={{ __html: blogPost.html }} />
       </BlogWrapper>
     </Layout>

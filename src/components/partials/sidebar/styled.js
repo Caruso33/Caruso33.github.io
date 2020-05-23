@@ -9,7 +9,7 @@ export const Sider = styled.aside`
   align-self: flex-start;
   text-align: center;
   background: ${color.contentBackground};
-  box-shadow: ${boxShadow} !important;
+  box-shadow: ${boxShadow};
 
   padding: 1.5rem;
   margin: 0 1.5rem;

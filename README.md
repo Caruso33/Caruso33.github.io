@@ -19,9 +19,8 @@
 
 - about
 - portfolio
-- update packages
 - primsj
 - gitalk
 - nav bar menu underline, shadow
 - moving header onscroll
-- Style footer, check blog footer
+- Style footer
