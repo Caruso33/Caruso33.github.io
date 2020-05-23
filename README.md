@@ -2,16 +2,25 @@
 
 ## Components used
 
-* [Reactjs](https://reactjs.org/)
-* [Create React App](https://github.com/facebookincubator/create-react-app)
-* [Material UI Design](https://material.io/)
-* [Material-UI-Next](https://material-ui-next.com/)
+- [Reactjs](https://reactjs.org/)
+- [Gatsbyjs](https://www.gatsbyjs.org/)
+- [Ant Design](https://ant.design/)
 
-## Resources
+### Inspiration
 
-* [Helpful MUI Course - CodeRealm](https://www.youtube.com/watch?v=xm4LX5fJKZ8&list=PLcCp4mjO-z98WAu4sd0eVha1g-NMfzHZk)
+- [Gatbsy blog calpa](https://calpa.me/)
 
 ### Suggestions & Feedback
 
-* Please drop me a message
-* Thanks
+- Please drop me a message
+- Thanks
+
+#### To do
+
+- about
+- portfolio
+- update packages
+- primsj
+- gitalk
+- nav bar menu underline, shadow
+- moving header onscroll

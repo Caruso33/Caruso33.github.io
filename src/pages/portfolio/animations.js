@@ -22,14 +22,21 @@ export default function P5() {
   React.useEffect(() => {
     if (!sketchRef.current || (prevOption && option && prevOption !== option)) {
       if (sketchRef.current) {
+        console.log("remove init")
         sketchRef.current.remove()
       }
 
+      console.log("assign p5 to ref")
       sketchRef.current = new p5(p5Sketch, p5DivRef.current)
       console.log(sketchRef.current)
     }
 
-    if (sketchRef.current) return sketchRef.current.remove
+    if (sketchRef.current)
+      return () => {
+        console.log("remove unmount")
+        sketchRef.current.remove()
+      }
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [p5Sketch, option])
 
@@ -74,7 +81,9 @@ export default function P5() {
       <Radio.Group
         style={{ marginBottom: "1rem" }}
         value={option}
-        onChange={e => setOption(e.target.value)}
+        onChange={e => {
+          setOption(e.target.value)
+        }}
       >
         {p5Options.map(opt => (
           <Radio.Button key={opt} value={opt}>
