@@ -15,7 +15,7 @@
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
     "deploy": "gatsby build && gh-pages -d public -b master",
-    "gulp": "npx gulp"
+    "gulp": "cd utils && npx gulp imgs"
   },
   "dependencies": {
     "antd": "^4.2.4",

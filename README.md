@@ -24,3 +24,4 @@
 - gitalk
 - nav bar menu underline, shadow
 - moving header onscroll
+- Style footer, check blog footer

@@ -1,7 +1,7 @@
-import { Typography } from "antd"
+import { Typography, Avatar } from "antd"
 import { Link } from "gatsby"
 import styled from "styled-components"
-import profilImg from "../../../img/dist/landing/sizes/profil-400.webp"
+import profilImg from "../../../img/dist/landing/profil-cropped.webp"
 import color from "../../../utils/color"
 import { boxShadow } from "../GlobalStyle"
 
@@ -9,7 +9,7 @@ export const Sider = styled.aside`
   align-self: flex-start;
   text-align: center;
   background: ${color.contentBackground};
-  box-shadow: ${boxShadow};
+  box-shadow: ${boxShadow} !important;
 
   padding: 1.5rem;
   margin: 0 1.5rem;
@@ -36,13 +36,12 @@ export const Sider = styled.aside`
   }
 `
 
-export const ProfileImage = styled.img.attrs(() => ({
-  src: profilImg
+export const ProfileAvatar = styled(Avatar).attrs(() => ({
+  size: 100,
+  src: profilImg,
+  shape: "round"
 }))`
   margin: 1.5rem;
-  object-fit: contain;
-  border-radius: 50%;
-  width: 50%;
   box-shadow: ${boxShadow};
 
   @media only screen and (max-width: 1000px) {

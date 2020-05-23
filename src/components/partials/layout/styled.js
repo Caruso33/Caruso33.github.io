@@ -3,7 +3,7 @@ import { Layout } from "antd"
 
 export const PageLayout = styled(Layout)`
   display: grid;
-  grid-template-columns: 1fr 25rem minmax(min-content, 80rem) 1fr;
+  grid-template-columns: 1fr 25rem minmax(min-content, 100rem) 1fr;
   grid-template-rows: 6.4rem 1fr 5rem;
   grid-gap: 3rem;
   min-height: 100%;

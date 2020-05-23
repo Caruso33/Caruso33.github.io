@@ -15,7 +15,7 @@ import {
   NumberArticles,
   PostsByTags,
   ProfileDescription,
-  ProfileImage,
+  ProfileAvatar,
   ProfileTitle,
   Sider,
   ProfileSkills,
@@ -34,7 +34,7 @@ export default function Sidebar({
 }) {
   return (
     <Sider isMobileSize={isMobileSize} hideSidebar={hideSidebar}>
-      <ProfileImage />
+      <ProfileAvatar />
 
       <ProfileTexts>
         <ProfileTitle>Tobias Leinss</ProfileTitle>

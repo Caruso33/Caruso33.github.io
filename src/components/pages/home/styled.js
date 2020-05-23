@@ -47,8 +47,12 @@ export const ExcerptNReadFull = styled.div`
 `
 
 export const BlogExcerpt = styled(Typography.Paragraph).attrs(() => ({
-  ellipsis: { rows: 4 }
-}))``
+  ellipsis: { rows: 3 }
+}))`
+  &.ant-typography {
+    margin-bottom: 0;
+  }
+`
 
 export const ReadFull = styled(Link)`
   display: inline-block;

@@ -67,11 +67,11 @@ export default function Header() {
         <Logo>{"<Tobias Leinss/>"}</Logo>
       </Link>
 
-      <Menu theme="dark" mode="horizontal" onClick={navigateToUrl}>
+      {/* <Menu theme="dark" mode="horizontal" onClick={navigateToUrl}>
         <MenuItem key="portfolio">Portfolio</MenuItem>
 
         <MenuItem key="about">About</MenuItem>
-      </Menu>
+      </Menu> */}
     </Head>
   )
 }
