@@ -2,10 +2,10 @@
   "name": "caruso33",
   "author": "Tobias Leinss",
   "homepage": "https://caruso33.github.io/",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "My homepage",
   "private": true,
-  "license": "MIT",
+  "license": "GPLv3",
   "scripts": {
     "build": "gatsby build",
     "develop": "env-cmd -f .env gatsby develop",

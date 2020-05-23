@@ -1,10 +1,22 @@
+import color from "../../utils/color"
 import React from "react"
 import { Link, graphql } from "gatsby"
 import Layout from "../partials/Layout"
-import Header from "../partials/Header"
 import Metatags from "../partials/MetaTags"
+import styled from "styled-components"
+import { boxShadow } from "../partials/GlobalStyle"
 
-function Tags({ data, pageContext, navigate, location }) {
+const TagsWrapper = styled.div`
+  background: ${color.contentBackground};
+  box-shadow: ${boxShadow};
+
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  margin: 1.5rem;
+`
+
+function Tags({ data, pageContext, location }) {
   const blogPost = data.allMarkdownRemark.edges
   const url = data.site.siteMetadata.siteUrl
   const { tag } = pageContext
@@ -18,21 +30,20 @@ function Tags({ data, pageContext, navigate, location }) {
         pathname={location.pathname}
       />
 
-      <Header
-        moveTo={location => navigate(location)}
-        type="tagList"
-        title="TagList"
-      />
+      <TagsWrapper>
+        <h1>{`Available posts in ${tag}`}</h1>
 
-      <h1>{`Available posts in ${tag}`}</h1>
-
-      <div>
-        {blogPost.map(({ node }, i) => (
-          <Link to={`/${node.fields.slug}`} key={i}>
-            {node.frontmatter.title}
-          </Link>
-        ))}
-      </div>
+        <div>
+          {blogPost.map(({ node }, i) => {
+            console.table(node)
+            return (
+              <Link to={`/${node.fields.slug}`} key={i}>
+                {node.frontmatter.date} - {node.frontmatter.title}
+              </Link>
+            )
+          })}
+        </div>
+      </TagsWrapper>
     </Layout>
   )
 }
@@ -50,6 +61,7 @@ export const query = graphql`
         node {
           frontmatter {
             title
+            date(formatString: "YYYY/MM/DD")
           }
           fields {
             slug

@@ -21,7 +21,7 @@ module.exports = async ({ graphql, actions }) => {
 
   if (result.data) {
     const tags = createBlogPostPages(result, createPage)
-    // createTagsPages(tags, createPage)
+    createTagsPages(tags, createPage)
 
     // createContentfulPages(result.data, createPage)
     // createWordpressPages(result.data, createPage)

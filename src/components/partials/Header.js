@@ -1,9 +1,10 @@
-import { Menu } from "antd"
-import { Link, navigate } from "gatsby"
+// import { Menu } from "antd"
+import { Link } from "gatsby" // navigate
 import React from "react"
 import styled from "styled-components"
 import color from "../../utils/color"
-import url from "../../utils/url"
+// import url from "../../utils/url"
+import { boxShadow } from "../partials/GlobalStyle"
 
 const Head = styled.header`
   background: ${color["primary-color"]};
@@ -14,6 +15,7 @@ const Head = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  box-shadow: ${boxShadow} !important;
 
   padding: 0 10rem;
   @media only screen and (max-width: 1000px) {
@@ -38,8 +40,8 @@ const Logo = styled.div`
   }
 `
 
-const MenuItem = styled(Menu.Item)`
-  /* & {
+// const MenuItem = styled(Menu.Item)`
+/* & {
     display: inline-block;
   }
 
@@ -56,10 +58,10 @@ const MenuItem = styled(Menu.Item)`
   &:hover:after {
     width: 100%;
   } */
-`
+// `
 
 export default function Header() {
-  const navigateToUrl = ({ key }) => navigate(url[key])
+  // const navigateToUrl = ({ key }) => navigate(url[key])
 
   return (
     <Head>

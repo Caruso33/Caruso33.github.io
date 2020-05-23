@@ -61,7 +61,7 @@ function Metatags(props) {
         { name: "robots", content: "index, follow" },
 
         { name: "twitter:creator", content: "@caruso33" },
-        { property: "og:site_name", content: "yoursitename" }
+        { property: "og:site_name", content: "Tobias Leinss" }
       ]}
     >
       <html lang="en" />
