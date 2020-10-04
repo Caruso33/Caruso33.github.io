@@ -1,1 +1,0 @@
-{"componentChunkName":"component---src-components-templates-tags-js","path":"/tags/gatsby/","result":{"data":{"allMarkdownRemark":{"edges":[{"node":{"frontmatter":{"title":"My first Blog post","date":"2019/11/27"},"fields":{"slug":"gatsby"}}}]},"site":{"siteMetadata":{"siteUrl":"https://www.tobiasleinss.ml"}}},"pageContext":{"tag":"gatsby"}}}
