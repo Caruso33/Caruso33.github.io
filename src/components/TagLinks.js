@@ -12,11 +12,11 @@ export const TagLink = styled(Tag)`
 export default function TagLinks({ tags }) {
   return (
     <div>
-      {tags.map(topic => {
+      {tags.map((topic) => {
         const Mapping = mapTopicToImage(topic)
 
         return (
-          <TagLink key={topic} onClick={() => navigate(`tags/${topic}`)}>
+          <TagLink key={topic} onClick={() => navigate(`/tags/${topic}`)}>
             {Mapping && <Mapping style={{ verticalAlign: "-.125em" }} />}{" "}
             {topic}
           </TagLink>

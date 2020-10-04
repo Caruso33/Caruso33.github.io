@@ -39,7 +39,7 @@ module.exports = {
         description: shared.description,
         start_url: manifest.pathPrefix,
         lang: manifest.lang,
-        background_color: manifest.backgroundColor,
+        background_color: color.pageBackground,
         theme_color: color["primary-color"],
         display: `standalone`,
         icons: [
@@ -90,10 +90,34 @@ module.exports = {
     },
     // 'gatsby-plugin-workerize-loader',
     "gatsby-plugin-twitter",
+    "gatsby-plugin-catch-links",
+    "gatsby-plugin-react-helmet",
+    {
+      resolve: `gatsby-plugin-nprogress`,
+      options: {
+        // Setting a color is optional.
+        color: color.pageBackground,
+        // Disable the loading spinner.
+        showSpinner: false,
+      },
+    },
+    // "gatsby-plugin-offline" ??
+    // {
+    //   resolve: `gatsby-plugin-feed`,
+    //   options: {
+    //     feeds: [
+          // getBlogFeed({
+          //   filePathRegex: `//content//`,
+          //   blogUrl: 'https://tobiasleinss.ml/blog',
+          //   output: '/blog/rss.xml',
+          //   title: 'Tobias Leinss Blog RSS Feed',
+          // }),
+    //     ],
+    //   },
+    // },
     "gatsby-plugin-resolve-src",
     "gatsby-plugin-styled-components",
     "gatsby-plugin-offline",
-    "gatsby-plugin-react-helmet",
     "gatsby-plugin-react-leaflet",
     "gatsby-plugin-sitemap",
     {
@@ -134,3 +158,65 @@ module.exports = {
     // }
   ],
 }
+
+// function getBlogFeed({filePathRegex, blogUrl, ...overrides}) {
+//   /**
+//    * These RSS feeds can be quite expensive to generate. Limiting the number of
+//    * posts and keeping each item's template lightweight (only using frontmatter,
+//    * avoiding the html/excerpt fields) helps negate this.
+//    */
+//   return {
+//     serialize: ({query: {allMdx}}) => {
+//       const stripSlash = slug => (slug.startsWith('/') ? slug.slice(1) : slug)
+//       return allMdx.edges.map(edge => {
+//         const url = `${siteUrl}/${stripSlash(edge.node.fields.slug)}`
+
+//         return {
+//           ...edge.node.frontmatter,
+//           date: edge.node.fields.date,
+//           url,
+//           guid: url,
+//           custom_elements: [
+//             {
+//               'content:encoded': `<div style="width: 100%; margin: 0 auto; max-width: 800px; padding: 40px 40px;">
+//                   <p>
+//                     I've posted a new article <em>"${edge.node.frontmatter.title}"</em> and you can <a href="${url}">read it online</a>.
+//                     <br>
+//                     ${edge.node.fields.plainTextDescription}
+//                     <br>
+//                     You can also <a href="${siteUrl}/subscribe">subscribe</a> for weekly emails on what I'm learning, working on, and writing about.
+//                   </p>
+//                 </div>`,
+//             },
+//           ],
+//         }
+//       })
+//     },
+//     query: `
+//        {
+//          allMdx(
+//            limit: 25,
+//            filter: {
+//              frontmatter: {published: {ne: false}}
+//              fileAbsolutePath: {regex: "${filePathRegex}"}
+//            }
+//            sort: { order: DESC, fields: [frontmatter___date] }
+//          ) {
+//            edges {
+//              node {
+//                fields {
+//                  slug
+//                  date
+//                  plainTextDescription
+//                }
+//                frontmatter {
+//                  title
+//                }
+//              }
+//            }
+//          }
+//        }
+//      `,
+//     ...overrides,
+//   }
+// }
