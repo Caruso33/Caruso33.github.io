@@ -72,26 +72,27 @@ module.exports = {
     },
     // resolve: `gatsby-plugin-mdx`,
     "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
     {
       resolve: "gatsby-transformer-remark",
       options: {
         plugins: [
-          "gatsby-remark-relative-images",
           {
             resolve: "gatsby-remark-images",
             options: {
               maxWidth: 940, // full width page
               linkImagesToOriginal: false,
-              background: color.contentBackground
+              background: color.contentBackground,
             },
           },
         ],
       },
     },
+    // 'gatsby-plugin-workerize-loader',
+    "gatsby-plugin-twitter",
     "gatsby-plugin-resolve-src",
     "gatsby-plugin-styled-components",
     "gatsby-plugin-offline",
-    "gatsby-transformer-sharp",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-react-leaflet",
     "gatsby-plugin-sitemap",
