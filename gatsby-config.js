@@ -4,11 +4,28 @@
  * See: https://www.gatsbyjs.org/docs/gatsby-config/
  */
 const color = require("./src/utils/color")
-
+const siteConfig = require("./config/site")
+console.log({siteConfig})
 module.exports = {
   siteMetadata: {
-    title: "tobiasleinss.ml",
-    siteUrl: "https://www.tobiasleinss.ml",
+    ...siteConfig.siteMetadata,
+    title: siteConfig.shared.title,
+    keywords: ["Software Engineer", "AI / Machine Learning"],
+    canonicalUrl: siteConfig.siteMetadata.siteUrl,
+    twitterHandle: siteConfig.social.twitterHandle,
+    image: siteConfig.siteMetadata.logo,
+    author: {
+      name: siteConfig.siteMetadata.author,
+      minibio: siteConfig.siteMetadata.minibio,
+    },
+    organization: {
+      name: siteConfig.siteMetadata.organization,
+      url: siteConfig.siteMetadata.siteUrl,
+      logo: siteConfig.siteMetadata.logo,
+    },
+    social: {
+      twitter: siteConfig.social.twitterHandle,
+    },
   },
   plugins: [
     "gatsby-plugin-resolve-src",
