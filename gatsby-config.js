@@ -4,10 +4,10 @@
  * See: https://www.gatsbyjs.org/docs/gatsby-config/
  */
 const color = require("./src/utils/color")
-const siteConfig = require("./config/site")
 
-console.log({siteConfig})
+const siteConfig = require("./config/site")
 const { siteMetadata, shared, manifest } = siteConfig
+
 module.exports = {
   siteMetadata: {
     ...siteMetadata,
@@ -15,7 +15,7 @@ module.exports = {
     description: shared.description,
     keywords: ["Software Engineer", "AI / Machine Learning"],
     canonicalUrl: siteMetadata.siteUrl,
-    twitterHandle: siteConfig.social.twitterHandle,
+    twitterHandle: siteConfig.shared.twitterHandle,
     image: siteMetadata.logo,
     author: {
       name: siteMetadata.author,
@@ -27,7 +27,7 @@ module.exports = {
       logo: siteMetadata.logo,
     },
     social: {
-      twitter: siteConfig.social.twitterHandle,
+      twitter: siteConfig.shared.twitterHandle,
     },
   },
   plugins: [
@@ -38,19 +38,20 @@ module.exports = {
         short_name: manifest.titleShort,
         description: shared.description,
         start_url: manifest.pathPrefix,
+        lang: manifest.lang,
         background_color: manifest.backgroundColor,
         theme_color: color["primary-color"],
         display: `standalone`,
         icons: [
           {
-            src: '/android-chrome-192x192.png',
-            sizes: '192x192',
-            type: 'image/png',
+            src: "/android-chrome-192x192.png",
+            sizes: "192x192",
+            type: "image/png",
           },
           {
-            src: '/android-chrome-512x512.png',
-            sizes: '512x512',
-            type: 'image/png',
+            src: "/android-chrome-512x512.png",
+            sizes: "512x512",
+            type: "image/png",
           },
         ],
       },

@@ -7,13 +7,3 @@ exports.onCreateNode = require("./gatsby/onCreateNode")
 exports.createPages = require("./gatsby/createPages")
 
 exports.onCreateWebpackConfig = require("./gatsby/onCreateWebpackConfig")
-
-// exports.onCreateBabelConfig = ({ actions }) => {
-//   actions.setBabelPlugin({
-//     name: "babel-plugin-import",
-//     options: {
-//       libraryName: "antd",
-//       style: true,
-//     },
-//   })
-// }
