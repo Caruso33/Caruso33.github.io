@@ -8,7 +8,7 @@ const color = require("./src/utils/color")
 module.exports = {
   siteMetadata: {
     title: "tobiasleinss.ml",
-    siteUrl: "https://www.tobiasleinss.ml"
+    siteUrl: "https://www.tobiasleinss.ml",
   },
   plugins: [
     "gatsby-plugin-resolve-src",
@@ -22,31 +22,33 @@ module.exports = {
     {
       resolve: "gatsby-plugin-antd",
       options: {
-        style: true
-      }
+        style: true,
+      },
     },
     {
       resolve: `gatsby-plugin-less`,
       options: {
-        javascriptEnabled: true,
-        modifyVars: {
-          ...color
-        }
-      }
+        lessOptions: {
+          javascriptEnabled: true,
+          modifyVars: {
+            ...color,
+          },
+        },
+      },
     },
     {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "content",
-        path: `${__dirname}/content/`
-      }
+        path: `${__dirname}/content/`,
+      },
     },
     {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "portfolio",
-        path: `${__dirname}/src/pages/portfolio/`
-      }
+        path: `${__dirname}/src/pages/portfolio/`,
+      },
     },
     {
       resolve: `gatsby-plugin-manifest`,
@@ -56,8 +58,8 @@ module.exports = {
         start_url: `/`,
         background_color: "#fff",
         theme_color: color["primary-color"],
-        display: `standalone`
-      }
+        display: `standalone`,
+      },
     },
     {
       resolve: "gatsby-transformer-remark",
@@ -68,12 +70,12 @@ module.exports = {
             resolve: "gatsby-remark-images",
             options: {
               maxWidth: 750,
-              linkImagesToOriginal: false
-            }
-          }
-        ]
-      }
-    }
+              linkImagesToOriginal: false,
+            },
+          },
+        ],
+      },
+    },
     // {
     //   resolve: `gatsby-source-wordpress`,
     //   options: {
@@ -93,5 +95,5 @@ module.exports = {
     //     accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
     //   }
     // }
-  ]
+  ],
 }
