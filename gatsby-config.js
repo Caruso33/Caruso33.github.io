@@ -5,29 +5,56 @@
  */
 const color = require("./src/utils/color")
 const siteConfig = require("./config/site")
+
 console.log({siteConfig})
+const { siteMetadata, shared, manifest } = siteConfig
 module.exports = {
   siteMetadata: {
-    ...siteConfig.siteMetadata,
-    title: siteConfig.shared.title,
+    ...siteMetadata,
+    title: shared.title,
+    description: shared.description,
     keywords: ["Software Engineer", "AI / Machine Learning"],
-    canonicalUrl: siteConfig.siteMetadata.siteUrl,
+    canonicalUrl: siteMetadata.siteUrl,
     twitterHandle: siteConfig.social.twitterHandle,
-    image: siteConfig.siteMetadata.logo,
+    image: siteMetadata.logo,
     author: {
-      name: siteConfig.siteMetadata.author,
-      minibio: siteConfig.siteMetadata.minibio,
+      name: siteMetadata.author,
+      minibio: siteMetadata.minibio,
     },
     organization: {
-      name: siteConfig.siteMetadata.organization,
-      url: siteConfig.siteMetadata.siteUrl,
-      logo: siteConfig.siteMetadata.logo,
+      name: siteMetadata.organization,
+      url: siteMetadata.siteUrl,
+      logo: siteMetadata.logo,
     },
     social: {
       twitter: siteConfig.social.twitterHandle,
     },
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: shared.title,
+        short_name: manifest.titleShort,
+        description: shared.description,
+        start_url: manifest.pathPrefix,
+        background_color: manifest.backgroundColor,
+        theme_color: color["primary-color"],
+        display: `standalone`,
+        icons: [
+          {
+            src: '/android-chrome-192x192.png',
+            sizes: '192x192',
+            type: 'image/png',
+          },
+          {
+            src: '/android-chrome-512x512.png',
+            sizes: '512x512',
+            type: 'image/png',
+          },
+        ],
+      },
+    },
     "gatsby-plugin-resolve-src",
     "gatsby-plugin-styled-components",
     "gatsby-plugin-offline",
@@ -65,17 +92,6 @@ module.exports = {
       options: {
         name: "portfolio",
         path: `${__dirname}/src/pages/portfolio/`,
-      },
-    },
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `tobiasleinss.ml`,
-        short_name: `tobias`,
-        start_url: `/`,
-        background_color: "#fff",
-        theme_color: color["primary-color"],
-        display: `standalone`,
       },
     },
     {
