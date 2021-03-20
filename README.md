@@ -1,4 +1,4 @@
-# [Personal Homepage](www.tobiasleinss.ml)
+# [Personal Homepage](www.tobias.gq)
 
 ## Components used
 
