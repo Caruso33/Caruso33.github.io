@@ -1,9 +1,9 @@
-// import { Menu } from "antd"
-import { Link } from "gatsby" // navigate
+import { Menu } from "antd"
+import { Link, navigate } from "gatsby" // navigate
 import React from "react"
 import styled from "styled-components"
 import color from "../../utils/color"
-// import url from "../../utils/url"
+import url from "../../utils/url"
 import { boxShadow } from "../partials/GlobalStyle"
 
 const Head = styled.header`
@@ -40,8 +40,8 @@ const Logo = styled.div`
   }
 `
 
-// const MenuItem = styled(Menu.Item)`
-/* & {
+const MenuItem = styled(Menu.Item)`
+ & {
     display: inline-block;
   }
 
@@ -57,11 +57,11 @@ const Logo = styled.div`
 
   &:hover:after {
     width: 100%;
-  } */
-// `
+  } 
+`
 
 export default function Header() {
-  // const navigateToUrl = ({ key }) => navigate(url[key])
+  const navigateToUrl = ({ key }) => navigate(url[key])
 
   return (
     <Head>
@@ -69,11 +69,11 @@ export default function Header() {
         <Logo>{"<Tobias Leinss/>"}</Logo>
       </Link>
 
-      {/* <Menu theme="dark" mode="horizontal" onClick={navigateToUrl}>
+      <Menu theme="dark" mode="horizontal" onClick={navigateToUrl}>
         <MenuItem key="portfolio">Portfolio</MenuItem>
 
         <MenuItem key="about">About</MenuItem>
-      </Menu> */}
+      </Menu>
     </Head>
   )
 }

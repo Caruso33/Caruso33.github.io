@@ -20,7 +20,7 @@ export default function Footer({ prev, next }) {
     <Foot>
       <Prev prev={prev && prev.node} />
 
-      <div>I am Footer</div>
+      <div>I am a Footer</div>
 
       <Next next={next && next.node} />
     </Foot>

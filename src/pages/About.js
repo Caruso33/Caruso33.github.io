@@ -25,8 +25,8 @@ export default function About({ data, location }) {
       <AboutDetails>
         <div>
           <p>
-            Hi, my name is Tobias, I am a fullstack developer based in Bangkok,
-            Thailand.
+            Hi, my name is Tobias, I am a fullstack developer turning AI
+            specialist based in Stuttgart, Germany.
           </p>
           <p>
             Originally, I've studied Industrial Management and specialized in IT
@@ -37,9 +37,10 @@ export default function About({ data, location }) {
             in a mid-sized German manufacturer.
           </p>
           <p>
-            Currently, I work as a Senior Web Developer. I enjoy writing code
-            and improving myself, always keen in getting more experience in
-            various technological fields like{" "}
+            Currently, I work as a Research Scientist, combining the fields of
+            IIoT, AI and Web Development. I enjoy writing code and improving
+            myself, always keen in getting more experience in various
+            technological fields.
           </p>
           <p>
             Recently, I am totally immersed into Artificial Intelligence,
@@ -78,12 +79,6 @@ export default function About({ data, location }) {
             and <a href="https://www.mongodb.com/">mongodb</a> as database or{" "}
             <a href="https://firebase.google.com/">firebase</a> as serverless
             solution of choice.
-            <br />
-            <br />
-            Design e.g. <a href="https://material-ui.com/">
-              Material Design
-            </a>{" "}
-            originally by google.
           </p>
           <p>
             Making websites PWA mobile-ready as taught by Google and Udacity by
