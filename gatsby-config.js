@@ -103,21 +103,21 @@ module.exports = {
     },
     // "gatsby-plugin-offline" ??
     // {
-    //   resolve: `gatsby-plugin-feed`,
-    //   options: {
+      //   resolve: `gatsby-plugin-feed`,
+      //   options: {
     //     feeds: [
-          // getBlogFeed({
+      // getBlogFeed({
           //   filePathRegex: `//content//`,
-          //   blogUrl: 'https://tobiasleinss.ml/blog',
+          //   blogUrl: 'https://tobias.gq/blog',
           //   output: '/blog/rss.xml',
           //   title: 'Tobias Leinss Blog RSS Feed',
           // }),
-    //     ],
-    //   },
-    // },
+          //     ],
+          //   },
+          // },
+      // "gatsby-plugin-offline",
     "gatsby-plugin-resolve-src",
     "gatsby-plugin-styled-components",
-    "gatsby-plugin-offline",
     "gatsby-plugin-react-leaflet",
     "gatsby-plugin-sitemap",
     {

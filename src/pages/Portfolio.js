@@ -26,6 +26,7 @@ export default function Portfolio({ data, location }) {
   const portfolioContent = data.allFile.edges.filter(
     (edge) => edge.node.sourceInstanceName === "portfolio"
   )
+
   return (
     <Layout>
       <Metatags
@@ -43,6 +44,8 @@ export default function Portfolio({ data, location }) {
             </PortfolioContent>
           )
         })}
+
+        {/* {portfolioData.map()} */}
       </PortfolioDetails>
     </Layout>
   )

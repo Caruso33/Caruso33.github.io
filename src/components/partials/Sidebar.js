@@ -4,7 +4,7 @@ import {
   AiFillGithub,
   AiOutlineCheck,
   AiOutlineMail,
-  AiOutlineTwitter
+  AiOutlineTwitter,
 } from "react-icons/ai"
 import {
   iconStyle,
@@ -21,7 +21,7 @@ import {
   ProfileSkills,
   ProfileTexts,
   PostTagsWrapper,
-  LatestArticlesWrapper
+  LatestArticlesWrapper,
 } from "./sidebar/styled"
 import TagLinks from "../TagLinks"
 
@@ -30,14 +30,14 @@ export default function Sidebar({
   tags,
   lastArticles,
   isMobileSize,
-  hideSidebar
+  hideSidebar,
 }) {
   return (
     <Sider isMobileSize={isMobileSize} hideSidebar={hideSidebar}>
-      <ProfileAvatar />
+      {/* <ProfileAvatar /> */}
 
       <ProfileTexts>
-        <ProfileTitle>Tobias Leinss</ProfileTitle>
+        {/* <ProfileTitle>Tobias Leinss</ProfileTitle> */}
 
         <ProfileSkills>
           ReactJS <AiOutlineCheck /> NodeJS <AiOutlineCheck /> Python

@@ -41,7 +41,7 @@ const Logo = styled.div`
 `
 
 const MenuItem = styled(Menu.Item)`
- & {
+  & {
     display: inline-block;
   }
 
@@ -57,7 +57,7 @@ const MenuItem = styled(Menu.Item)`
 
   &:hover:after {
     width: 100%;
-  } 
+  }
 `
 
 export default function Header() {
@@ -70,7 +70,7 @@ export default function Header() {
       </Link>
 
       <Menu theme="dark" mode="horizontal" onClick={navigateToUrl}>
-        <MenuItem key="portfolio">Portfolio</MenuItem>
+        {/* <MenuItem key="portfolio">Portfolio</MenuItem> */}
 
         <MenuItem key="about">About</MenuItem>
       </Menu>

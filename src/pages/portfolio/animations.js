@@ -14,9 +14,21 @@ export default function P5() {
   const p5Options = ["snake"] //, "playground"]
 
   const [option, setOption] = React.useState(p5Options[0])
+  const [canvasDivKey, setCanvasDivKey] = React.useState("1")
 
   const p5DivRef = React.useRef()
   const sketchRef = React.useRef()
+
+  function setNewGame(opt) {
+    setOption(opt)
+    setCanvasDivKey("2")
+
+    if (sketchRef.current) {
+      sketchRef.current = null
+
+      sketchRef.current = new p5(p5Sketch, p5DivRef.current)
+    }
+  }
 
   const prevOption = usePrevious(option)
   React.useEffect(() => {
@@ -26,17 +38,17 @@ export default function P5() {
       }
 
       sketchRef.current = new p5(p5Sketch, p5DivRef.current)
-      console.log(sketchRef.current)
     }
 
     if (sketchRef.current) return sketchRef.current.remove
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [p5Sketch, option])
+  }, [option])
 
   function p5Sketch(sketch) {
     const canvasDim = {
       width: windowDim.width > 1100 ? 800 : windowDim.width - 250,
-      height: Math.min(500, windowDim.height)
+      height: Math.min(500, windowDim.height),
     }
 
     let extraCanvas
@@ -74,16 +86,25 @@ export default function P5() {
       <Radio.Group
         style={{ marginBottom: "1rem" }}
         value={option}
-        onChange={e => setOption(e.target.value)}
+        onChange={(e) => {
+          console.log("onChange", e.target.value)
+          setOption(e.target.value)
+        }}
       >
-        {p5Options.map(opt => (
-          <Radio.Button key={opt} value={opt}>
+        {p5Options.map((opt) => (
+          <Radio.Button
+            key={opt}
+            value={opt}
+            onClick={() => {
+              setNewGame(opt)
+            }}
+          >
             {_capitalize(opt)}
           </Radio.Button>
         ))}
       </Radio.Group>
 
-      <div key={p5Options} ref={p5DivRef} />
+      <div key={canvasDivKey} ref={p5DivRef} />
     </Layout>
   )
 }

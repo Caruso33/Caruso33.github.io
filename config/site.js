@@ -1,12 +1,12 @@
 module.exports = {
   shared: {
-    title: "tobiasleinss.ml", // Navigation and Site Title
+    title: "tobias.gq", // Navigation and Site Title
     description:
       "Come check out how Tobias Leinss can help you level up your websites.",
     twitterHandle: "@caruso33",
   },
   siteMetadata: {
-    siteUrl: "https://www.tobiasleinss.ml", // Domain of your site. No trailing slash!
+    siteUrl: "https://www.tobias.gq", // Domain of your site. No trailing slash!
     logo: "favicon-32x32.png", // Used for SEO and manifest, path to your image you placed in the 'static' folder
     author: "Tobias Leinss", // Author for schemaORGJSONLD
     minibio: `
@@ -27,5 +27,5 @@ module.exports = {
   github: "https://github.com/caruso33/",
   linkedin: "https://www.linkedin.com/in/tobias-leinss/",
   youtube: "https://www.youtube.com/channel/UChu_X4ofbd-3q_uwEX3I-5Q",
-  rss: "https://tobiasleinss.ml/blog/rss.xml",
+  rss: "https://tobias.gq/blog/rss.xml",
 }
