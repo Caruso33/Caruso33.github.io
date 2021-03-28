@@ -14,19 +14,15 @@ export default function P5() {
   const p5Options = ["snake"] //, "playground"]
 
   const [option, setOption] = React.useState(p5Options[0])
-  const [canvasDivKey, setCanvasDivKey] = React.useState("1")
 
   const p5DivRef = React.useRef()
   const sketchRef = React.useRef()
 
   function setNewGame(opt) {
     setOption(opt)
-    setCanvasDivKey("2")
 
     if (sketchRef.current) {
-      sketchRef.current = null
-
-      sketchRef.current = new p5(p5Sketch, p5DivRef.current)
+      snake(sketchRef.current, { resetGame: true })
     }
   }
 
@@ -37,13 +33,14 @@ export default function P5() {
         sketchRef.current.remove()
       }
 
-      sketchRef.current = new p5(p5Sketch, p5DivRef.current)
+      // sketchRef.current = new p5(p5Sketch, p5DivRef.current)
+      sketchRef.current = new p5(p5Sketch)
     }
 
     if (sketchRef.current) return sketchRef.current.remove
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [option])
+  }, [setOption, option])
 
   function p5Sketch(sketch) {
     const canvasDim = {
@@ -54,9 +51,10 @@ export default function P5() {
     let extraCanvas
 
     sketch.setup = () => {
-      sketch
+      const canvas = sketch
         .createCanvas(canvasDim.width, canvasDim.height)
         .parent(p5DivRef.current)
+      canvas.clear()
 
       extraCanvas = sketch.createGraphics(canvasDim.width, canvasDim.height)
       extraCanvas.clear()
@@ -104,7 +102,7 @@ export default function P5() {
         ))}
       </Radio.Group>
 
-      <div key={canvasDivKey} ref={p5DivRef} />
+      <div ref={p5DivRef} />
     </Layout>
   )
 }

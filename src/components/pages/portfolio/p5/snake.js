@@ -12,14 +12,29 @@ let counter = 0
 let rez = 20 // resolution
 let realDim = { width: 0, height: 0 }
 
-export default function snakeGame(p5) {
+export default function snakeGame(p5, { resetGame }) {
   if (!p) p = p5
+  if (resetGame) {
+    reset()
+  }
 
   init()
 
   maintain()
 
   render()
+}
+
+function reset() {
+  if (p == null) return
+
+  snake = null
+  food = null
+
+  gameHasStarted = false
+  frameRate = 2
+  time = 0
+  counter = 0
 }
 
 function init() {
@@ -41,6 +56,7 @@ function maintain() {
   }
 
   if (counter % 200 === 0) {
+    // console.log("You are good, speeding up a bit.")
     frameRate += 1
   }
 

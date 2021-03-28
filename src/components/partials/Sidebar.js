@@ -34,10 +34,10 @@ export default function Sidebar({
 }) {
   return (
     <Sider isMobileSize={isMobileSize} hideSidebar={hideSidebar}>
-      {/* <ProfileAvatar /> */}
+      <ProfileAvatar />
 
       <ProfileTexts>
-        {/* <ProfileTitle>Tobias Leinss</ProfileTitle> */}
+        <ProfileTitle>Tobias Leinss</ProfileTitle>
 
         <ProfileSkills>
           ReactJS <AiOutlineCheck /> NodeJS <AiOutlineCheck /> Python
