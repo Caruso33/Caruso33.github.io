@@ -2,11 +2,11 @@ import { Radio } from "antd"
 import _capitalize from "lodash/capitalize"
 import p5 from "p5"
 import React from "react"
-import playground from "../../components/pages/portfolio/p5/playground"
-import snake from "../../components/pages/portfolio/p5/snake"
-import Layout from "../../components/partials/Layout"
-import getWindowDimensions from "../../components/utils/useWindowDimensions"
-import usePrevious from "../../components/utils/usePrevious"
+import playground from "../../../components/pages/portfolio/p5/playground"
+import snake from "../../../components/pages/portfolio/p5/snake"
+import Layout from "../../../components/partials/Layout"
+import getWindowDimensions from "../../../components/utils/useWindowDimensions"
+import usePrevious from "../../../components/utils/usePrevious"
 
 export default function P5() {
   const windowDim = getWindowDimensions()

@@ -47,6 +47,7 @@ export default function About({ data, location }) {
             impressed by recent deep learning accomplishments.
           </p>
         </div>
+
         <div>
           What I do:
           <p>Build or extend websites</p>

@@ -26,6 +26,7 @@ export default function Portfolio({ data, location }) {
   const portfolioContent = data.allFile.edges.filter(
     (edge) => edge.node.sourceInstanceName === "portfolio"
   )
+  const portfolioToShow = ["imdb"]
 
   return (
     <Layout>
@@ -37,13 +38,21 @@ export default function Portfolio({ data, location }) {
       />
 
       <PortfolioDetails>
-        {portfolioContent.map(({ node }) => {
-          return (
-            <PortfolioContent key={node.name} to={`/portfolio/${node.name}`}>
-              {_capitalize(node.name)}
-            </PortfolioContent>
-          )
-        })}
+        {/* <p>
+          Everyone has to start somewhere, and these were my beginnings with Web
+          Development.
+        </p> */}
+
+        {portfolioContent
+          .filter(({ node }) => portfolioToShow.indexOf(node.name) !== -1)
+          .map(({ node }) => {
+            console.log({node})
+            return (
+              <PortfolioContent key={node.name} to={`/portfolio/${node.name}`}>
+                {_capitalize(node.name)}
+              </PortfolioContent>
+            )
+          })}
 
         {/* {portfolioData.map()} */}
       </PortfolioDetails>
