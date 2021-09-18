@@ -1,24 +1,21 @@
 module.exports = {
   shared: {
-    title: "tobias.gq", // Navigation and Site Title
+    title: "Tobias Leinss", // Navigation and Site Title
     description:
-      "Come check out how Tobias Leinss can help you level up your websites.",
-    twitterHandle: "@caruso33",
+      "Fullstack Software Engineer bringing together data engineering, web development, IIoT and AI.\nCurrently working on data-driven production optimization.",
   },
   siteMetadata: {
     siteUrl: "https://www.tobias.gq", // Domain of your site. No trailing slash!
     logo: "favicon-32x32.png", // Used for SEO and manifest, path to your image you placed in the 'static' folder
     author: "Tobias Leinss", // Author for schemaORGJSONLD
-    minibio: `
-    <strong>Tobias Leinss</strong> is a Fullstack JavaScript and Python software engineer. 
-    He's interested in AI and Blockchain technologies. He lives with his wife in Esslingen, Germany..
-  `,
+    minibio:
+      "Fullstack Software Engineer bringing together data engineering, web development, IIoT and AI.\nCurrently working on data-driven production optimization.",
     organization: "Tobias Leinss",
+    twitterUsername: "@caruso33",
   },
   manifest: {
-    titleShort: "tobiasleinss", // short_name for manifest
+    titleShort: "TobiasLeinss", // short_name for manifest
     pathPrefix: "/",
-    backgroundColor: "#f0f2f5",
     lang: "en", // Language Tag on <html> element
   },
 
