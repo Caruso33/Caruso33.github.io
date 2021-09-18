@@ -70,7 +70,7 @@ export default function Header() {
       </Link>
 
       <Menu theme="dark" mode="horizontal" onClick={navigateToUrl}>
-        <MenuItem key="portfolio">Portfolio</MenuItem>
+        {/* <MenuItem key="portfolio">Portfolio</MenuItem> */}
 
         <MenuItem key="about">About</MenuItem>
       </Menu>

@@ -2,21 +2,13 @@ import { graphql, Link } from "gatsby"
 import _capitalize from "lodash/capitalize"
 import React from "react"
 import styled from "styled-components"
-import { boxShadow } from "../components/partials/GlobalStyle"
 import Layout from "../components/partials/Layout"
 import Metatags from "../components/partials/MetaTags"
-import color from "../utils/color"
-import imgPomodoR from "../img/dist/portfolio/pomodor-min.webp"
+import PageContent from "../components/partials/PageContent"
+import imgCalculator from "../img/dist/portfolio/calculator.webp"
 import imgBarChart from "../img/dist/portfolio/d3barChart.webp"
 import imgMarkdownPreviewer from "../img/dist/portfolio/markdown-previewer.webp"
-import imgCalculator from "../img/dist/portfolio/calculator.webp"
-
-const PortfolioDetails = styled.div`
-  background: ${color.contentBackground};
-  padding: 1.5rem;
-  margin: 1.5rem;
-  box-shadow: ${boxShadow};
-`
+import imgPomodoR from "../img/dist/portfolio/pomodor-min.webp"
 
 const PortfolioContent = styled(Link)`
   display: block;
@@ -37,7 +29,7 @@ export default function Portfolio({ data, location }) {
         pathname={location.pathname}
       />
 
-      <PortfolioDetails>
+      <PageContent>
         {/* <p>
           Everyone has to start somewhere, and these were my beginnings with Web
           Development.
@@ -46,7 +38,7 @@ export default function Portfolio({ data, location }) {
         {portfolioContent
           .filter(({ node }) => portfolioToShow.indexOf(node.name) !== -1)
           .map(({ node }) => {
-            console.log({node})
+            console.log({ node })
             return (
               <PortfolioContent key={node.name} to={`/portfolio/${node.name}`}>
                 {_capitalize(node.name)}
@@ -55,7 +47,7 @@ export default function Portfolio({ data, location }) {
           })}
 
         {/* {portfolioData.map()} */}
-      </PortfolioDetails>
+      </PageContent>
     </Layout>
   )
 }
