@@ -1,60 +1,27 @@
-import { graphql } from "gatsby"
-import React from "react"
-import Layout from "../components/partials/Layout"
-import Metatags from "../components/partials/MetaTags"
-import BlogItem from "../components/pages/home/BlogItem"
-import { BlogItems } from "../components/pages/home/styled"
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import { Layout, Hero, About, Jobs, Featured, Projects, Contact } from '@components';
 
-const Home = ({ data, location }) => {
-  return (
-    <Layout {...{ location }}>
-      <Metatags
-        title={"Tobias Leinss"}
-        description={"personal details and blog list"}
-        url={data.site.siteMetadata.siteUrl}
-        pathname={location.pathname}
-      />
+const StyledMainContainer = styled.main`
+  counter-reset: section;
+`;
 
-      <BlogItems>
-        {data.allMarkdownRemark.edges.map(({ node }) => {
-          return <BlogItem key={node.frontmatter.title} node={node} />
-        })}
-      </BlogItems>
-    </Layout>
-  )
-}
+const IndexPage = ({ location }) => (
+  <Layout location={location}>
+    <StyledMainContainer className="fillHeight">
+      <Hero />
+      <About />
+      <Jobs />
+      <Featured />
+      <Projects />
+      <Contact />
+    </StyledMainContainer>
+  </Layout>
+);
 
-export default Home
+IndexPage.propTypes = {
+  location: PropTypes.object.isRequired,
+};
 
-export const pageQuery = graphql`
-  query {
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-      edges {
-        node {
-          fields {
-            slug
-          }
-          frontmatter {
-            title
-            date(formatString: "DD. MMMM, YYYY")
-            image {
-              childImageSharp {
-                resize(width: 200, height: 130) {
-                  src
-                }
-              }
-            }
-            imageUrl
-            tags
-          }
-          excerpt(pruneLength: 350)
-        }
-      }
-    }
-    site {
-      siteMetadata {
-        siteUrl
-      }
-    }
-  }
-`
+export default IndexPage;

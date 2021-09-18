@@ -4,7 +4,7 @@ import React from "react"
 import styled from "styled-components"
 import color from "../../utils/color"
 import url from "../../utils/url"
-import { boxShadow } from "../partials/GlobalStyle"
+import { boxShadow } from "./GlobalStyle"
 
 const Head = styled.header`
   background: ${color["primary-color"]};
